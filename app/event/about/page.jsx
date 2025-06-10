@@ -40,7 +40,6 @@ function About() {
             <div className="text-white ">
               <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
                 About Us
-
               </h1>
             </div>
           </div>
@@ -69,9 +68,9 @@ function About() {
               innovative solutions, and flawless execution.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed dark:text-gray-300">
-              We pride ourselves on understanding our clients' unique needs and
-              turning their ideas into extraordinary realities. Whether it’s a
-              corporate gathering, a glamorous fashion show, or a heartfelt
+              We pride ourselves on understanding our clients&#39; unique needs
+              and turning their ideas into extraordinary realities. Whether it’s
+              a corporate gathering, a glamorous fashion show, or a heartfelt
               charity event, we are passionate about delivering excellence every
               step of the way.
             </p>
@@ -155,7 +154,8 @@ function About() {
                 Marketing Strategy
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                Innovative marketing solutions to maximize your event's impact
+                Innovative marketing solutions to maximize your event&#39;s
+                impact
               </p>
             </div>
 
@@ -371,9 +371,9 @@ function About() {
                 ))}
               </div>
               <p className="text-gray-600 italic dark:text-gray-300">
-                "Sara Events transformed our corporate gala into an
+                &quot;Sara Events transformed our corporate gala into an
                 unforgettable experience. Their attention to detail was
-                impeccable!"
+                impeccable!&quot;
               </p>
               <div className="mt-6 flex items-center">
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
@@ -403,8 +403,9 @@ function About() {
                 ))}
               </div>
               <p className="text-gray-600 italic dark:text-gray-300">
-                "Our wedding was perfect thanks to Sara Events. They handled
-                everything from start to finish with professionalism."
+                &quot;Our wedding was perfect thanks to Sara Events. They
+                handled everything from start to finish with
+                professionalism.&quot;
               </p>
               <div className="mt-6 flex items-center">
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
@@ -434,9 +435,9 @@ function About() {
                 ))}
               </div>
               <p className="text-gray-600 italic dark:text-gray-300">
-                "Working with Sara Events on our product launch was a
+                &quot;Working with Sara Events on our product launch was a
                 game-changer. Their marketing expertise made all the
-                difference!"
+                difference!&quot;
               </p>
               <div className="mt-6 flex items-center">
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />

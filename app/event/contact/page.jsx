@@ -1,9 +1,9 @@
 "use client";
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function EventContact() {
   return (
@@ -39,7 +39,7 @@ export default function EventContact() {
             </h1>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
               Get in touch with us for any inquiries about our event management
-              services. We're here to help make your event a success.
+              services. We&apos;re here to help make your event a success.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

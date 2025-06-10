@@ -1,18 +1,21 @@
 "use client";
-import React, { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { gallery } from "@/app/property/mockData"; 
+import React, { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { gallery } from "@/app/property/mockData";
 
 export default function EventGallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  
   const openLightbox = (index) => setSelectedImageIndex(index);
   const closeLightbox = () => setSelectedImageIndex(null);
-  const showNextImage = () => setSelectedImageIndex((prev) => (prev + 1) % galleryImages.length);
-  const showPrevImage = () => setSelectedImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  const showNextImage = () =>
+    setSelectedImageIndex((prev) => (prev + 1) % galleryImages.length);
+  const showPrevImage = () =>
+    setSelectedImageIndex(
+      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
+    );
 
   return (
     <>
@@ -28,7 +31,7 @@ export default function EventGallery() {
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
             <div className="text-white ">
               <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
-               Gallery
+                Gallery
               </h1>
             </div>
           </div>
@@ -46,7 +49,7 @@ export default function EventGallery() {
               Our <span className="text-[#137a70]">Gallery</span>
             </h1>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-              Explore our collection of memorable events and moments we've
+              Explore our collection of memorable events and moments we&#39;ve
               created for our clients.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -107,4 +110,4 @@ export default function EventGallery() {
       <Footer />
     </>
   );
-} 
+}
