@@ -36,7 +36,7 @@ function Service() {
         title: "Conferences and Seminars",
         description:
           "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience.",
-        button: "Explore",
+        button: "Learn More",
         href: "/event/services/conferences-and-seminars",
         image: {
           url: "/meeting2.webp",
@@ -47,7 +47,7 @@ function Service() {
         title: "Corporate Events",
         description:
           "Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
-        button: "Get Started",
+        button: "Learn More",
         href: "/event/services/corporate-event",
         image: {
           url: "/meeting.webp",
@@ -58,7 +58,7 @@ function Service() {
         title: "Fashion Shows ",
         description:
           "Our expertise in organizing fashion shows ensures a stunning and memorable event that showcases your designs with flawless coordination and creative flair. ",
-        button: "Get Started",
+        button: "Learn More",
         href: "/event/services/fashion-shows",
         image: {
           url: "/show2.webp",
@@ -69,7 +69,7 @@ function Service() {
         title: "Grand Openings",
         description:
           " Celebrate your milestone with a grand opening event that captivates and excites your audience, leaving a remarkable first impression of your brand or venue.",
-        button: "Get Started",
+        button: "Learn More",
         href: "/event/services/grand-opening",
         image: {
           url: "/speech.webp",
@@ -80,7 +80,7 @@ function Service() {
         title: "Product Launches",
         description:
           "Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation",
-        button: "Get Started",
+        button: "Learn More",
         href: "/event/services/launching",
         image: {
           url: "/speech2.webp",
@@ -192,7 +192,7 @@ function Service() {
                   {href && button && (
                     <Link
                       href={href}
-                      target="_blank"
+                      target="_self"
                       className="bg-[#137a70] hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
                     >
                       {button}
