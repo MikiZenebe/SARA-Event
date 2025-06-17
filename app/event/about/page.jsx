@@ -38,7 +38,7 @@ function About() {
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
             <div className="text-white ">
-              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
+              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[450PX]">
                 About Us
               </h1>
             </div>
@@ -56,7 +56,7 @@ function About() {
             variants={titleSlide}
             className="text-4xl font-bold text-gray-800 leading-tight dark:text-white"
           >
-            About <span className="text-[#137a70] font-bold">Us</span>
+            About <span className="text-[#137a70] font-bold ">Us</span>
           </motion.h1>
 
           <div className="space-y-4">
