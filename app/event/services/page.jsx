@@ -83,7 +83,7 @@ function Service() {
         button: "Learn More",
         href: "/event/services/launching",
         image: {
-          url: "/speech2.webp",
+          url: "/meeting2.webp",
           alternativeText: "Brand Management Service",
         },
       },

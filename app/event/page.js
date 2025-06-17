@@ -246,7 +246,7 @@ export default function Home() {
               specializes in organizing charity events, corporate functions,
               conferences, grand openings, and product launches.
             </motion.p>
-            <motion.a
+            {/* <motion.a
               href="/event/about"
               initial="hidden"
               whileInView="visible"
@@ -255,7 +255,11 @@ export default function Home() {
               className="bg-[#137a70] mb-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
             >
               Learn More
-            </motion.a>
+            </motion.a> */}
+
+            <Button className="bg-[#137a70] mb-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md">
+              <Link href="/event/about">Learn More</Link>
+            </Button> 
           </div>
           <motion.div
             initial="hidden"

@@ -38,10 +38,10 @@ function Page() {
           variants={titleSlide}
         >
           <div className="mb-6 md:mb-8 text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold dark:text-white text-gray-800 mb-2 text-center ">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2 text-center ">
               Discover Our Services
             </h1>
-            <p className="text-base md:text-lg text-gray-600 text-center dark:text-white  w-[70%] mx-auto ">
+            <p className="text-base md:text-lg text-gray-600 dark:text-white w-[70%] mx-auto text-center">
               Explore a range of services tailored to meet your needs, from
               event management to property investment opportunities.
             </p>
@@ -66,10 +66,10 @@ function Page() {
                 />
               </CardHeader>
               <CardContent className="p-4">
-                <CardTitle className="text-xl text-center font-semibold text-gray-800 mb-3 dark:text-[#1F995E]">
+                <CardTitle className="text-xl text-center font-semibold text-gray-800 dark:text-white mb-3">
                   Events Management
                 </CardTitle>
-                <CardDescription className="text-gray-600 mb-4 dark:text-white">
+                <CardDescription className="text-gray-600 dark:text-white mb-4">
                   <ul className="list-disc ml-4 font-medium text-[16px] space-y-2">
                     <li>Upcoming Events</li>
                     <li>Event Management</li>
@@ -97,10 +97,10 @@ function Page() {
                 />
               </CardHeader>
               <CardContent className="p-4">
-                <CardTitle className="text-xl text-center font-semibold text-gray-800 mb-3 dark:text-[#969963]">
+                <CardTitle className="text-xl text-center font-semibold text-gray-800 dark:text-white mb-3">
                   Property Management
                 </CardTitle>
-                <CardDescription className="text-gray-600 mb-4 dark:text-white">
+                <CardDescription className="text-gray-600 dark:text-white mb-4">
                   <ul className="list-disc ml-4 font-medium text-[16px] space-y-2">
                     <li>Available Properties</li>
                     <li>Property Management </li>

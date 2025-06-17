@@ -1244,7 +1244,7 @@ export const mockEventServicesData = {
             serviceImage: {
               data: {
                 attributes: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/product-launch-main_1.jpg",
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/conference-main_1.jpg",
                   alternativeText: "Product Launch Main Image",
                 },
               },
@@ -1340,7 +1340,7 @@ export const EventService = {
       description:
         "We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values.",
       image: {
-        url: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
+        url: "meeting2.webp",
         alternativeText: "Charity Event Image",
       },
       href: "/event/services/charity-events",
@@ -1351,7 +1351,7 @@ export const EventService = {
       description:
         "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience.",
       image: {
-        url: "/charity.webp",
+        url: "/conference.webp",
         alternativeText: "Corporate Event Image",
       },
       href: "/event/services/corporate-events",
@@ -1362,7 +1362,7 @@ export const EventService = {
       description:
         "Product Launches Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
       image: {
-        url: "/speech.webp",
+        url: "/charity.webp",
         alternativeText: "Conference Image",
       },
       href: "/event/services/conferences-and-seminars",
