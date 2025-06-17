@@ -35,11 +35,11 @@ function Service() {
       {
         title: "Conferences and Seminars",
         description:
-          "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience.",
+          "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience",
         button: "Learn More",
         href: "/event/services/conferences-and-seminars",
         image: {
-          url: "/meeting2.webp",
+          url: "/conference.webp",
           alternativeText: "Marketing Campaign Service",
         },
       },
@@ -50,7 +50,7 @@ function Service() {
         button: "Learn More",
         href: "/event/services/corporate-event",
         image: {
-          url: "/meeting.webp",
+          url: "/meeting2.webp",
           alternativeText: "Brand Management Service",
         },
       },
@@ -83,7 +83,7 @@ function Service() {
         button: "Learn More",
         href: "/event/services/launching",
         image: {
-          url: "/meeting2.webp",
+          url: "/charity.webp",
           alternativeText: "Brand Management Service",
         },
       },
@@ -140,7 +140,7 @@ function Service() {
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
             <div className="text-white ">
-              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
+              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[410PX]">
                 Our Services
               </h1>
             </div>

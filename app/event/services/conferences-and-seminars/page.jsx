@@ -15,7 +15,7 @@ function CharityEvent() {
   const heroSecondTitle = "seminars";
 
   const serviceImage = {
-    url: "/meeting2.webp",
+    url: "/conference.webp",
     alternativeText: "Charity Event Image",
   };
 
@@ -24,6 +24,8 @@ function CharityEvent() {
       children: [
         {
           text: "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience.",
+
+
         },
       ],
     },
@@ -53,7 +55,7 @@ function CharityEvent() {
     },
   ];
 
-  const galleryImages = ["/metting3.webp", "/meeting2.webp"];
+  const galleryImages = ["/conference.webp", "/conference1.webp","/conference2.webp" , "/conference4.webp"];
 
   const goToNextImage = () => {
     const nextIndex = (currentIndex + 1) % galleryImages.length;
