@@ -382,6 +382,21 @@ const PropertyHome = React.memo(function PropertyHome() {
         </div>
       </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
       {/* About Us Section */}
       <section className="py-16 bg-white dark:bg-[#1f2937]">
         <div className="container mx-auto px-4">

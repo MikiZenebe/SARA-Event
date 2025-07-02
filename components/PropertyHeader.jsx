@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 // Mock data for header
 const mockHeaderData = {
   logo: {
-    url: "/logo.png",
+    url: "/Property/PropertyLogo.jpeg",
     alt: "Property Logo"
   },
   navigation: [
@@ -30,7 +30,7 @@ const PropertyHeader = () => {
             <img
               src={mockHeaderData.logo.url}
               alt={mockHeaderData.logo.alt}
-              className="h-8 w-auto"
+              className="h-16 w-32"
             />
           </Link>
 
@@ -47,6 +47,23 @@ const PropertyHeader = () => {
             ))}
             <ModeToggle />
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">

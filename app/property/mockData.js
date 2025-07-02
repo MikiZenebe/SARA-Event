@@ -4,73 +4,26 @@ export const mockProperties = [
   {
     id: "1",
     attributes: {
-      Title: "Modern Apartment in Bole",
-      Description: "Beautiful modern apartment with stunning city views",
+      Title: " penthouse Apartments at Bole mega",
+      Description:
+        " Furnished dublex penthouse Apartments for Rent at Bole mega",
       Icon: {
         data: {
           attributes: {
             alternativeText: "Apartment Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/apartment-icon_1.jpg"
-          }
-        }
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/apartment-icon_1.jpg",
+          },
+        },
       },
       Image: {
         data: {
           attributes: {
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-apartment_1.jpg",
-            alternativeText: "Modern Apartment"
-          }
-        }
+            url: "/Property/house1.jpg",
+            alternativeText: "Modern Apartment",
+          },
+        },
       },
-      Price: 2500000,
-      Bedrooms: 3,
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bole"
-                }
-              }
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole Medhanealem"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  {
-    id: "2",
-    attributes: {
-      Title: "Luxury Villa in Sarbet",
-      Description: "Spacious villa with garden and modern amenities",
-      Icon: {
-        data: {
-          attributes: {
-            alternativeText: "Villa Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/villa-icon_1.jpg"
-          }
-        }
-      },
-      Image: {
-        data: {
-          attributes: {
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/luxury-villa_1.jpg",
-            alternativeText: "Luxury Villa"
-          }
-        }
-      },
-      Price: 4500000,
+      Price: 3500,
       Bedrooms: 5,
       city: {
         data: {
@@ -79,23 +32,73 @@ export const mockProperties = [
             location: {
               data: {
                 attributes: {
-                  Name: "Sarbet"
-                }
-              }
+                  Name: "Bole",
+                },
+              },
             },
             subcities: {
               data: [
                 {
                   attributes: {
-                    Name: "Sarbet"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
+                    Name: "Bole Medhanealem",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  },
+
+  {
+    id: "2",
+    attributes: {
+      Title: "Luxury penthouse Apartments at Bole welo sefer",
+      Description:
+        "luxury fully Furnished dublex penthouse Apartments for Rent at Bole welo sefer",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Villa Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/villa-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: {
+          attributes: {
+            url: "Property/house2.jpg",
+            alternativeText: "Luxury Villa",
+          },
+        },
+      },
+      Price: 5000,
+      Bedrooms: 5,
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Sarbet",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Sarbet",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
   },
   {
     id: "3",
@@ -106,17 +109,17 @@ export const mockProperties = [
         data: {
           attributes: {
             alternativeText: "Studio Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg"
-          }
-        }
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
       },
       Image: {
         data: {
           attributes: {
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-apartment_1.jpg",
-            alternativeText: "Studio Apartment"
-          }
-        }
+            url: "/Property/house3.jpg",
+            alternativeText: "Studio Apartment",
+          },
+        },
       },
       Price: 1200000,
       Bedrooms: 1,
@@ -127,23 +130,23 @@ export const mockProperties = [
             location: {
               data: {
                 attributes: {
-                  Name: "CMC"
-                }
-              }
+                  Name: "CMC",
+                },
+              },
             },
             subcities: {
               data: [
                 {
                   attributes: {
-                    Name: "CMC"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
+                    Name: "CMC",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
   },
   {
     id: "4",
@@ -154,17 +157,17 @@ export const mockProperties = [
         data: {
           attributes: {
             alternativeText: "House Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/house-icon_1.jpg"
-          }
-        }
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/house-icon_1.jpg",
+          },
+        },
       },
       Image: {
         data: {
           attributes: {
             url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/family-home_1.jpg",
-            alternativeText: "Family Home"
-          }
-        }
+            alternativeText: "Family Home",
+          },
+        },
       },
       Price: 3800000,
       Bedrooms: 4,
@@ -175,24 +178,24 @@ export const mockProperties = [
             location: {
               data: {
                 attributes: {
-                  Name: "Bole"
-                }
-              }
+                  Name: "Bole",
+                },
+              },
             },
             subcities: {
               data: [
                 {
                   attributes: {
-                    Name: "Gerji"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
-  }
+                    Name: "Gerji",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    },
+  },
 ];
 
 export const mockCities = {
@@ -1543,28 +1546,41 @@ export const mockHeaderData = {
 export const mockFooterData = {
   logo: {
     url: "/logo.png",
-    alternativeText: "Company Logo"
+    alternativeText: "Company Logo",
   },
-  description: "We are a leading event management company dedicated to creating unforgettable experiences for our clients.",
+  description:
+    "We are a leading event management company dedicated to creating unforgettable experiences for our clients.",
   socialLinks: [
-    { id: 1, url: "https://facebook.com", icon: "Facebook" },
+    {
+      id: 1,
+      url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
+      icon: "Facebook",
+    },
     { id: 2, url: "https://twitter.com", icon: "Twitter" },
     { id: 3, url: "https://instagram.com", icon: "Instagram" },
-    { id: 4, url: "https://linkedin.com", icon: "LinkedIn" }
+    {
+      id: 4,
+      url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
+      icon: "LinkedIn",
+    },
   ],
   quickLinks: [
     { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "About", href: "/about" },
-    { id: 3, label: "Services", href: "/services" },
-    { id: 4, label: "Gallery", href: "/gallery" },
-    { id: 5, label: "Contact", href: "/contact" }
+    { id: 2, label: "About", href: "/event/about" },
+    { id: 3, label: "Services", href: "/event/services" },
+    { id: 4, label: "Gallery", href: "/event/gallery" },
+    { id: 5, label: "Contact", href: "/event/contact" },
   ],
   contactInfo: [
-    { id: 1, icon: "📍", text: "123 Event Street, City, Country" },
-    { id: 2, icon: "📞", text: "+1 234 567 890" },
-    { id: 3, icon: "✉️", text: "info@company.com" }
+    {
+      id: 1,
+      icon: "📍",
+      text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
+    },
+    { id: 2, icon: "📞", text: "09 36 68 3005" },
+    { id: 3, icon: "✉️", text: "info@company.com" },
   ],
-  copyright: "© 2024 Company Name. All rights reserved."
+  copyright: "© 2024 Company Name. All rights reserved.",
 };
 
 export const mockPropertyHeaderData = {
