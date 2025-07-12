@@ -164,7 +164,7 @@ export const mockProperties = [
       Image: {
         data: {
           attributes: {
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/family-home_1.jpg",
+            url: "Property/house4.jpg",
             alternativeText: "Family Home",
           },
         },

@@ -217,7 +217,10 @@ const PropertyHome = React.memo(function PropertyHome() {
       <Toaster position="top-right" reverseOrder={false} />
       <header
         className="relative w-full h-[70vh] flex justify-center items-center bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: `url('${mockHomeData.hero.backgroundImage}')` }}>
+        style={{
+          backgroundImage: `url('${mockHomeData.hero.backgroundImage}')`,
+        }}
+      >
         <div className="absolute inset-0 bg-black opacity-70"></div>
         <motion.div
           initial="hidden"
@@ -233,7 +236,7 @@ const PropertyHome = React.memo(function PropertyHome() {
             {mockHomeData.hero.subtitle}
           </p>
           <Button
-            onClick={() => window.location.href = '/property/listings'}
+            onClick={() => (window.location.href = "/property/listings")}
             className="bg-[#137a70] hover:bg-[#0f5d56] text-white px-8 py-6 text-lg"
           >
             View All Properties
@@ -342,7 +345,7 @@ const PropertyHome = React.memo(function PropertyHome() {
       {/* Property Listings */}
       <section className="py-16 bg-gray-50 dark:bg-[#1f2937]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredProperties.map((property, index) => (
               <motion.div
                 key={property.id}
@@ -355,7 +358,10 @@ const PropertyHome = React.memo(function PropertyHome() {
                   <CardHeader className="p-0">
                     <img
                       src={property.attributes.Image.data.attributes.url}
-                      alt={property.attributes.Image.data.attributes.alternativeText}
+                      alt={
+                        property.attributes.Image.data.attributes
+                          .alternativeText
+                      }
                       className="w-full h-48 object-cover"
                     />
                   </CardHeader>
@@ -381,21 +387,6 @@ const PropertyHome = React.memo(function PropertyHome() {
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
 
       {/* About Us Section */}
       <section className="py-16 bg-white dark:bg-[#1f2937]">
@@ -478,7 +469,9 @@ const PropertyHome = React.memo(function PropertyHome() {
                   <h3 className="text-4xl font-bold text-[#137a70] mb-2">
                     {counterOn && <CountUp end={stat.number} duration={2} />}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{stat.label}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {stat.label}
+                  </p>
                 </div>
               </ScrollTrigger>
             ))}
