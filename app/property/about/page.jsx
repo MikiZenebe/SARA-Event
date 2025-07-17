@@ -137,7 +137,7 @@ function PropertyAbout() {
               </h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 At SEM Properties, we specialize in delivering personalized real
-                estate solutions that align with each client's unique
+                estate solutions that align with each client&#39;s unique
                 preferences and needs. Our primary goal is to eliminate the
                 stress and complexities often associated with property
                 transactions, ensuring smooth and seamless access to desired
