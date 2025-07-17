@@ -2,9 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import { mockPropertyFooterData } from "@/app/property/mockData";
+import Image from "next/image";
 
 function PropertyFooter() {
-  const { logo, description, socialLinks, quickLinks, contactInfo, copyright } = mockPropertyFooterData;
+  const { logo, description, socialLinks, quickLinks, contactInfo, copyright } =
+    mockPropertyFooterData;
+
+  console.log("Logo URL:", logo.url);
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -13,10 +17,11 @@ function PropertyFooter() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <Link href="/property" className="inline-block">
-              <img
+              <Image
                 src={logo.url}
                 alt={logo.alternativeText}
-                className="h-12 w-auto"
+                height={50}
+                width={80}
               />
             </Link>
             <p className="text-gray-400">{description}</p>

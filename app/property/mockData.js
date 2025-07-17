@@ -1,5 +1,3 @@
-
-
 export const mockProperties = [
   {
     id: "1",
@@ -208,25 +206,25 @@ export const mockCities = {
           location: {
             data: {
               attributes: {
-                Name: "Bole"
-              }
-            }
+                Name: "Bole",
+              },
+            },
           },
           subcities: {
             data: [
               {
                 attributes: {
-                  Name: "Bole Medhanealem"
-                }
+                  Name: "Bole Medhanealem",
+                },
               },
               {
                 attributes: {
-                  Name: "Gerji"
-                }
-              }
-            ]
-          }
-        }
+                  Name: "Gerji",
+                },
+              },
+            ],
+          },
+        },
       },
       {
         id: "2",
@@ -235,20 +233,20 @@ export const mockCities = {
           location: {
             data: {
               attributes: {
-                Name: "Sarbet"
-              }
-            }
+                Name: "Sarbet",
+              },
+            },
           },
           subcities: {
             data: [
               {
                 attributes: {
-                  Name: "Sarbet"
-                }
-              }
-            ]
-          }
-        }
+                  Name: "Sarbet",
+                },
+              },
+            ],
+          },
+        },
       },
       {
         id: "3",
@@ -257,23 +255,23 @@ export const mockCities = {
           location: {
             data: {
               attributes: {
-                Name: "CMC"
-              }
-            }
+                Name: "CMC",
+              },
+            },
           },
           subcities: {
             data: [
               {
                 attributes: {
-                  Name: "CMC"
-                }
-              }
-            ]
-          }
-        }
-      }
-    ]
-  }
+                  Name: "CMC",
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+  },
 };
 
 export const mockHomeData = {
@@ -285,31 +283,32 @@ export const mockHomeData = {
             __typename: "ComponentLayoutPropertyAboutUs",
             Title: {
               title: "About Our Properties",
-              secondTitle: "Find Your Dream Home"
+              secondTitle: "Find Your Dream Home",
             },
-            description: "We offer a wide range of properties to suit your needs",
+            description:
+              "We offer a wide range of properties to suit your needs",
             aboutCard: {
               title: "Quality Properties",
-              secondTitle: "Best Locations"
-            }
+              secondTitle: "Best Locations",
+            },
           },
           {
             __typename: "ComponentLayoutPartners",
             partnerDescription: "Trusted by leading real estate companies",
             partnerTitle: {
               title: "Our Partners",
-              secondTitle: "Trusted Companies"
+              secondTitle: "Trusted Companies",
             },
             partnerImage: {
               image: {
                 data: {
                   attributes: {
                     url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/partners_1.jpg",
-                    alternativeText: "Our Partners"
-                  }
-                }
-              }
-            }
+                    alternativeText: "Our Partners",
+                  },
+                },
+              },
+            },
           },
           {
             __typename: "ComponentLayoutOurAcheivement",
@@ -318,15 +317,16 @@ export const mockHomeData = {
             acheivementCard: {
               description: "Successfully sold properties",
               title: "1000+",
-              button: "Learn More"
-            }
-          }
-        ]
-      }
-    }
-  }
+              button: "Learn More",
+            },
+          },
+        ],
+      },
+    },
+  },
 };
 
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 export const mockContactData = {
   propertyContactPage: {
     data: {
@@ -336,56 +336,36 @@ export const mockContactData = {
             __typename: "ComponentLayoutContactInfo",
             contactTitle: {
               title: "Get in Touch",
-              secondTitle: "Contact Us"
+              secondTitle: "Contact Us",
             },
-            contactDescription: "Have questions about our properties? We're here to help. Fill out the form below and we'll get back to you as soon as possible.",
+            contactDescription:
+              "Have questions about our properties? We're here to help. Fill out the form below and we'll get back to you as soon as possible.",
             getInTouch: "Contact Information",
             contactCard: [
               {
                 title: "Address",
                 description: "Bole, Addis Ababa, Ethiopia",
                 button: "View on Map",
-                image: {
-                  data: {
-                    attributes: {
-                      url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/location-icon_1.jpg",
-                      alternativeText: "Location Icon"
-                    }
-                  }
-                }
+                icon: MapPin,
               },
               {
                 title: "Phone",
                 description: "+251 911 123 456",
                 button: "Call Now",
-                image: {
-                  data: {
-                    attributes: {
-                      url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/phone-icon_1.jpg",
-                      alternativeText: "Phone Icon"
-                    }
-                  }
-                }
+                icon: Phone,
               },
               {
                 title: "Email",
                 description: "info@saraevents.com",
                 button: "Send Email",
-                image: {
-                  data: {
-                    attributes: {
-                      url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/email-icon_1.jpg",
-                      alternativeText: "Email Icon"
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      }
-    }
-  }
+                icon: Mail,
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
 };
 
 export const mockAboutData = {
@@ -397,72 +377,76 @@ export const mockAboutData = {
             __typename: "ComponentLayoutPropertyAboutUs",
             Title: {
               title: "Who We Are",
-              secondTitle: "Our Story"
+              secondTitle: "Our Story",
             },
-            description: "Sara Events and Marketing is a leading property management company in Ethiopia, dedicated to providing exceptional real estate services. With years of experience in the market, we have built a reputation for trust, reliability, and excellence.",
+            description:
+              "Sara Events and Marketing is a leading property management company in Ethiopia, dedicated to providing exceptional real estate services. With years of experience in the market, we have built a reputation for trust, reliability, and excellence.",
             aboutCard: {
               title: "Our Mission",
-              secondTitle: "Building Dreams"
-            }
+              secondTitle: "Building Dreams",
+            },
           },
           {
             __typename: "ComponentComponentsLink",
             title: "Our Vision",
             eventTitle: "Leading the Future",
-            url: "#vision"
+            url: "#vision",
           },
           {
             __typename: "ComponentLayoutServiceCard",
             ServiceCard: {
               title: "Professional Team",
-              description: "Our team of experienced real estate professionals is dedicated to helping you find your perfect property.",
+              description:
+                "Our team of experienced real estate professionals is dedicated to helping you find your perfect property.",
               button: "Meet Our Team",
               image: {
                 data: {
                   attributes: {
                     url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/team_1.jpg",
-                    alternativeText: "Professional Team"
-                  }
-                }
-              }
-            }
+                    alternativeText: "Professional Team",
+                  },
+                },
+              },
+            },
           },
           {
             __typename: "ComponentLayoutTestimonial",
             testimonailTitle: {
               title: "What Our Clients",
-              secondTitle: "Say About Us"
+              secondTitle: "Say About Us",
             },
             testimonialCard: [
               {
                 title: "Excellent Service",
-                description: "The team at Sara Events made finding my dream home a seamless experience. Their professionalism and attention to detail were outstanding.",
-                button: "Read More"
+                description:
+                  "The team at Sara Events made finding my dream home a seamless experience. Their professionalism and attention to detail were outstanding.",
+                button: "Read More",
               },
               {
                 title: "Highly Recommended",
-                description: "I've worked with many real estate companies, but Sara Events stands out for their exceptional service and market knowledge.",
-                button: "Read More"
-              }
-            ]
+                description:
+                  "I've worked with many real estate companies, but Sara Events stands out for their exceptional service and market knowledge.",
+                button: "Read More",
+              },
+            ],
           },
           {
             __typename: "ComponentLayoutPartners",
             partnerDescription: "Trusted by leading real estate companies",
             partnerTitle: {
               title: "Our Partners",
-              secondTitle: "Trusted Companies"
+              secondTitle: "Trusted Companies",
             },
             partnerImage: {
               image: {
                 data: {
                   attributes: {
                     url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/partners_1.jpg",
-                    alternativeText: "Our Partners"
-                  }
-                }
-              }
-            }
+                    alternativeText: "Our Partners",
+                  },
+                },
+              },
+            },
           },
           {
             __typename: "ComponentLayoutOurAcheivement",
@@ -472,24 +456,24 @@ export const mockAboutData = {
               {
                 description: "Properties Sold",
                 title: "1000+",
-                button: "Learn More"
+                button: "Learn More",
               },
               {
                 description: "Happy Clients",
                 title: "500+",
-                button: "Learn More"
+                button: "Learn More",
               },
               {
                 description: "Years Experience",
                 title: "10+",
-                button: "Learn More"
-              }
-            ]
-          }
-        ]
-      }
-    }
-  }
+                button: "Learn More",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
 };
 
 export const mockGalleryData = {
@@ -506,16 +490,16 @@ export const mockGalleryData = {
               alternativeText: "Modern Apartment Interior",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-interior-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-interior-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-interior-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-interior-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "2",
@@ -529,16 +513,16 @@ export const mockGalleryData = {
               alternativeText: "Luxury Villa Exterior",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/luxury-villa-exterior-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/luxury-villa-exterior-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/luxury-villa-exterior-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/luxury-villa-exterior-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "3",
@@ -552,16 +536,16 @@ export const mockGalleryData = {
               alternativeText: "Modern Kitchen",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-kitchen-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-kitchen-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-kitchen-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/modern-kitchen-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "4",
@@ -575,16 +559,16 @@ export const mockGalleryData = {
               alternativeText: "Swimming Pool",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/swimming-pool-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/swimming-pool-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/swimming-pool-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/swimming-pool-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "5",
@@ -598,16 +582,16 @@ export const mockGalleryData = {
               alternativeText: "Garden View",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/garden-view-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/garden-view-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/garden-view-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/garden-view-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "6",
@@ -621,16 +605,16 @@ export const mockGalleryData = {
               alternativeText: "Master Bedroom",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/master-bedroom-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/master-bedroom-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/master-bedroom-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/master-bedroom-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "7",
@@ -644,16 +628,16 @@ export const mockGalleryData = {
               alternativeText: "Fitness Center",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/fitness-center-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/fitness-center-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/fitness-center-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/fitness-center-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     {
       id: "8",
@@ -667,18 +651,18 @@ export const mockGalleryData = {
               alternativeText: "Living Room",
               formats: {
                 small: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/living-room-small_1.jpg"
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/living-room-small_1.jpg",
                 },
                 large: {
-                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/living-room-large_1.jpg"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  ]
+                  url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/living-room-large_1.jpg",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
 };
 
 export const mockFashionShowData = {
@@ -790,7 +774,6 @@ export const mockEventServicesData = {
                 attributes: {
                   url: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
                   alternativeText: "Charity Event Hero Image",
-                  
                 },
               },
             },
@@ -1427,25 +1410,22 @@ export const achievementSection = {
   ],
 };
 
-
 export const upcomingEvents = [
-    {
-      id: 1,
-      title: "Tech Conference 2024",
-      date: "2024-12-15",
-      location: "Addis Ababa, Ethiopia",
-      description: "Join us for a day of insightful talks and networking.",
-    },
-    {
-      id: 2,
-      title: "Annual Business Expo",
-      date: "2024-11-20",
-      location: "Nairobi, Kenya",
-      description: "Explore innovative business solutions and meet leaders.",
-    },
-  ];
-
-
+  {
+    id: 1,
+    title: "Tech Conference 2024",
+    date: "2024-12-15",
+    location: "Addis Ababa, Ethiopia",
+    description: "Join us for a day of insightful talks and networking.",
+  },
+  {
+    id: 2,
+    title: "Annual Business Expo",
+    date: "2024-11-20",
+    location: "Nairobi, Kenya",
+    description: "Explore innovative business solutions and meet leaders.",
+  },
+];
 
 export const tabs = [
   "All",
@@ -1454,9 +1434,6 @@ export const tabs = [
   "GrandOpenings",
   "corporate",
 ];
-
-
-
 
 export const allGalleries = [
   {
@@ -1526,21 +1503,18 @@ export const gallery = [
   },
 ];
 
-
-
-
 export const mockHeaderData = {
   logo: {
     url: "/logo.png",
-    alternativeText: "Company Logo"
+    alternativeText: "Company Logo",
   },
   menuItems: [
     { id: 1, label: "Home", href: "/" },
     { id: 2, label: "About", href: "/about" },
     { id: 3, label: "Services", href: "/services" },
     { id: 4, label: "Gallery", href: "/gallery" },
-    { id: 5, label: "Contact", href: "/contact" }
-  ]
+    { id: 5, label: "Contact", href: "/contact" },
+  ],
 };
 
 export const mockFooterData = {
@@ -1586,50 +1560,48 @@ export const mockFooterData = {
 export const mockPropertyHeaderData = {
   logo: {
     url: "/images/property-logo.png",
-    alternativeText: "Property Logo"
+    alternativeText: "Property Logo",
   },
   menuItems: [
     { id: 1, label: "Home", href: "/property" },
     { id: 2, label: "About", href: "/property/about" },
     { id: 3, label: "Properties", href: "/property/properties" },
     { id: 4, label: "Gallery", href: "/property/gallery" },
-    { id: 5, label: "Contact", href: "/property/contact" }
-  ]
+    { id: 5, label: "Contact", href: "/property/contact" },
+  ],
 };
 
 export const mockPropertyFooterData = {
   logo: {
-    url: "/images/property-logo.png",
-    alternativeText: "Property Logo"
+    url: "/Property/PropertyLogo.jpeg",
+    alternativeText: "Property Logo",
   },
-  description: "We are a premier property management company committed to providing exceptional real estate services.",
+  description:
+    "We are a premier property management company committed to providing exceptional real estate services.",
   socialLinks: [
     { id: 1, url: "https://facebook.com", icon: "Facebook" },
     { id: 2, url: "https://twitter.com", icon: "Twitter" },
     { id: 3, url: "https://instagram.com", icon: "Instagram" },
-    { id: 4, url: "https://linkedin.com", icon: "LinkedIn" }
+    { id: 4, url: "https://linkedin.com", icon: "LinkedIn" },
   ],
   quickLinks: [
     { id: 1, label: "Home", href: "/property" },
     { id: 2, label: "About", href: "/property/about" },
     { id: 3, label: "Properties", href: "/property/properties" },
     { id: 4, label: "Gallery", href: "/property/gallery" },
-    { id: 5, label: "Contact", href: "/property/contact" }
+    { id: 5, label: "Contact", href: "/property/contact" },
   ],
   contactInfo: [
-    { id: 1, icon: "📍", text: "456 Property Avenue, City, Country" },
-    { id: 2, icon: "📞", text: "+1 234 567 891" },
-    { id: 3, icon: "✉️", text: "property@company.com" }
+    {
+      id: 1,
+      icon: "📍",
+      text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
+    },
+    { id: 2, icon: "📞", text: "09 36 68 3005" },
+    { id: 3, icon: "✉️", text: "info@company.com" },
   ],
-  copyright: "© 2024 Property Company. All rights reserved."
+  copyright: "© 2024 Property Company. All rights reserved.",
 };
-
-
-
-
-
-
-
 
 export const HeroSlides = {
   slides: [
@@ -1659,10 +1631,6 @@ export const HeroSlides = {
   ],
 };
 
-
-
-
-
 export const heroSlides = [
   {
     imageUrl: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
@@ -1681,10 +1649,6 @@ export const heroSlides = [
     button: "View Services",
   },
 ];
-
-
-
-
 
 export const mockEventAboutData = {
   eventAboutPage: {
@@ -1854,11 +1818,11 @@ export const mockEventGalleryData = {
           data: {
             attributes: {
               url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/gallery1.jpg",
-              alternativeText: "Charity Gala Night"
-            }
-          }
-        }
-      }
+              alternativeText: "Charity Gala Night",
+            },
+          },
+        },
+      },
     },
     {
       id: "2",
@@ -1869,11 +1833,11 @@ export const mockEventGalleryData = {
           data: {
             attributes: {
               url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/gallery2.jpg",
-              alternativeText: "Corporate Summit 2023"
-            }
-          }
-        }
-      }
+              alternativeText: "Corporate Summit 2023",
+            },
+          },
+        },
+      },
     },
     {
       id: "3",
@@ -1884,13 +1848,13 @@ export const mockEventGalleryData = {
           data: {
             attributes: {
               url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/gallery3.jpg",
-              alternativeText: "New Product Launch"
-            }
-          }
-        }
-      }
-    }
-  ]
+              alternativeText: "New Product Launch",
+            },
+          },
+        },
+      },
+    },
+  ],
 };
 
 // --- Event Contact Page Mock Data ---
@@ -1903,10 +1867,11 @@ export const mockEventContactData = {
             __typename: "ComponentLayoutContactInfo",
             contactTitle: {
               title: "Contact Us",
-              secondTitle: "Get in Touch"
+              secondTitle: "Get in Touch",
             },
             getInTouch: "Get in Touch",
-            contactDescription: "We'd love to hear from you! Reach out to us for event inquiries, partnerships, or general questions.",
+            contactDescription:
+              "We'd love to hear from you! Reach out to us for event inquiries, partnerships, or general questions.",
             contactCard: [
               {
                 title: "Email",
@@ -1916,10 +1881,10 @@ export const mockEventContactData = {
                   data: {
                     attributes: {
                       url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/email-icon.jpg",
-                      alternativeText: "Email Icon"
-                    }
-                  }
-                }
+                      alternativeText: "Email Icon",
+                    },
+                  },
+                },
               },
               {
                 title: "Phone",
@@ -1929,15 +1894,15 @@ export const mockEventContactData = {
                   data: {
                     attributes: {
                       url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/phone-icon.jpg",
-                      alternativeText: "Phone Icon"
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      }
-    }
-  }
-}; 
+                      alternativeText: "Phone Icon",
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
+};

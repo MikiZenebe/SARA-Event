@@ -36,15 +36,13 @@ export default function Home() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [counterOn, setCounterOn] = useState(false);
 
-
   const [activeTab, setActiveTab] = useState("All");
- 
+
   const filteredGalleries =
     activeTab === "All"
       ? allGalleries
       : allGalleries.filter((gallery) => gallery.category === activeTab);
 
-  
   const closeLightbox = () => {
     setSelectedImageIndex(null);
   };
@@ -60,7 +58,6 @@ export default function Home() {
       prev < filteredGalleries.length - 1 ? prev + 1 : 0
     );
   };
-
 
   useEffect(() => {
     setMounted(true);
@@ -102,7 +99,6 @@ export default function Home() {
     },
   ];
 
- 
   return (
     <>
       <head>
@@ -259,7 +255,7 @@ export default function Home() {
 
             <Button className="bg-[#137a70] mb-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md">
               <Link href="/event/about">Learn More</Link>
-            </Button> 
+            </Button>
           </div>
           <motion.div
             initial="hidden"
@@ -489,7 +485,7 @@ export default function Home() {
                 </h2>
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509006!2d144.9630579153168!3d-37.81627977975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3d4bfb7%3A0x506f0b535df22a0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1681456832979!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5579366920224!2d38.77746827342025!3d9.012760189246231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8587fa9151c9%3A0x2d95ce30ff415b3f!2sSARA%20Events%20%26%20Marketing!5e0!3m2!1sen!2set!4v1752763002192!5m2!1sen!2set"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}

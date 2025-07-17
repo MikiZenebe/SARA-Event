@@ -13,14 +13,14 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
-    Message: ""
+    Message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -46,7 +46,7 @@ const ContactPage = () => {
 
     try {
       // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       toast.success("Message sent successfully!");
       setFormData({ Name: "", Email: "", Message: "" });
     } catch (error) {
@@ -60,9 +60,10 @@ const ContactPage = () => {
 
   useEffect(() => {
     // Set contact info from mock data
-    const filteredContactSections = mockContactData.propertyContactPage.data.attributes.blocks.filter(
-      (item) => item.__typename === "ComponentLayoutContactInfo"
-    );
+    const filteredContactSections =
+      mockContactData.propertyContactPage.data.attributes.blocks.filter(
+        (item) => item.__typename === "ComponentLayoutContactInfo"
+      );
     setContactInfo(filteredContactSections);
     setIsLoading(false);
   }, []);
@@ -85,7 +86,7 @@ const ContactPage = () => {
       <div className="min-h-screen flex flex-col items-center justify-center dark:bg-gray-900 transition-colors duration-300">
         {/* Hero Section */}
         <Toaster position="top-right" reverseOrder={false} />
-        <section className="hero-section relative w-full h-[70vh]">
+        <section className="hero-section relative w-full h-[40vh]">
           <div className="absolute inset-0 w-full h-full">
             <img
               src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
@@ -159,17 +160,23 @@ const ContactPage = () => {
               </h2>
               {contactInfo[0]?.contactCard?.map((card, index) => {
                 const imageUrl = card?.image?.data?.attributes?.url;
-                const altText = card?.image?.data?.attributes?.alternativeText || "contact Icon";
+                const altText =
+                  card?.image?.data?.attributes?.alternativeText ||
+                  "contact Icon";
 
                 return (
                   <div className="flex items-start space-x-4" key={index}>
-                    <img
-                      src={imageUrl}
-                      alt={altText}
-                      width={25}
-                      height={25}
-                      className="mt-1"
-                    />
+                    {card.icon ? (
+                      <card.icon className="w-6 h-6 text-[#9e8f72] mt-1" />
+                    ) : (
+                      <img
+                        src={imageUrl}
+                        alt={altText}
+                        width={25}
+                        height={25}
+                        className="mt-1"
+                      />
+                    )}
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                         {card.title}

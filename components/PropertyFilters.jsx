@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -8,13 +8,13 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 
-export default function PropertyFilters({ 
-  filters, 
-  locations, 
-  cities, 
-  subCities, 
-  onFilterChange, 
-  onReset 
+export default function PropertyFilters({
+  filters,
+  locations,
+  cities,
+  subCities,
+  onFilterChange,
+  onReset,
 }) {
   return (
     <section>
@@ -107,4 +107,4 @@ export default function PropertyFilters({
       </div>
     </section>
   );
-} 
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -7,6 +7,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 const cardVariants = [
   {
@@ -24,6 +25,7 @@ const cardVariants = [
 ];
 
 export default function PropertyCard({ property, index }) {
+  console.log(property);
   return (
     <motion.div
       initial="hidden"
@@ -33,10 +35,12 @@ export default function PropertyCard({ property, index }) {
     >
       <Card className="h-full">
         <CardHeader className="p-0">
-          <img
+          <Image
             src={property.attributes.Image.data.attributes.url}
             alt={property.attributes.Image.data.attributes.alternativeText}
             className="w-full h-48 object-cover"
+            width={50}
+            height={50}
           />
         </CardHeader>
         <CardContent className="p-6">
@@ -58,4 +62,4 @@ export default function PropertyCard({ property, index }) {
       </Card>
     </motion.div>
   );
-} 
+}
