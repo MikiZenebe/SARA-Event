@@ -2,7 +2,7 @@ export const mockProperties = [
   {
     id: "1",
     attributes: {
-      Title: " penthouse Apartments at Bole mega",
+      Title: "penthouse Apartments at Bole mega",
       Description:
         " Furnished dublex penthouse Apartments for Rent at Bole mega",
       Icon: {

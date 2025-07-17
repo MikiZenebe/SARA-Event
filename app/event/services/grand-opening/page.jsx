@@ -58,7 +58,6 @@ function CharityEvent() {
     "/speech4.jpg",
     "/meeting4.webp",
     "/speech.webp",
-   
   ];
 
   const goToNextImage = () => {

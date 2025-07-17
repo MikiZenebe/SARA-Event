@@ -25,7 +25,6 @@ const cardVariants = [
 ];
 
 export default function PropertyCard({ property, index }) {
-  console.log(property);
   return (
     <motion.div
       initial="hidden"
@@ -33,14 +32,15 @@ export default function PropertyCard({ property, index }) {
       viewport={{ once: true }}
       variants={cardVariants[index % 3]}
     >
-      <Card className="h-full">
+      <Card
+        className="h-full cursor-pointer"
+        onClick={() => (window.location.href = `/property/${property.id}`)}
+      >
         <CardHeader className="p-0">
-          <Image
+          <img
             src={property.attributes.Image.data.attributes.url}
             alt={property.attributes.Image.data.attributes.alternativeText}
             className="w-full h-48 object-cover"
-            width={50}
-            height={50}
           />
         </CardHeader>
         <CardContent className="p-6">

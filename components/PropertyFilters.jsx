@@ -79,7 +79,7 @@ export default function PropertyFilters({
           </Select>
 
           {/* Bedrooms Filter */}
-          <Select
+          {/* <Select
             value={filters.bedrooms}
             onValueChange={(value) => onFilterChange(value, "bedrooms")}
           >
@@ -94,7 +94,7 @@ export default function PropertyFilters({
               <SelectItem value="4">4</SelectItem>
               <SelectItem value="5">5+</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
         </div>
       </div>
       <div className="flex justify-end">

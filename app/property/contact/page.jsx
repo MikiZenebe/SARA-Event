@@ -1,13 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import PropertyHeader from "@/components/PropertyHeader";
 import PropertyFooter from "@/components/PropertyFooter";
-import Image from "next/image";
 import { mockContactData } from "../mockData";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -86,17 +84,16 @@ const ContactPage = () => {
       <div className="min-h-screen flex flex-col items-center justify-center dark:bg-gray-900 transition-colors duration-300">
         {/* Hero Section */}
         <Toaster position="top-right" reverseOrder={false} />
-        <section className="hero-section relative w-full h-[40vh]">
-          <div className="absolute inset-0 w-full h-full">
+        <section className="hero-section relative w-full h-[50vh] pt-0 ">
+          <div className="relative w-full h-full">
             <img
-              src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
-              alt="alt"
-              fill
+              src="/aboutEvent/bg.webp"
+              alt="About Us Hero"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
-              <div className="w-[60%] mx-auto">
-                <h1 className="text-center text-white font-medium text-4xl">
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
+              <div className="text-white ">
+                <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
                   Contact Us
                 </h1>
               </div>
@@ -104,95 +101,141 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="container mx-auto py-16 px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
-                {contactInfo[0]?.contactTitle?.title}{" "}
-                <span className="text-[#969963] underline">
-                  {contactInfo[0]?.contactTitle?.secondTitle}
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                {contactInfo[0]?.contactDescription}
-              </p>
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <Input
-                  type="text"
-                  name="Name"
-                  placeholder="Your Name"
-                  value={formData.Name}
-                  onChange={handleInputChange}
-                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300 placeholder-gray-600 dark:placeholder-gray-500 rounded-lg shadow-md transition-colors"
-                />
-                <Input
-                  type="email"
-                  name="Email"
-                  placeholder="Your Email"
-                  value={formData.Email}
-                  onChange={handleInputChange}
-                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300 placeholder-gray-600 dark:placeholder-gray-500 rounded-lg shadow-md transition-colors"
-                />
-                <Textarea
-                  name="Message"
-                  placeholder="Your Message"
-                  value={formData.Message}
-                  onChange={handleInputChange}
-                  rows="5"
-                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300 placeholder-gray-600 dark:placeholder-gray-500 rounded-lg shadow-md transition-colors resize-none"
-                />
+        <section className="container mx-auto px-4 py-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-6xl mx-auto"
+          >
+            <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+              Contact <span className="text-[#137a70]">Us</span>
+            </h1>
+            <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Get in touch with us for any inquiries about our event management
+              services. We&apos;re here to help make your event a success.
+            </p>
 
-                <Button
-                  type="submit"
-                  className="px-8 py-3 bg-[#9e8f72] dark:bg-[#9e8f72] text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-transform transform hover:scale-105"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
-                {contactInfo[0]?.getInTouch}
-              </h2>
-              {contactInfo[0]?.contactCard?.map((card, index) => {
-                const imageUrl = card?.image?.data?.attributes?.url;
-                const altText =
-                  card?.image?.data?.attributes?.alternativeText ||
-                  "contact Icon";
-
-                return (
-                  <div className="flex items-start space-x-4" key={index}>
-                    {card.icon ? (
-                      <card.icon className="w-6 h-6 text-[#9e8f72] mt-1" />
-                    ) : (
-                      <img
-                        src={imageUrl}
-                        alt={altText}
-                        width={25}
-                        height={25}
-                        className="mt-1"
-                      />
-                    )}
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                        {card.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        {card.description}
-                      </p>
-                      <button className="text-[#9e8f72] hover:text-[#7a6d57] font-medium mt-2">
-                        {card.button}
-                      </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h2 className="text-2xl font-semibold mb-6">
+                    Contact Information
+                  </h2>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <Mail className="w-6 h-6 text-[#137a70] mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Email</h3>
+                        <p className="text-gray-600">info@saraevents.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <Phone className="w-6 h-6 text-[#137a70] mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Phone</h3>
+                        <p className="text-gray-600">+251 911 123 456</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <MapPin className="w-6 h-6 text-[#137a70] mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Address</h3>
+                        <p className="text-gray-600">
+                          Bole, Addis Ababa, Ethiopia
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <Clock className="w-6 h-6 text-[#137a70] mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Working Hours</h3>
+                        <p className="text-gray-600">
+                          Monday - Friday: 9:00 AM - 6:00 PM
+                        </p>
+                        <p className="text-gray-600">
+                          Saturday: 10:00 AM - 4:00 PM
+                        </p>
+                      </div>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              </div>
+
+              {/* Contact Form */}
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold mb-6">
+                  Send us a Message
+                </h2>
+                <form className="space-y-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#137a70] focus:ring-[#137a70]"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#137a70] focus:ring-[#137a70]"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#137a70] focus:ring-[#137a70]"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#137a70] text-white py-2 px-4 rounded-md hover:bg-[#0f5d54] transition-colors duration-300"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+
+            {/* Map */}
+            <div className="mt-12">
+              <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5205105887855!2d38.7619!3d9.0221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMjAuMCJOIDM4wrA0NSc0Mi44IkU!5e0!3m2!1sen!2set!4v1635000000000!5m2!1sen!2set"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </motion.div>
         </section>
       </div>
       <PropertyFooter />

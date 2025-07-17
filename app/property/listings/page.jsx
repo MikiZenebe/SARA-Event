@@ -4,7 +4,7 @@ import PropertyHeader from "@/components/PropertyHeader";
 import PropertyFooter from "@/components/PropertyFooter";
 import PropertyCard from "@/components/PropertyCard";
 import PropertyFilters from "@/components/PropertyFilters";
-import { mockProperties, mockCities } from "@/libs/data/propertyData";
+import { mockProperties, mockCities } from "../mockData";
 
 export default function PropertyListings() {
   const initialFilters = {
@@ -18,43 +18,54 @@ export default function PropertyListings() {
 
   const [filters, setFilters] = useState(initialFilters);
   const [properties] = useState(mockProperties);
-  const [locations] = useState([...new Set(mockCities.cities.data.map(city => 
-    city.attributes.location.data.attributes.Name
-  ))]);
-  const [cities] = useState([...new Set(mockCities.cities.data.map(city => 
-    city.attributes.Name
-  ))]);
-  const [subCities] = useState([...new Set(mockCities.cities.data.flatMap(city => 
-    city.attributes.subcities.data.map(subcity => 
-      subcity.attributes.Name
-    )
-  ))]);
+  const [locations] = useState([
+    ...new Set(
+      mockCities.cities.data.map(
+        (city) => city.attributes.location.data.attributes.Name
+      )
+    ),
+  ]);
+  const [cities] = useState([
+    ...new Set(mockCities.cities.data.map((city) => city.attributes.Name)),
+  ]);
+  const [subCities] = useState([
+    ...new Set(
+      mockCities.cities.data.flatMap((city) =>
+        city.attributes.subcities.data.map((subcity) => subcity.attributes.Name)
+      )
+    ),
+  ]);
 
   const handleFilterChange = (value, name) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const resetFilters = () => {
     setFilters({
       ...initialFilters,
-      bedrooms: "any"
+      bedrooms: "any",
     });
   };
 
   const filteredProperties = useMemo(() => {
-    return properties.filter(property => {
-      const locationFilter = !filters.location || 
-        property.attributes.city.data.attributes.location.data.attributes.Name === filters.location;
-      const cityFilter = !filters.city || 
+    return properties.filter((property) => {
+      const locationFilter =
+        !filters.location ||
+        property.attributes.city.data.attributes.location.data.attributes
+          .Name === filters.location;
+      const cityFilter =
+        !filters.city ||
         property.attributes.city.data.attributes.Name === filters.city;
-      const subCityFilter = !filters.subCity || 
+      const subCityFilter =
+        !filters.subCity ||
         property.attributes.city.data.attributes.subcities.data.some(
-          subcity => subcity.attributes.Name === filters.subCity
+          (subcity) => subcity.attributes.Name === filters.subCity
         );
-      const bedroomsFilter = filters.bedrooms === "any" || 
+      const bedroomsFilter =
+        filters.bedrooms === "any" ||
         property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
       return locationFilter && cityFilter && subCityFilter && bedroomsFilter;
@@ -72,7 +83,7 @@ export default function PropertyListings() {
       </head>
 
       <PropertyHeader />
-      
+
       <main className="container mx-auto px-4 py-8">
         <PropertyFilters
           filters={filters}
@@ -102,4 +113,4 @@ export default function PropertyListings() {
       <PropertyFooter />
     </>
   );
-} 
+}

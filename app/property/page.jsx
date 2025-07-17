@@ -34,30 +34,25 @@ import { mockProperties, mockCities } from "./mockData";
 const mockHomeData = {
   hero: {
     title: "Discover Luxury Living",
-    subtitle: "Find properties that match your style and redefine your standards of living.",
-    backgroundImage: "/propertybg.jpg"
+    subtitle:
+      "Find properties that match your style and redefine your standards of living.",
+    backgroundImage: "/propertybg.jpg",
   },
   aboutUs: {
     title: "About Us",
-    description: "We are dedicated to providing exceptional real estate services with a focus on customer satisfaction and quality properties.",
-    image: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/about-us_1.jpg"
+    description:
+      "At SEM Properties, we specialize in delivering personalized real estate solutions that align with each client's unique preferences and needs. Our primary goal is to eliminate the stress and complexities often associated with property transactions, ensuring smooth and seamless access to desired properties across all 13 districts of Addis Ababa and in Dubai.",
+    image:
+      "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/about-us_1.jpg",
   },
   partners: {
     title: "Our Partners",
     logos: [
       {
-        url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/partner1_1.jpg",
-        alt: "Partner 1"
+        url: "logo.png",
+        alt: "Partner 1",
       },
-      {
-        url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/partner2_1.jpg",
-        alt: "Partner 2"
-      },
-      {
-        url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/partner3_1.jpg",
-        alt: "Partner 3"
-      }
-    ]
+    ],
   },
   achievements: {
     title: "Our Achievements",
@@ -65,23 +60,23 @@ const mockHomeData = {
       { number: 500, label: "Properties Sold" },
       { number: 1000, label: "Happy Clients" },
       { number: 50, label: "Awards Won" },
-      { number: 10, label: "Years Experience" }
-    ]
-  }
+      { number: 10, label: "Years Experience" },
+    ],
+  },
 };
 
 const PropertyHome = React.memo(function PropertyHome() {
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
-    Message: ""
+    Message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -107,7 +102,7 @@ const PropertyHome = React.memo(function PropertyHome() {
 
     try {
       // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       toast.success("Message sent successfully!");
       setFormData({ Name: "", Email: "", Message: "" });
     } catch (error) {
@@ -127,49 +122,62 @@ const PropertyHome = React.memo(function PropertyHome() {
 
   const [filters, setFilters] = useState(initialFilters);
   const [properties] = useState(mockProperties);
-  const [locations] = useState([...new Set(mockCities.cities.data.map(city => 
-    city.attributes.location.data.attributes.Name
-  ))]);
-  const [cities] = useState([...new Set(mockCities.cities.data.map(city => 
-    city.attributes.Name
-  ))]);
-  const [subCities] = useState([...new Set(mockCities.cities.data.flatMap(city => 
-    city.attributes.subcities.data.map(subcity => 
-      subcity.attributes.Name
-    )
-  ))]);
+  const [locations] = useState([
+    ...new Set(
+      mockCities.cities.data.map(
+        (city) => city.attributes.location.data.attributes.Name
+      )
+    ),
+  ]);
+  const [cities] = useState([
+    ...new Set(mockCities.cities.data.map((city) => city.attributes.Name)),
+  ]);
+  const [subCities] = useState([
+    ...new Set(
+      mockCities.cities.data.flatMap((city) =>
+        city.attributes.subcities.data.map((subcity) => subcity.attributes.Name)
+      )
+    ),
+  ]);
   const [counterOn, setCounterOn] = useState(false);
 
   const handleFilterChange = (value, name) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const resetFilters = () => {
     setFilters({
       ...initialFilters,
-      bedrooms: "any"
+      bedrooms: "any",
     });
   };
 
   const filteredProperties = useMemo(() => {
-    return properties.filter(property => {
-      const locationFilter = !filters.location || 
-        property.attributes.city.data.attributes.location.data.attributes.Name === filters.location;
-      const cityFilter = !filters.city || 
+    return properties.filter((property) => {
+      const locationFilter =
+        !filters.location ||
+        property.attributes.city.data.attributes.location.data.attributes
+          .Name === filters.location;
+      const cityFilter =
+        !filters.city ||
         property.attributes.city.data.attributes.Name === filters.city;
-      const subCityFilter = !filters.subCity || 
+      const subCityFilter =
+        !filters.subCity ||
         property.attributes.city.data.attributes.subcities.data.some(
-          subcity => subcity.attributes.Name === filters.subCity
+          (subcity) => subcity.attributes.Name === filters.subCity
         );
-      const bedroomsFilter = filters.bedrooms === "any" || 
+      const bedroomsFilter =
+        filters.bedrooms === "any" ||
         property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
       return locationFilter && cityFilter && subCityFilter && bedroomsFilter;
     });
   }, [properties, filters]);
+
+  console.log(filteredProperties);
 
   const titleSlide = {
     hidden: { opacity: 0, x: -100 },
@@ -313,7 +321,7 @@ const PropertyHome = React.memo(function PropertyHome() {
               </Select>
 
               {/* Bedrooms Filter */}
-              <Select
+              {/* <Select
                 value={filters.bedrooms}
                 onValueChange={(value) => handleFilterChange(value, "bedrooms")}
               >
@@ -328,7 +336,7 @@ const PropertyHome = React.memo(function PropertyHome() {
                   <SelectItem value="4">4</SelectItem>
                   <SelectItem value="5">5+</SelectItem>
                 </SelectContent>
-              </Select>
+              </Select> */}
             </div>
           </div>
           <div className="flex justify-end">
@@ -354,7 +362,12 @@ const PropertyHome = React.memo(function PropertyHome() {
                 viewport={{ once: true }}
                 variants={cardVariants[index % 3]}
               >
-                <Card className="h-full">
+                <Card
+                  className="h-full cursor-pointer"
+                  onClick={() =>
+                    (window.location.href = `/property/${property.id}`)
+                  }
+                >
                   <CardHeader className="p-0">
                     <img
                       src={property.attributes.Image.data.attributes.url}
@@ -418,7 +431,7 @@ const PropertyHome = React.memo(function PropertyHome() {
             {mockHomeData.partners.title}
           </h2>
           <Swiper
-            slidesPerView={3}
+            slidesPerView={1}
             spaceBetween={30}
             autoplay={{ delay: 3000 }}
             loop={true}
@@ -438,12 +451,12 @@ const PropertyHome = React.memo(function PropertyHome() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={logoVariants}
-                  className="flex justify-center items-center"
+                  className="flex justify-center items-center mx-auto w-full"
                 >
                   <img
                     src={logo.url}
                     alt={logo.alt}
-                    className="w-32 h-32 object-contain"
+                    className="w-48 h-32 object-contain"
                   />
                 </motion.div>
               </SwiperSlide>
