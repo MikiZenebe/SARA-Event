@@ -39,78 +39,94 @@ const FindProperty = () => {
   useEffect(() => {
     // Set initial data from mock
     setProperties(mockProperties);
-    
+
     // Extract unique locations
-    const uniqueLocations = [...new Set(mockCities.cities.data.map(city => 
-      city.attributes.location.data.attributes.Name
-    ))];
+    const uniqueLocations = [
+      ...new Set(
+        mockCities.cities?.data.map(
+          (city) => city.attributes.location?.data.attributes.Name
+        )
+      ),
+    ];
     setLocations(uniqueLocations);
 
     // Extract unique cities
-    const uniqueCities = [...new Set(mockCities.cities.data.map(city => 
-      city.attributes.Name
-    ))];
+    const uniqueCities = [
+      ...new Set(mockCities.cities?.data.map((city) => city.attributes.Name)),
+    ];
     setCities(uniqueCities);
 
     // Extract unique subcities
-    const uniqueSubCities = [...new Set(mockCities.cities.data.flatMap(city => 
-      city.attributes.subcities.data.map(subcity => 
-        subcity.attributes.Name
-      )
-    ))];
+    const uniqueSubCities = [
+      ...new Set(
+        mockCities.cities?.data.flatMap((city) =>
+          city.attributes.subcities?.data.map(
+            (subcity) => subcity.attributes.Name
+          )
+        )
+      ),
+    ];
     setSubCities(uniqueSubCities);
 
     setIsLoading(false);
   }, []);
 
   const handleFilterChange = (value, name) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
 
     if (name === "location") {
       // Filter cities based on selected location
-      const filteredCities = mockCities.cities.data
-        .filter(city => city.attributes.location.data.attributes.Name === value)
-        .map(city => city.attributes.Name);
+      const filteredCities = mockCities.cities?.data
+        .filter(
+          (city) => city.attributes.location?.data.attributes.Name === value
+        )
+        .map((city) => city.attributes.Name);
       setCities(filteredCities);
       setSubCities([]);
-      setFilters(prev => ({ ...prev, city: "", subCity: "" }));
+      setFilters((prev) => ({ ...prev, city: "", subCity: "" }));
     } else if (name === "city") {
       // Filter subcities based on selected city
-      const selectedCity = mockCities.cities.data.find(
-        city => city.attributes.Name === value
+      const selectedCity = mockCities.cities?.data.find(
+        (city) => city.attributes.Name === value
       );
-      const subCities = selectedCity?.attributes.subcities.data.map(
-        subcity => subcity.attributes.Name
-      ) || [];
+      const subCities =
+        selectedCity?.attributes.subcities?.data.map(
+          (subcity) => subcity.attributes.Name
+        ) || [];
       setSubCities(subCities);
-      setFilters(prev => ({ ...prev, subCity: "" }));
+      setFilters((prev) => ({ ...prev, subCity: "" }));
     }
   };
 
   const resetFilters = () => {
     setFilters(initialFilters);
     // Reset cities and subcities to initial state
-    const uniqueCities = [...new Set(mockCities.cities.data.map(city => 
-      city.attributes.Name
-    ))];
+    const uniqueCities = [
+      ...new Set(mockCities.cities?.data.map((city) => city.attributes.Name)),
+    ];
     setCities(uniqueCities);
     setSubCities([]);
   };
 
   const filteredProperties = useMemo(() => {
-    return properties.filter(property => {
-      const locationFilter = !filters.location || 
-        property.attributes.city.data.attributes.location.data.attributes.Name === filters.location;
-      const cityFilter = !filters.city || 
-        property.attributes.city.data.attributes.Name === filters.city;
-      const subCityFilter = !filters.subCity || 
-        property.attributes.city.data.attributes.subcities.data.some(
-          subcity => subcity.attributes.Name === filters.subCity
+    return properties.filter((property) => {
+      const locationFilter =
+        !filters.location ||
+        property.attributes.city?.data.attributes.location?.data.attributes
+          .Name === filters.location;
+      const cityFilter =
+        !filters.city ||
+        property.attributes.city?.data.attributes.Name === filters.city;
+      const subCityFilter =
+        !filters.subCity ||
+        property.attributes.city?.data.attributes.subcities?.data.some(
+          (subcity) => subcity.attributes.Name === filters.subCity
         );
-      const bedroomsFilter = !filters.bedrooms || 
+      const bedroomsFilter =
+        !filters.bedrooms ||
         property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
       return locationFilter && cityFilter && subCityFilter && bedroomsFilter;
@@ -149,7 +165,7 @@ const FindProperty = () => {
       <PropertyHeader />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Find Your Property</h1>
-        
+
         {/* Filters Section */}
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -238,14 +254,18 @@ const FindProperty = () => {
             >
               <div className="relative">
                 <img
-                  src={property.attributes.Image.data.attributes.url}
-                  alt={property.attributes.Image.data.attributes.alternativeText}
+                  src={property.attributes.Image?.data.attributes.url}
+                  alt={
+                    property.attributes.Image?.data.attributes.alternativeText
+                  }
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-2 left-2 bg-white dark:bg-gray-800 p-2 rounded-full">
                   <img
-                    src={property.attributes.Icon.data.attributes.url}
-                    alt={property.attributes.Icon.data.attributes.alternativeText}
+                    src={property.attributes.Icon?.data.attributes.url}
+                    alt={
+                      property.attributes.Icon?.data.attributes.alternativeText
+                    }
                     className="w-6 h-6"
                   />
                 </div>
@@ -253,7 +273,7 @@ const FindProperty = () => {
               <CardHeader>
                 <CardTitle>{property.attributes.Title}</CardTitle>
                 <CardDescription>
-                  {property.attributes.city.data.attributes.Name}
+                  {property.attributes.city?.data.attributes.Name}
                 </CardDescription>
               </CardHeader>
               <CardContent>
