@@ -28,7 +28,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { motion } from "framer-motion";
-import { mockProperties, mockCities } from "./mockData";
+import { mockProperties, mockCities, mockAboutData } from "./mockData";
 import { FaBalanceScale, FaBullseye, FaEye } from "react-icons/fa";
 
 // Mock data for additional sections
@@ -67,6 +67,7 @@ const mockHomeData = {
 };
 
 const PropertyHome = React.memo(function PropertyHome() {
+  const [mileStoneSections, setMileStoneSections] = useState([]);
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -211,6 +212,14 @@ const PropertyHome = React.memo(function PropertyHome() {
       visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.8 } },
     },
   ];
+
+  useEffect(() => {
+    const filteredMileStoneSections =
+      mockAboutData.propertyAboutUs.data.attributes.blocks.filter(
+        (item) => item.__typename === "ComponentLayoutOurAcheivement"
+      );
+    setMileStoneSections(filteredMileStoneSections);
+  }, []);
 
   return (
     <>
