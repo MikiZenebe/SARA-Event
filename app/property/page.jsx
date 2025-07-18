@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import PropertyFooter from "@/components/PropertyFooter";
 import PropertyHeader from "@/components/PropertyHeader";
 import { Button } from "@/components/ui/button";
