@@ -123,7 +123,7 @@ const PropertyDetail = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 <div className="flex items-center">
-                  <FaBed className="text-[#137a70] mr-2 text-xl" />
+                  <FaBed className="text-[#c9b68f] mr-2 text-xl" />
                   <div>
                     <p className="text-gray-500 dark:text-gray-400 text-sm">
                       Bedrooms
@@ -134,7 +134,7 @@ const PropertyDetail = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <FaBath className="text-[#137a70] mr-2 text-xl" />
+                  <FaBath className="text-[#c9b68f] mr-2 text-xl" />
                   <div>
                     <p className="text-gray-500 dark:text-gray-400 text-sm">
                       Bathrooms
@@ -147,7 +147,7 @@ const PropertyDetail = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <FaRulerCombined className="text-[#137a70] mr-2 text-xl" />
+                  <FaRulerCombined className="text-[#c9b68f] mr-2 text-xl" />
                   <div>
                     <p className="text-gray-500 dark:text-gray-400 text-sm">
                       Area
@@ -174,7 +174,7 @@ const PropertyDetail = () => {
                   "24/7 Electricity",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="w-2 h-2 bg-[#137a70] rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#c9b68f] rounded-full mr-2"></span>
                     <span className="text-gray-600 dark:text-gray-300">
                       {feature}
                     </span>
@@ -207,16 +207,16 @@ const PropertyDetail = () => {
           >
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 sticky top-4">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-2xl font-bold text-[#137a70]">
+                <h3 className="text-2xl font-bold text-[#c9b68f]">
                   ${attributes.Price.toLocaleString()}
                 </h3>
-                <span className="bg-[#137a70] text-white text-sm px-3 py-1 rounded-full">
+                <span className="bg-[#c9b68f] text-black text-sm px-3 py-1 rounded-full">
                   For Rent
                 </span>
               </div>
 
               <div className="mb-6">
-                <Button className="w-full bg-[#137a70] hover:bg-[#0f5d56] text-white py-6 text-lg mb-4">
+                <Button className="w-full bg-[#c9b68f] hover:bg-[#837559] text-black py-6 text-lg mb-4">
                   Contact Agent
                 </Button>
                 {/* <Button
@@ -227,7 +227,7 @@ const PropertyDetail = () => {
                 </Button> */}
               </div>
 
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
+              {/* <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
                   Property Agent
                 </h4>
@@ -264,7 +264,7 @@ const PropertyDetail = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -316,7 +316,7 @@ const PropertyDetail = () => {
                       </span>
                     </div>
                     <div className="flex justify-between items-center mb-4">
-                      <span className="text-[#137a70] font-bold">
+                      <span className="text-[#c9b68f] font-bold">
                         ${property.attributes.Price.toLocaleString()}
                       </span>
                       <span className="text-gray-600 dark:text-gray-300 flex items-center">
@@ -325,7 +325,7 @@ const PropertyDetail = () => {
                       </span>
                     </div>
                     <Button
-                      className="w-full bg-[#137a70] hover:bg-[#0f5d56] text-white"
+                      className="w-full bg-[#c9b68f] hover:bg-[#96876a] text-black"
                       onClick={() =>
                         (window.location.href = `/property/${property.id}`)
                       }

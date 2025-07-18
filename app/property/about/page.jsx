@@ -8,13 +8,12 @@ import PropertyFooter from "@/components/PropertyFooter";
 import Link from "next/link";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { motion } from "framer-motion";
 import { mockAboutData } from "../mockData";
+import { FaBullseye, FaEye, FaBalanceScale } from "react-icons/fa";
 
 function PropertyAbout() {
   const [aboutUsSections, setAboutUsSections] = useState([]);
@@ -101,7 +100,7 @@ function PropertyAbout() {
       <PropertyHeader />
       <div className="bg-gray-100">
         {/* Hero Section */}
-        <section className="hero-section relative w-full h-[70vh]">
+        <section className="hero-section relative w-full h-[35vh]">
           <div className="absolute inset-0 w-full h-full">
             <img
               src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
@@ -157,24 +156,15 @@ function PropertyAbout() {
                   variants={cardVariants[index % 3]}
                 >
                   <div class="container p-6 px-6 mx-auto bg-white dark:bg-gray-800">
-                    <div class="mb-16 text-center">
-                      <p class="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                    <div class="mb-6 text-center">
+                      <p class=" text-3xl font-bold  text-gray-900 dark:text-white ">
                         SEM properties
                       </p>
                     </div>
                     <div class="flex flex-wrap my-12 dark:text-white">
                       <div class="w-full p-8 border-b md:w-1/2 md:border-r lg:w-1/3">
                         <div class="flex items-center mb-6">
-                          <svg
-                            width="20"
-                            height="20"
-                            fill="currentColor"
-                            class="w-6 h-6 text-indigo-500"
-                            viewBox="0 0 1792 1792"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"></path>
-                          </svg>
+                          <FaBullseye color="#c9b68f" size={25} />
                           <div class="ml-4 text-xl">Mission</div>
                         </div>
                         <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
@@ -187,16 +177,7 @@ function PropertyAbout() {
                       </div>
                       <div class="w-full p-8 border-b md:w-1/2 lg:w-1/3 lg:border-r">
                         <div class="flex items-center mb-6">
-                          <svg
-                            width="20"
-                            height="20"
-                            fill="currentColor"
-                            class="w-6 h-6 text-indigo-500"
-                            viewBox="0 0 1792 1792"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"></path>
-                          </svg>
+                          <FaEye color="#c9b68f" size={25} />
                           <div class="ml-4 text-xl">Vision</div>
                         </div>
                         <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
@@ -207,16 +188,7 @@ function PropertyAbout() {
                       </div>
                       <div class="w-full p-8 border-b md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0">
                         <div class="flex items-center mb-6">
-                          <svg
-                            width="20"
-                            height="20"
-                            fill="currentColor"
-                            class="w-6 h-6 text-indigo-500"
-                            viewBox="0 0 1792 1792"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"></path>
-                          </svg>
+                          <FaBalanceScale color="#c9b68f" size={25} />
                           <div class="ml-4 text-xl">Values</div>
                         </div>
                         <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
@@ -236,7 +208,7 @@ function PropertyAbout() {
             </div>
 
             {/* Team Section */}
-            <div className="mb-16">
+            {/* <div className="mb-16">
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -269,7 +241,7 @@ function PropertyAbout() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Testimonials Section */}
             <div className="mb-16">
@@ -336,15 +308,12 @@ function PropertyAbout() {
 
               <div className="relative">
                 <img
-                  src={
-                    partnerSections[0]?.partnerImage?.image?.data?.attributes
-                      ?.url
-                  }
+                  src={"/logo.png"}
                   alt={
                     partnerSections[0]?.partnerImage?.image?.data?.attributes
                       ?.alternativeText
                   }
-                  className="w-full h-[200px] object-cover rounded-lg"
+                  className="w-40 object-cover rounded-lg"
                 />
               </div>
             </div>

@@ -109,7 +109,7 @@ const ContactPage = () => {
             className="max-w-6xl mx-auto"
           >
             <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-              Contact <span className="text-[#137a70]">Us</span>
+              Contact <span className="text-[#c9b68f]">Us</span>
             </h1>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
               Get in touch with us for any inquiries about our event management
@@ -125,21 +125,21 @@ const ContactPage = () => {
                   </h2>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-4">
-                      <Mail className="w-6 h-6 text-[#137a70] mt-1" />
+                      <Mail className="w-6 h-6 text-[#c9b68f] mt-1" />
                       <div>
                         <h3 className="font-semibold">Email</h3>
                         <p className="text-gray-600">info@saraevents.com</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <Phone className="w-6 h-6 text-[#137a70] mt-1" />
+                      <Phone className="w-6 h-6 text-[#c9b68f] mt-1" />
                       <div>
                         <h3 className="font-semibold">Phone</h3>
                         <p className="text-gray-600">+251 911 123 456</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <MapPin className="w-6 h-6 text-[#137a70] mt-1" />
+                      <MapPin className="w-6 h-6 text-[#c9b68f] mt-1" />
                       <div>
                         <h3 className="font-semibold">Address</h3>
                         <p className="text-gray-600">
@@ -148,7 +148,7 @@ const ContactPage = () => {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <Clock className="w-6 h-6 text-[#137a70] mt-1" />
+                      <Clock className="w-6 h-6 text-[#c9b68f] mt-1" />
                       <div>
                         <h3 className="font-semibold">Working Hours</h3>
                         <p className="text-gray-600">
@@ -213,7 +213,7 @@ const ContactPage = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#137a70] text-white py-2 px-4 rounded-md hover:bg-[#0f5d54] transition-colors duration-300"
+                    className="w-full bg-[#c9b68f] text-black py-2 px-4 rounded-md hover:bg-[#9b8b6c] transition-colors duration-300"
                   >
                     Send Message
                   </button>
@@ -225,7 +225,7 @@ const ContactPage = () => {
             <div className="mt-12">
               <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5205105887855!2d38.7619!3d9.0221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMjAuMCJOIDM4wrA0NSc0Mi44IkU!5e0!3m2!1sen!2set!4v1635000000000!5m2!1sen!2set"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5579943908274!2d38.780043199999994!3d9.0127549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8587fa9151c9%3A0x2d95ce30ff415b3f!2sSARA%20Events%20%26%20Marketing!5e0!3m2!1sen!2set!4v1752871442971!5m2!1sen!2set"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

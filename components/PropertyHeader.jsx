@@ -9,14 +9,14 @@ import { Button } from "./ui/button";
 const mockHeaderData = {
   logo: {
     url: "/Property/PropertyLogo.jpeg",
-    alt: "Property Logo"
+    alt: "Property Logo",
   },
   navigation: [
     { name: "Home", href: "/property" },
     { name: "Properties", href: "/property/listings" },
     { name: "About", href: "/property/about" },
-    { name: "Contact", href: "/property/contact" }
-  ]
+    { name: "Contact", href: "/property/contact" },
+  ],
 };
 
 const PropertyHeader = () => {
@@ -40,30 +40,13 @@ const PropertyHeader = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-[#137a70] dark:hover:text-[#137a70] transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f] transition-colors"
               >
                 {item.name}
               </Link>
             ))}
             <ModeToggle />
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
@@ -100,7 +83,7 @@ const PropertyHeader = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-600 dark:text-gray-300 hover:text-[#137a70] dark:hover:text-[#137a70] transition-colors"
+                className="block py-2 text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

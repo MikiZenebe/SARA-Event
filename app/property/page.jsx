@@ -29,6 +29,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { motion } from "framer-motion";
 import { mockProperties, mockCities } from "./mockData";
+import { FaBalanceScale, FaBullseye, FaEye } from "react-icons/fa";
 
 // Mock data for additional sections
 const mockHomeData = {
@@ -245,7 +246,7 @@ const PropertyHome = React.memo(function PropertyHome() {
           </p>
           <Button
             onClick={() => (window.location.href = "/property/listings")}
-            className="bg-[#137a70] hover:bg-[#0f5d56] text-white px-8 py-6 text-lg"
+            className="bg-[#c9b68f] hover:bg-[#9c8d70] text-black px-8 py-6 text-lg"
           >
             View All Properties
           </Button>
@@ -342,7 +343,7 @@ const PropertyHome = React.memo(function PropertyHome() {
           <div className="flex justify-end">
             <Button
               onClick={resetFilters}
-              className="bg-[#137a70] hover:bg-[#0f5d56] text-white"
+              className="bg-[#c9b68f] hover:bg-[#c2b49b] text-black"
             >
               Reset Filters
             </Button>
@@ -386,7 +387,7 @@ const PropertyHome = React.memo(function PropertyHome() {
                       {property.attributes.Description}
                     </CardDescription>
                     <div className="flex justify-between items-center">
-                      <span className="text-[#137a70] font-bold">
+                      <span className="text-[#948567] font-bold">
                         ${property.attributes.Price.toLocaleString()}
                       </span>
                       <span className="text-gray-600 dark:text-gray-300">
@@ -405,11 +406,11 @@ const PropertyHome = React.memo(function PropertyHome() {
       <section className="py-16 bg-white dark:bg-[#1f2937]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-full md:w-1/2">
+            <div className="w-full flex justify-center md:w-1/2 mx-auto">
               <img
-                src={mockHomeData.aboutUs.image}
+                src={"/Property/PropertyLogo.jpeg"}
                 alt="About Us"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-[50%] h-auto rounded-lg "
               />
             </div>
             <div className="w-full md:w-1/2">
@@ -465,32 +466,111 @@ const PropertyHome = React.memo(function PropertyHome() {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className="py-16 bg-white dark:bg-[#1f2937]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">
-            {mockHomeData.achievements.title}
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {mockHomeData.achievements.stats.map((stat, index) => (
-              <ScrollTrigger
-                key={index}
-                onEnter={() => setCounterOn(true)}
-                onExit={() => setCounterOn(false)}
-              >
-                <div className="text-center">
-                  <h3 className="text-4xl font-bold text-[#137a70] mb-2">
-                    {counterOn && <CountUp end={stat.number} duration={2} />}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {stat.label}
-                  </p>
-                </div>
-              </ScrollTrigger>
-            ))}
+      <motion.div
+        // key={index}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        // variants={cardVariants[index % 3]}
+      >
+        <div class="container p-6 px-6 mx-auto bg-white dark:bg-gray-800">
+          <div class="mb-16 text-center">
+            <p class="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              SEM properties
+            </p>
+          </div>
+          <div class="flex flex-wrap my-12 dark:text-white">
+            <div class="w-full p-8 border-b md:w-1/2 md:border-r lg:w-1/3">
+              <div class="flex items-center mb-6">
+                <FaBullseye color="#c9b68f" size={25} />
+                <div class="ml-4 text-xl">Mission</div>
+              </div>
+              <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
+                To provide customized real estate solutions catering to clients
+                specific preferences and needs. Above all decreasing the hassle
+                of clients. Ensuring seamless access to properties desired in
+                all 13 districts of Adiss Ababa and Dubai.
+              </p>
+            </div>
+            <div class="w-full p-8 border-b md:w-1/2 lg:w-1/3 lg:border-r">
+              <div class="flex items-center mb-6">
+                <FaEye color="#c9b68f" size={25} />
+                <div class="ml-4 text-xl">Vision</div>
+              </div>
+              <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
+                To become an exceptional real estate marketing firm recognized
+                for our integrity, reliability, and strive for virtue, both in
+                Addis Ababa and Dubai.
+              </p>
+            </div>
+            <div class="w-full p-8 border-b md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0">
+              <div class="flex items-center mb-6">
+                <FaBalanceScale color="#c9b68f" size={25} />
+                <div class="ml-4 text-xl">Values</div>
+              </div>
+              <p class="leading-loose text-gray-500 dark:text-gray-200 text-md">
+                Transparency and reliability: high standards of honesty and
+                accountability in all encounters. Customer-oriented approach:
+                providing tailored solutions Local and Global reach: combining
+                local and international perspectives within the market
+                Innovation: delivering top-notch solutions that are
+                strategically created and technologically modern
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Achievements Section */}
+      <ScrollTrigger
+        onEnter={() => setCounterOn(true)}
+        onExit={() => setCounterOn(false)}
+      >
+        <div className="mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={titleSlide}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              {mileStoneSections[0]?.title}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              {mileStoneSections[0]?.description}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {mileStoneSections[0]?.acheivementCard?.map(
+              (achievement, index) => (
+                <motion.div
+                  key={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={cardVariants[index % 3]}
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center"
+                >
+                  <h3 className="text-4xl font-bold text-[#969963] mb-4">
+                    {counterOn && (
+                      <CountUp end={parseInt(achievement.title)} duration={2} />
+                    )}
+                    {!counterOn && achievement.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {achievement.description}
+                  </p>
+                  <button className="text-[#969963] hover:text-[#7a6d57] font-medium">
+                    {achievement.button}
+                  </button>
+                </motion.div>
+              )
+            )}
+          </div>
+        </div>
+      </ScrollTrigger>
 
       {/* Contact Form */}
       <section className="py-16 bg-gray-50 dark:bg-[#1f2937]">
@@ -534,7 +614,7 @@ const PropertyHome = React.memo(function PropertyHome() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#137a70] hover:bg-[#0f5d56] text-white"
+                className="w-full bg-[#c9b68f] hover:bg-[#75694f] text-black"
               >
                 Send Message
               </Button>

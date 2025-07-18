@@ -51,7 +51,7 @@ export default function PropertyCard({ property, index }) {
             {property.attributes.Description}
           </CardDescription>
           <div className="flex justify-between items-center">
-            <span className="text-[#137a70] font-bold">
+            <span className="text-[#a39373] font-bold">
               ${property.attributes.Price.toLocaleString()}
             </span>
             <span className="text-gray-600 dark:text-gray-300">

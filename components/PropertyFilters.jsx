@@ -100,7 +100,7 @@ export default function PropertyFilters({
       <div className="flex justify-end">
         <Button
           onClick={onReset}
-          className="bg-[#137a70] hover:bg-[#0f5d56] text-white"
+          className="bg-[#c9b68f] hover:bg-[#948465] text-black"
         >
           Reset Filters
         </Button>

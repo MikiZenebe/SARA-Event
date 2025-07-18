@@ -48,26 +48,18 @@ export const mockProperties = [
       },
     },
   },
-
   {
     id: "2",
     attributes: {
       Title: "Luxury penthouse Apartments at Bole welo sefer",
       Description:
         "luxury fully Furnished dublex penthouse Apartments for Rent at Bole welo sefer",
-      Icon: {
-        data: {
-          attributes: {
-            alternativeText: "Villa Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/villa-icon_1.jpg",
-          },
-        },
-      },
+
       Image: {
         data: {
           attributes: {
-            url: "Property/house2.jpg",
-            alternativeText: "Luxury Villa",
+            url: "/Property/house2.jpg",
+            alternativeText: "Modern Apartment",
           },
         },
       },
@@ -98,6 +90,7 @@ export const mockProperties = [
       },
     },
   },
+
   {
     id: "3",
     attributes: {
@@ -154,16 +147,16 @@ export const mockProperties = [
       Icon: {
         data: {
           attributes: {
-            alternativeText: "House Icon",
-            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/house-icon_1.jpg",
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
           },
         },
       },
       Image: {
         data: {
           attributes: {
-            url: "Property/house4.jpg",
-            alternativeText: "Family Home",
+            url: "/Property/house4.jpg",
+            alternativeText: "Studio Apartment",
           },
         },
       },
@@ -1552,9 +1545,9 @@ export const mockFooterData = {
       text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
     { id: 2, icon: "📞", text: "09 36 68 3005" },
-    { id: 3, icon: "✉️", text: "info@company.com" },
+    { id: 3, icon: "✉️", text: "info@saraevents.com" },
   ],
-  copyright: "© 2024 Company Name. All rights reserved.",
+  copyright: "© 2025 Company Name. All rights reserved.",
 };
 
 export const mockPropertyHeaderData = {
@@ -1597,10 +1590,10 @@ export const mockPropertyFooterData = {
       icon: "📍",
       text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
-    { id: 2, icon: "📞", text: "09 36 68 3005" },
-    { id: 3, icon: "✉️", text: "info@company.com" },
+    { id: 2, icon: "📞", text: "+251 911 123 456" },
+    { id: 3, icon: "✉️", text: "info@saraevents.com" },
   ],
-  copyright: "© 2024 Property Company. All rights reserved.",
+  copyright: "© 2025 Property Company. All rights reserved.",
 };
 
 export const HeroSlides = {

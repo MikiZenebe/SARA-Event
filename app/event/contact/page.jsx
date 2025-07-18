@@ -151,7 +151,7 @@ export default function EventContact() {
             <div className="mt-12">
               <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5205105887855!2d38.7619!3d9.0221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMjAuMCJOIDM4wrA0NSc0Mi44IkU!5e0!3m2!1sen!2set!4v1635000000000!5m2!1sen!2set"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5579943908274!2d38.780043199999994!3d9.0127549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8587fa9151c9%3A0x2d95ce30ff415b3f!2sSARA%20Events%20%26%20Marketing!5e0!3m2!1sen!2set!4v1752871442971!5m2!1sen!2set"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
