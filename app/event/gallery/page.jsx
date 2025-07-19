@@ -11,10 +11,10 @@ export default function EventGallery() {
   const openLightbox = (index) => setSelectedImageIndex(index);
   const closeLightbox = () => setSelectedImageIndex(null);
   const showNextImage = () =>
-    setSelectedImageIndex((prev) => (prev + 1) % galleryImages.length);
+    setSelectedImageIndex((prev) => (prev + 1) % gallery.length);
   const showPrevImage = () =>
     setSelectedImageIndex(
-      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
+      (prev) => (prev - 1 + gallery.length) % gallery.length
     );
 
   return (

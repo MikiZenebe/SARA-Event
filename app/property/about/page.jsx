@@ -1,11 +1,7 @@
 "use client";
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import PropertyHeader from "@/components/PropertyHeader";
 import PropertyFooter from "@/components/PropertyFooter";
-import Link from "next/link";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import "swiper/css";
@@ -103,12 +99,12 @@ function PropertyAbout() {
         <section className="hero-section relative w-full h-[35vh]">
           <div className="absolute inset-0 w-full h-full">
             <img
-              src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
+              src="/banner.jpg"
               alt="alt"
               fill
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
+            <div className="absolute inset-0 bg-[#969963] bg-opacity-75 flex items-center p-8">
               <div className="w-[60%] mx-auto">
                 <h1 className="text-center text-white font-medium text-4xl">
                   About Us

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 
@@ -21,6 +22,13 @@ const mockHeaderData = {
 
 const PropertyHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) => {
+    return (
+      pathname === href || (href !== "/property" && pathname.startsWith(href))
+    );
+  };
 
   return (
     <header className="bg-white dark:bg-[#1f2937] shadow-md">
@@ -40,7 +48,11 @@ const PropertyHeader = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f] transition-colors"
+                className={`font-medium ${
+                  isActive(item.href)
+                    ? "text-[#c9b68f] dark:text-[#c9b68f]"
+                    : "text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f]"
+                } transition-colors`}
               >
                 {item.name}
               </Link>
@@ -83,7 +95,11 @@ const PropertyHeader = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f] transition-colors"
+                className={`block py-2 font-medium ${
+                  isActive(item.href)
+                    ? "text-[#c9b68f] dark:text-[#c9b68f]"
+                    : "text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f]"
+                } transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

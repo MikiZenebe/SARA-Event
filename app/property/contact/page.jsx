@@ -84,16 +84,17 @@ const ContactPage = () => {
       <div className="min-h-screen flex flex-col items-center justify-center dark:bg-gray-900 transition-colors duration-300">
         {/* Hero Section */}
         <Toaster position="top-right" reverseOrder={false} />
-        <section className="hero-section relative w-full h-[50vh] pt-0 ">
-          <div className="relative w-full h-full">
+        <section className="hero-section relative w-full h-[35vh]">
+          <div className="absolute inset-0 w-full h-full">
             <img
-              src="/aboutEvent/bg.webp"
-              alt="About Us Hero"
+              src="/banner.jpg"
+              alt="alt"
+              fill
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
-              <div className="text-white ">
-                <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
+            <div className="absolute inset-0 bg-[#969963] bg-opacity-75 flex items-center p-8">
+              <div className="w-[60%] mx-auto">
+                <h1 className="text-center text-white font-medium text-4xl">
                   Contact Us
                 </h1>
               </div>

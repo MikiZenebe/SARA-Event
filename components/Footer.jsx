@@ -4,19 +4,20 @@ import Link from "next/link";
 import { mockFooterData } from "@/app/property/mockData";
 
 function Footer() {
-  const { logo, description, socialLinks, quickLinks, contactInfo, copyright } = mockFooterData;
+  const { logo, description, socialLinks, quickLinks, contactInfo, copyright } =
+    mockFooterData;
 
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
-          <div className="space-y-4">
+          <div className="space-y-0">
             <Link href="/" className="inline-block">
               <img
                 src={logo.url}
                 alt={logo.alternativeText}
-                className="h-12 w-auto"
+                className="h-auto w-36 -mt-7"
               />
             </Link>
             <p className="text-gray-400">{description}</p>
