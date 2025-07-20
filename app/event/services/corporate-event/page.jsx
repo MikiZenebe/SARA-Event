@@ -11,7 +11,7 @@ function CharityEvent() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const heroTitle = "Corporate" ;
+  const heroTitle = "Corporate";
   const heroSecondTitle = "Events";
 
   const serviceImage = {
@@ -23,14 +23,14 @@ function CharityEvent() {
     {
       children: [
         {
-          text: " We specialize in planning and executing professional corporate events that align with your brand and business goals.  From team-building retreats to formal galas, we ensure every detail reflects your company’s values. ",
+          text: "Corporate Events We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values. Our corporate event planning process starts with understanding your company’s culture, objectives, and audience. We focus on delivering events that not only achieve your business goals but also leave a lasting impression on attendees.",
         },
       ],
     },
     {
       children: [
         {
-          text: "Our corporate event planning process starts with understanding your company’s culture, objectives, and audience.",
+          text: "Sara Events stands out by offering a personalized approach, ensuring that each corporate event is unique, engaging, and seamlessly executed. From venue selection to audiovisual setup, catering, and post-event feedback, we handle every aspect with professionalism and precision.",
         },
       ],
     },

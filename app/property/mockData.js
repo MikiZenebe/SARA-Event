@@ -448,17 +448,17 @@ export const mockAboutData = {
             acheivementCard: [
               {
                 description: "Properties Sold",
-                title: "1000+",
+                title: "50",
                 button: "Learn More",
               },
               {
                 description: "Happy Clients",
-                title: "500+",
+                title: "50",
                 button: "Learn More",
               },
               {
                 description: "Years Experience",
-                title: "10+",
+                title: "6",
                 button: "Learn More",
               },
             ],
@@ -683,7 +683,7 @@ export const mockFashionShowData = {
             serviceImage: {
               data: {
                 attributes: {
-                  url: "/show4.webp",
+                  url: "/aboutEvent/fashion.jpg",
                   alternativeText: "Fashion Show Main Image",
                 },
               },
@@ -1399,7 +1399,7 @@ export const achievementSection = {
   cards: [
     { title: "200+", description: "Events Organized" },
     { title: "100+", description: "Corporate Clients" },
-    { title: "10+", description: "Years Experience" },
+    { title: "6", description: "Years Experience" },
   ],
 };
 
@@ -1515,8 +1515,7 @@ export const mockFooterData = {
     url: "/logo.png",
     alternativeText: "Company Logo",
   },
-  description:
-    "We are a leading event management company dedicated to creating unforgettable experiences for our clients.",
+  description: "Just think it we will make it happen",
   socialLinks: [
     {
       id: 1,
@@ -1532,7 +1531,7 @@ export const mockFooterData = {
     },
   ],
   quickLinks: [
-    { id: 1, label: "Home", href: "/" },
+    { id: 1, label: "Home", href: "/event" },
     { id: 2, label: "About", href: "/event/about" },
     { id: 3, label: "Services", href: "/event/services" },
     { id: 4, label: "Gallery", href: "/event/gallery" },
@@ -1599,6 +1598,22 @@ export const mockPropertyFooterData = {
 export const HeroSlides = {
   slides: [
     {
+      imageUrl: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
+      altText: "Event 1",
+      title: "Product Launches",
+      description:
+        " Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
+    },
+
+    {
+      imageUrl: "/speech.webp",
+      altText: "Event 1",
+      title: "Product Launches",
+      description:
+        " Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
+    },
+
+    {
       imageUrl: "/meeting2.webp",
       altText: "Event 2",
       title: "Transforming Ideas in to Event",
@@ -1612,14 +1627,6 @@ export const HeroSlides = {
       title: "Conferences and Seminars",
       description:
         "Our team organizes seamless conferences and seminars tailored to engage your audience, with expert coordination of venues, technology, and schedules for a successful experience.",
-    },
-
-    {
-      imageUrl: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
-      altText: "Event 1",
-      title: "Product Launches",
-      description:
-        " Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
     },
   ],
 };

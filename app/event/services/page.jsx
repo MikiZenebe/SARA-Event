@@ -1,5 +1,3 @@
-
-
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -15,7 +13,6 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-
 function Service() {
   const isLoading = false;
 
@@ -24,7 +21,7 @@ function Service() {
       {
         title: "Charity Events",
         description:
-          "We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values.",
+          "Charity Events From fundraisers to awareness campaigns, we help you create meaningful charity events that inspire and connect with your community for a greater cause.",
         button: "Learn More",
         href: "/event/services/charity-events",
         image: {
@@ -46,7 +43,7 @@ function Service() {
       {
         title: "Corporate Events",
         description:
-          "Make a lasting impression with our creative and impactful product launch events, designed to generate buzz and spotlight your brand’s latest innovation.",
+          "Corporate Events We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values.",
         button: "Learn More",
         href: "/event/services/corporate-event",
         image: {
@@ -101,9 +98,6 @@ function Service() {
     ],
   };
 
-
-  
-
   const cardVariants = [
     {
       hidden: { opacity: 0, x: -100 },
@@ -134,7 +128,7 @@ function Service() {
       <section className="hero-section relative w-full h-[50vh] pt-20 ">
         <div className="relative w-full h-full">
           <img
-            src="/aboutEvent/bg.webp"
+            src="/bannerSara.png"
             alt="About Us Hero"
             className="w-full h-full object-cover"
           />

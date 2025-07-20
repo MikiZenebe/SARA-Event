@@ -55,7 +55,7 @@ function FashionShow() {
       <section className="hero-section relative w-full h-[50vh] pt-20">
         <div className="relative w-full h-full">
           <img
-            src={heroData?.image?.data?.attributes?.url}
+            src="/bannerSara.png"
             alt={heroData?.image?.data?.attributes?.alternativeText}
             className="w-full h-full object-cover"
           />

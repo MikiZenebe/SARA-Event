@@ -51,13 +51,13 @@ function Header() {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-0">
           {/* Logo */}
           <Link href="/event" className="flex items-center">
             <img
               src={logo.url}
               alt={logo.alternativeText}
-              className="h-12 w-auto"
+              className="h-auto w-28"
             />
           </Link>
 

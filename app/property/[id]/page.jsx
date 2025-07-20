@@ -211,20 +211,16 @@ const PropertyDetail = () => {
                   ${attributes.Price.toLocaleString()}
                 </h3>
                 <span className="bg-[#c9b68f] text-black text-sm px-3 py-1 rounded-full">
-                  For Rent
+                  For Sell
                 </span>
               </div>
 
               <div className="mb-6">
-                <Button className="w-full bg-[#c9b68f] hover:bg-[#837559] text-black py-6 text-lg mb-4">
-                  Contact Agent
-                </Button>
-                {/* <Button
-                  variant="outline"
-                  className="w-full border-[#137a70] text-[#137a70] hover:bg-[#137a70] hover:text-white py-6 text-lg"
-                >
-                  Schedule Viewing
-                </Button> */}
+                <a href="tel:+251900014100">
+                  <Button className="w-full bg-[#c9b68f] hover:bg-[#837559] text-black py-6 text-lg mb-4">
+                    Contact Agent
+                  </Button>
+                </a>
               </div>
 
               {/* <div className="border-t border-gray-200 dark:border-gray-700 pt-6">

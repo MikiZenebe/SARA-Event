@@ -48,7 +48,7 @@ const PropertyHeader = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium ${
+                className={`text-lg font-medium transition-colors duration-300 ${
                   isActive(item.href)
                     ? "text-[#c9b68f] dark:text-[#c9b68f]"
                     : "text-gray-600 dark:text-gray-300 hover:text-[#c9b68f] dark:hover:text-[#c9b68f]"

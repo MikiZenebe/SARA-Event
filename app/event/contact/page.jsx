@@ -13,14 +13,14 @@ export default function EventContact() {
       <section className="hero-section relative w-full h-[50vh] pt-20 ">
         <div className="relative w-full h-full">
           <img
-            src="/aboutEvent/bg.webp"
+            src="/bannerSara.png"
             alt="About Us Hero"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center p-8">
             <div className="text-white ">
-              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[700PX]">
-                Contact Us
+              <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight ml-[410PX]">
+                Contact
               </h1>
             </div>
           </div>

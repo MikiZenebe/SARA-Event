@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import { Autoplay } from "swiper/modules";
@@ -24,14 +23,14 @@ function CharityEvent() {
     {
       children: [
         {
-          text: "We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values.",
+          text: "Charity Events From fundraisers to awareness campaigns, we help you create meaningful charity events that inspire and connect with your community for a greater cause.Charity events are about making an impact, and Sara Events takes pride in creating experiences that inspire generosity and community involvement. We offer strategic planning, creative themes, and effective outreach to maximize engagement and fundraising outcomes.",
         },
       ],
     },
     {
       children: [
         {
-          text: "Our corporate event planning process starts with understanding your company’s culture, objectives, and audience. We focus on delivering events that not only achieve your business goals but also leave a lasting impression on attendees.",
+          text: "Our team ensures that every aspect, from sponsorships to guest management, is handled with care and precision, allowing you to focus on your cause while we bring your vision to life.",
         },
       ],
     },
@@ -54,11 +53,7 @@ function CharityEvent() {
     },
   ];
 
-  const galleryImages = [
-    "/picture.webp",
-    "/charity.webp",
-    "/memory.webp",
-  ];
+  const galleryImages = ["/picture.webp", "/memory.webp"];
 
   const goToNextImage = () => {
     const nextIndex = (currentIndex + 1) % galleryImages.length;
@@ -136,7 +131,7 @@ function CharityEvent() {
             <section className="py-16 dark:bg-gray-900">
               <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
                 <Swiper
-                  slidesPerView={3}
+                  slidesPerView={2}
                   spaceBetween={30}
                   autoplay={{ delay: 3000 }}
                   loop={true}

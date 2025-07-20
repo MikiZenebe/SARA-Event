@@ -53,6 +53,10 @@ const mockHomeData = {
         url: "logo.png",
         alt: "Partner 1",
       },
+      {
+        url: "/Property/partner.jpg",
+        alt: "Partner 1",
+      },
     ],
   },
   achievements: {

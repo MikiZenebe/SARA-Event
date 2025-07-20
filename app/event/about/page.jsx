@@ -32,7 +32,7 @@ function About() {
       <section className="hero-section relative w-full h-[50vh] pt-20 ">
         <div className="relative w-full h-full">
           <img
-            src="/aboutEvent/bg.webp"
+            src="/bannerSara.png"
             alt="About Us Hero"
             className="w-full h-full object-cover"
           />
