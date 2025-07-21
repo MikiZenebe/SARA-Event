@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -7,14 +8,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
+import Link from "next/link";
 
-import { motion } from "framer-motion";
-function Page() {
+const Page = () => {
   const titleSlide = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   };
+
   const imageSlideRight = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.5 } },
@@ -30,97 +31,133 @@ function Page() {
           content="Sara Events and Marketing is the best event organizer in Ethiopia."
         />
       </head>
-      <div className="flex justify-center flex-col lg:flex-col md:flex-col items-center min-h-screen ">
-        <motion.main
+
+      <div className="bg-[#187c74] min-h-screen px-6 py-12 font-sans text-white">
+        {/* Hero Section */}
+        <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={titleSlide}
+          className="text-center mb-16"
         >
-          <div className="mb-6 md:mb-8 text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2 text-center ">
-              Discover Our Services
-            </h1>
-            <p className="text-base md:text-lg text-gray-600 dark:text-white w-[70%] mx-auto text-center">
-              Explore a range of services tailored to meet your needs, from
-              event management to property investment opportunities.
-            </p>
-          </div>
-        </motion.main>
-        <motion.main
+          <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+            Sara Event & Marketing
+          </h1>
+          <p className="max-w-4xl mx-auto text-lg  text-[#e1f5f3] leading-relaxed">
+            At SARA, we bring your ideas to life — from unforgettable events and
+            high-quality imports to bold marketing strategies and luxury real
+            estate investments. With our dedicated team and eye for detail, we
+            help you turn moments into milestones. Explore our world of
+            excellence through SEM Properties and more.
+          </p>
+        </motion.section>
+
+        {/* Services Section */}
+        <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={imageSlideRight}
+          className="max-w-7xl mx-auto"
         >
-          <div className="grid  md:gap-12 grid-cols-1 md:grid-cols-2">
-            {/* Event Card */}
-            <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            What We Offer
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Events Management */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-3xl bg-white text-[#187c74] shadow-xl overflow-hidden group"
+            >
               <CardHeader className="p-0">
                 <img
-                  src='https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/3_W7_A9014_1_cb772560c0.jpg'
-                  alt="image"
-                  width={500}
-                  height={210}
-                  className="w-full h-[210px] object-cover"
+                  src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/3_W7_A9014_1_cb772560c0.jpg"
+                  alt="Events"
+                  className="w-full h-64 object-cover"
                 />
               </CardHeader>
-              <CardContent className="p-4">
-                <CardTitle className="text-xl text-center font-semibold text-gray-800 dark:text-white mb-3">
+              <CardContent className="p-8">
+                <CardTitle className="text-2xl font-semibold mb-2">
                   Events Management
                 </CardTitle>
-                <CardDescription className="text-gray-600 dark:text-white mb-4">
-                  <ul className="list-disc ml-4 font-medium text-[16px] space-y-2">
-                    <li>Upcoming Events</li>
-                    <li>Event Management</li>
-                    <li>Event Gallery</li>
-                  </ul>
+                <CardDescription className="text-[#187c74] mb-4">
+                  We design experiences that captivate — from intimate
+                  celebrations to large-scale productions.
                 </CardDescription>
+                <ul className="list-disc list-inside space-y-1 text-[#187c74]">
+                  <li>Upcoming Events</li>
+                  <li>Event Management</li>
+                  <li>Event Gallery</li>
+                </ul>
                 <a
                   target="_blank"
                   href="/event"
-                  className="block bg-[#137a70] text-white text-center py-2 px-4 rounded hover:scale-105 hover:shadow-lg dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] transition-transform duration-300"
+                  className="mt-6 inline-block bg-[#187c74] hover:bg-[#14625d] text-white font-bold py-2 px-6 rounded-full"
                 >
-                  Event
+                  See Our Events
                 </a>
               </CardContent>
-            </Card>
+            </motion.div>
 
-            <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
+            {/* Property Management */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-3xl bg-white text-[#959563] shadow-xl overflow-hidden group"
+            >
               <CardHeader className="p-0">
                 <img
                   src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650749/photo_5800701578242541043_y_1_e6682c900f.jpg"
-                  alt="image"
-                  width={500}
-                  height={210}
-                  className="w-full h-[210px] object-cover"
+                  alt="Property"
+                  className="w-full h-64 object-cover"
                 />
               </CardHeader>
-              <CardContent className="p-4">
-                <CardTitle className="text-xl text-center font-semibold text-gray-800 dark:text-white mb-3">
+              <CardContent className="p-8">
+                <CardTitle className="text-2xl font-semibold mb-2">
                   Property Management
                 </CardTitle>
-                <CardDescription className="text-gray-600 dark:text-white mb-4">
-                  <ul className="list-disc ml-4 font-medium text-[16px] space-y-2">
-                    <li>Available Properties</li>
-                    <li>Property Management </li>
-                    <li>Investment Opportunities</li>
-                  </ul>
+                <CardDescription className="text-[#959563] mb-4">
+                  Discover high-end real estate with SEM Properties — where
+                  investment meets lifestyle.
                 </CardDescription>
+                <ul className="list-disc list-inside space-y-1 text-[#959563]">
+                  <li>Available Properties</li>
+                  <li>Property Management</li>
+                  <li>Investment Opportunities</li>
+                </ul>
                 <a
                   target="_blank"
                   href="/property"
-                  className="block bg-[#969963] text-white text-center py-2 px-4 rounded hover:scale-105 hover:shadow-lg dark:hover:bg-white dark:hover:text-[#969963] dark:hover:border dark:hover:border-[#969963] transition-transform duration-300"
+                  className="mt-6 inline-block bg-[#959563] hover:bg-[#7a7a4f] text-white font-bold py-2 px-6 rounded-full"
                 >
-                  Property
+                  Browse Properties
                 </a>
               </CardContent>
-            </Card>
+            </motion.div>
           </div>
-        </motion.main>
+        </motion.section>
+
+        {/* CTA Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mt-20"
+        >
+          <h2 className="text-3xl font-bold mb-4">
+            Ready to bring your vision to life?
+          </h2>
+          <p className="text-lg text-[#e1f5f3] mb-6">
+            Let&#39;s build something unforgettable together.
+          </p>
+          <button className="bg-white text-[#187c74] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#f1f1f1] transition">
+            <Link href={"/event/contact"}>Contact Us</Link>
+          </button>
+        </motion.section>
       </div>
     </>
   );
-}
+};
 
 export default Page;
