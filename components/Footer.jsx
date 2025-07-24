@@ -28,7 +28,7 @@ function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 mt-4"
                 >
                   {link.icon}
                 </a>

@@ -1510,6 +1510,14 @@ export const mockHeaderData = {
   ],
 };
 
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+const iconMap = {
+  Facebook: FaFacebook,
+  Twitter: FaTwitter,
+  Instagram: FaInstagram,
+  LinkedIn: FaLinkedin,
+};
+
 export const mockFooterData = {
   logo: {
     url: "/logo.png",
@@ -1520,14 +1528,14 @@ export const mockFooterData = {
     {
       id: 1,
       url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
-      icon: "Facebook",
+      icon: <FaFacebook />,
     },
-    { id: 2, url: "https://twitter.com", icon: "Twitter" },
-    { id: 3, url: "https://instagram.com", icon: "Instagram" },
+    { id: 2, url: "https://twitter.com", icon: <FaTwitter /> },
+    { id: 3, url: "https://instagram.com", icon: <FaInstagram /> },
     {
       id: 4,
       url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
-      icon: "LinkedIn",
+      icon: <FaLinkedin />,
     },
   ],
   quickLinks: [

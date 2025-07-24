@@ -237,7 +237,7 @@ export default function Home() {
               variants={descriptionSlide}
               className="text-lg text-gray-600 leading-relaxed dark:text-white mb-10"
             >
-              Sara Events and Marketing is a leading event management company
+              Sara Events and Marketing is a trusted event management company
               dedicated to creating unforgettable experiences. Our team
               specializes in organizing charity events, corporate functions,
               conferences, grand openings, and product launches.
