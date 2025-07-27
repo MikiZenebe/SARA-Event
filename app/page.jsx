@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const Page = () => {
   const titleSlide = {
@@ -21,6 +23,18 @@ const Page = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.5 } },
     exit: { opacity: 0, x: 100 },
   };
+
+  // Carousel setup
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
+
+  const carouselImages = [
+    "/home_slide1.jpg",
+    "/home_slide2.jpg",
+    "/home_slide3.jpg",
+    // Add more image URLs here
+  ];
 
   return (
     <>
@@ -51,6 +65,31 @@ const Page = () => {
             help you turn moments into milestones. Explore our world of
             excellence through SEM Properties and more.
           </p>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16 max-w-6xl mx-auto rounded-xl overflow-hidden shadow-xl"
+        >
+          <div className="embla overflow-hidden" ref={emblaRef}>
+            <div className="embla__container flex">
+              {carouselImages.map((img, index) => (
+                <div
+                  className="embla__slide flex-[0_0_100%] min-w-0"
+                  key={index}
+                >
+                  <img
+                    src={img}
+                    alt={`Carousel image ${index + 1}`}
+                    className="w-full h-96 object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.section>
 
         {/* Services Section */}
