@@ -367,6 +367,63 @@ export default function Home() {
           </ScrollTrigger>
         </section>
 
+        {/* <section className="pb-6 text-center dark:bg-none bg-cover bg-center w-full">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
+              Our <span className="text-[#137a70] font-bold">Certificates</span>
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white dark:font-normal">
+              We are proud to showcase our professional certifications and
+              awards that demonstrate our commitment to excellence in event
+              management.
+            </p>
+          </div>
+
+          <div className="dark:bg-none min-h-[60vh] flex flex-col items-center py-10">
+            <div className="w-11/12 flex flex-wrap justify-center gap-6">
+          
+              {[1, 2, 3, 4].map((cert, index) => (
+                <div
+                  key={index}
+                  className="relative p-2 transition-all cursor-pointer group"
+                  onClick={() => openLightbox(`/certificate-${cert}.jpg`)}
+                >
+                  <div className="relative w-[300px] h-[200px] overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={`/certificate-${cert}.jpg`}
+                      alt={`Certificate ${index + 1}`}
+                      className="w-full h-full object-contain bg-white transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                      <svg
+                        className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <p className="mt-2 text-gray-700 dark:text-gray-300">
+                    Certificate {index + 1}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+        
+            <Button className="mt-8 bg-[#137a70] hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md">
+              <Link href="/certificates">View All Certificates</Link>
+            </Button>
+          </div>
+        </section> */}
+
         {/* Portfolio Section */}
         <section className="pb-6 text-center dark:bg-none bg-cover bg-center min-h-screen w-full">
           <div className="text-center">

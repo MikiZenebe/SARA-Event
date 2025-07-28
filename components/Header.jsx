@@ -36,6 +36,7 @@ function Header() {
     { id: 2, label: "About", href: "/event/about" },
     { id: 3, label: "Services", href: "/event/services" },
     { id: 4, label: "Gallery", href: "/event/gallery" },
+    { id: 4, label: "Certificates", href: "/event/event-certificate" },
     { id: 5, label: "Contact", href: "/event/contact" },
   ];
 

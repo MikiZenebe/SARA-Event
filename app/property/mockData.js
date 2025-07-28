@@ -1554,7 +1554,7 @@ export const mockFooterData = {
     { id: 2, icon: "📞", text: "09 36 68 3005" },
     { id: 3, icon: "✉️", text: "info@saraevents.com" },
   ],
-  copyright: "© 2025 Company Name. All rights reserved.",
+  copyright: "© 2025 Sara Event & Marketing. All rights reserved.",
 };
 
 export const mockPropertyHeaderData = {

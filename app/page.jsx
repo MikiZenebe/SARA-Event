@@ -58,13 +58,6 @@ const Page = () => {
           <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Sara Event & Marketing
           </h1>
-          <p className="max-w-4xl mx-auto text-lg  text-[#e1f5f3] leading-relaxed">
-            At SARA, we bring your ideas to life — from unforgettable events and
-            high-quality imports to bold marketing strategies and luxury real
-            estate investments. With our dedicated team and eye for detail, we
-            help you turn moments into milestones. Explore our world of
-            excellence through SEM Properties and more.
-          </p>
         </motion.section>
 
         <motion.section
@@ -72,7 +65,7 @@ const Page = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 max-w-6xl mx-auto rounded-xl overflow-hidden shadow-xl"
+          className="mb-10 max-w-6xl mx-auto rounded-xl overflow-hidden shadow-xl"
         >
           <div className="embla overflow-hidden" ref={emblaRef}>
             <div className="embla__container flex">
@@ -91,6 +84,17 @@ const Page = () => {
             </div>
           </div>
         </motion.section>
+
+        <div className="my-8">
+          {" "}
+          <p className="max-w-4xl mx-auto text-lg  text-[#e1f5f3] leading-relaxed">
+            At SARA, we bring your ideas to life — from unforgettable events and
+            high-quality imports to bold marketing strategies and luxury real
+            estate investments. With our dedicated team and eye for detail, we
+            help you turn moments into milestones. Explore our world of
+            excellence through SEM Properties and more.
+          </p>
+        </div>
 
         {/* Services Section */}
         <motion.section
