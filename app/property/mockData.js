@@ -1510,7 +1510,13 @@ export const mockHeaderData = {
   ],
 };
 
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+} from "react-icons/fa";
 const iconMap = {
   Facebook: FaFacebook,
   Twitter: FaTwitter,
@@ -1590,6 +1596,11 @@ export const mockPropertyFooterData = {
       id: 4,
       url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
       icon: <FaLinkedin />,
+    },
+    {
+      id: 5,
+      url: "https://www.tiktok.com",
+      icon: <FaTiktok />,
     },
   ],
   quickLinks: [
