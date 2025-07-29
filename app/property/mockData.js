@@ -1543,6 +1543,11 @@ export const mockFooterData = {
       url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
       icon: <FaLinkedin />,
     },
+    {
+      id: 5,
+      url: "https://www.tiktok.com",
+      icon: <FaTiktok />,
+    },
   ],
   quickLinks: [
     { id: 1, label: "Home", href: "/event" },
