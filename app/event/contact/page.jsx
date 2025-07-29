@@ -70,7 +70,7 @@ export default function EventContact() {
                       <div>
                         <h3 className="font-semibold">Address</h3>
                         <p className="text-gray-600">
-                          Bole, Addis Ababa, Ethiopia
+                          22, Addis Ababa, Ethiopia
                         </p>
                       </div>
                     </div>

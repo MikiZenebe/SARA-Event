@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LogOut } from "lucide-react";
 
 function About() {
   const titleSlide = {
@@ -22,18 +23,21 @@ function About() {
       title: "Chief Executive Officer, AYSOL Management Consultancy",
       content:
         "Sara Event & Marketing was the driving force behind some of our most successful events. From the Qushite Leaders Award to multiple book launches, they handled everything — coordination, sponsorship, and execution — with excellence. Highly recommended!",
+      logo: "/aboutEvent/AYSOL.jpeg",
     },
     {
       name: "Ayeneabeba Maru",
       title: "Director, Care for the Nation",
       content:
         "Sara Event & Marketing turned our vision into reality with creativity, precision, and care. Their commitment made our event unforgettable.",
+      logo: "/aboutEvent/ICARE.jpeg",
     },
     {
       name: "Ministry of Defense",
       title: "Ethiopia",
       content:
         "It’s rare to find an events team that combines speed, quality, and accountability as well as Sara Events & Marketing does. For our National Defense Day celebration, they delivered everything on time, managed the logistics flawlessly, and showed real dedication to making our event a success!",
+      logo: "/aboutEvent/FEDR.jpeg",
     },
   ];
 
@@ -396,7 +400,9 @@ function About() {
 
               {/* Author Info */}
               <div className="mt-6 flex items-center">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                <div className="max-w-[20%]">
+                  <img src={testimonial.logo} alt="logo" className="w-full" />
+                </div>
                 <div className="ml-4">
                   <h4 className="font-semibold text-gray-800 dark:text-white">
                     {testimonial.name}

@@ -1579,17 +1579,25 @@ export const mockPropertyFooterData = {
   description:
     "We are a premier property management company committed to providing exceptional real estate services.",
   socialLinks: [
-    { id: 1, url: "https://facebook.com", icon: "Facebook" },
-    { id: 2, url: "https://twitter.com", icon: "Twitter" },
-    { id: 3, url: "https://instagram.com", icon: "Instagram" },
-    { id: 4, url: "https://linkedin.com", icon: "LinkedIn" },
+    {
+      id: 1,
+      url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
+      icon: <FaFacebook />,
+    },
+    { id: 2, url: "https://twitter.com", icon: <FaTwitter /> },
+    { id: 3, url: "https://instagram.com", icon: <FaInstagram /> },
+    {
+      id: 4,
+      url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
+      icon: <FaLinkedin />,
+    },
   ],
   quickLinks: [
     { id: 1, label: "Home", href: "/property" },
     { id: 2, label: "About", href: "/property/about" },
-    { id: 3, label: "Properties", href: "/property/properties" },
-    { id: 4, label: "Gallery", href: "/property/gallery" },
-    { id: 5, label: "Contact", href: "/property/contact" },
+    { id: 3, label: "Properties", href: "/property/listings" },
+    // { id: 4, label: "Gallery", href: "/property/gallery" },
+    { id: 4, label: "Contact", href: "/property/contact" },
   ],
   contactInfo: [
     {
@@ -1597,7 +1605,7 @@ export const mockPropertyFooterData = {
       icon: "📍",
       text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
-    { id: 2, icon: "📞", text: "+251 911 123 456" },
+    { id: 2, icon: "📞", text: "093 668 3005" },
     { id: 3, icon: "✉️", text: "info@saraevents.com" },
   ],
   copyright: "© 2025 Property Company. All rights reserved.",

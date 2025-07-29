@@ -136,7 +136,8 @@ const ContactPage = () => {
                       <Phone className="w-6 h-6 text-[#c9b68f] mt-1" />
                       <div>
                         <h3 className="font-semibold">Phone</h3>
-                        <p className="text-gray-600">+251 911 123 456</p>
+                        <p className="text-gray-600">+251 11 657 5755</p>{" "}
+                        <p className="text-gray-600">+251936683005</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -144,7 +145,7 @@ const ContactPage = () => {
                       <div>
                         <h3 className="font-semibold">Address</h3>
                         <p className="text-gray-600">
-                          Bole, Addis Ababa, Ethiopia
+                          22, Addis Ababa, Ethiopia
                         </p>
                       </div>
                     </div>
