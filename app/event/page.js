@@ -31,6 +31,15 @@ import {
   allGalleries,
 } from "@/app/property/mockData";
 
+const partnerLogo = [
+  "/aboutEvent/INSA.jpeg",
+  "/aboutEvent/EFP.jpeg",
+  "/aboutEvent/FEDR.jpeg",
+  "/aboutEvent/ICARE.jpeg",
+  "/aboutEvent/AYSOL.jpeg",
+  "/aboutEvent/LET.jpeg",
+];
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -189,7 +198,7 @@ export default function Home() {
             Upcoming <span className="font-bold text-[#137a70]">Events</span>
           </motion.h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-[90%] mx-auto">
-            {upcomingEvents.length > 0 ? (
+            {!upcomingEvents.length > 0 &&
               upcomingEvents.map((event) => (
                 <div
                   key={event.id}
@@ -207,13 +216,12 @@ export default function Home() {
                   <p className="mb-6">{event.description}</p>
                   <div className="absolute inset-0 rounded-lg pointer-events-none border border-white/20"></div>
                 </div>
-              ))
-            ) : (
-              <p className="text-center text-gray-500 dark:text-gray-300">
-                No upcoming events.
-              </p>
-            )}
+              ))}
           </div>
+
+          <p className="text-center text-gray-500 dark:text-gray-300 mt-8">
+            No upcoming events.
+          </p>
         </div>
       </section>
 
@@ -501,6 +509,40 @@ export default function Home() {
               )}
           </div>
         </section>
+
+        {/* Partners Section */}
+        <div className="mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={titleSlide}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              Our <span className="text-[#137a70]">Partners</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We collaborate with reputable organizations to deliver top-notch
+              events and marketing services.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-8 items-center px-6">
+            {partnerLogo.map((logo, index) => (
+              <div
+                key={index}
+                className="w-32 h-20 flex items-center justify-center bg-white rounded-lg  dark:bg-gray-700 p-2"
+              >
+                <img
+                  src={logo}
+                  alt={`Partner Logo ${index + 1}`}
+                  className="object-contain max-h-full max-w-full"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Working Hours & Map */}
         <section className="dark:bg-gray-900 pb-12 mb-5">

@@ -71,7 +71,7 @@ const Page = () => {
             <div className="embla__container flex">
               {carouselImages.map((img, index) => (
                 <div
-                  className="embla__slide flex-[0_0_100%] min-w-0"
+                  className="embla__slide flex-[0_0_100%] min-w-0 relative"
                   key={index}
                 >
                   <img
@@ -79,6 +79,14 @@ const Page = () => {
                     alt={`Carousel image ${index + 1}`}
                     className="w-full h-96 object-cover"
                   />
+
+                  {/* Text overlay */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white px-4 py-2 rounded">
+                    <p className="text-center text-sm sm:text-2xl">
+                      Your Number One Trusted Event Management and Marketing
+                      Company
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

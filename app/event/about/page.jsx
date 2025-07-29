@@ -16,6 +16,27 @@ function About() {
     exit: { opacity: 0, x: 100 },
   };
 
+  const testimonials = [
+    {
+      name: "Lemma Degela",
+      title: "Chief Executive Officer, AYSOL Management Consultancy",
+      content:
+        "Sara Event & Marketing was the driving force behind some of our most successful events. From the Qushite Leaders Award to multiple book launches, they handled everything — coordination, sponsorship, and execution — with excellence. Highly recommended!",
+    },
+    {
+      name: "Ayeneabeba Maru",
+      title: "Director, Care for the Nation",
+      content:
+        "Sara Event & Marketing turned our vision into reality with creativity, precision, and care. Their commitment made our event unforgettable.",
+    },
+    {
+      name: "Ministry of Defense",
+      title: "Ethiopia",
+      content:
+        "It’s rare to find an events team that combines speed, quality, and accountability as well as Sara Events & Marketing does. For our National Defense Day celebration, they delivered everything on time, managed the logistics flawlessly, and showed real dedication to making our event a success!",
+    },
+  ];
+
   return (
     <>
       <head>
@@ -344,20 +365,17 @@ function About() {
 
       {/* Testimonials Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white">
-              Client{" "}
-              <span className="text-[#137a70] font-bold">Testimonials</span>
-            </h2>
-            <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto dark:text-gray-300">
-              Hear what our clients say about our services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-              <div className="text-yellow-400 flex mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, idx) => (
+            <div
+              key={idx}
+              className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg"
+            >
+              {/* Star Rating */}
+              <div
+                className="text-yellow-400 flex mb-4"
+                aria-label="5 star rating"
+              >
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
@@ -370,88 +388,26 @@ function About() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-600 italic dark:text-gray-300">
-                &quot;Sara Events transformed our corporate gala into an
-                unforgettable experience. Their attention to detail was
-                impeccable!&quot;
-              </p>
-              <div className="mt-6 flex items-center">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white">
-                    Abebe Kebede
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    CEO, Tech Solutions Inc.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-              <div className="text-yellow-400 flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
+              {/* Testimonial Text */}
               <p className="text-gray-600 italic dark:text-gray-300">
-                &quot;Our wedding was perfect thanks to Sara Events. They
-                handled everything from start to finish with
-                professionalism.&quot;
+                {testimonial.content}
               </p>
-              <div className="mt-6 flex items-center">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white">
-                    Meron Getachew
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Happy Bride
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-              <div className="text-yellow-400 flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-600 italic dark:text-gray-300">
-                &quot;Working with Sara Events on our product launch was a
-                game-changer. Their marketing expertise made all the
-                difference!&quot;
-              </p>
+              {/* Author Info */}
               <div className="mt-6 flex items-center">
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                 <div className="ml-4">
                   <h4 className="font-semibold text-gray-800 dark:text-white">
-                    Tewodros Alemayehu
+                    {testimonial.name}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Marketing Director
+                    {testimonial.title}
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 

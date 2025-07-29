@@ -1551,7 +1551,7 @@ export const mockFooterData = {
       icon: "📍",
       text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
-    { id: 2, icon: "📞", text: "09 36 68 3005" },
+    { id: 2, icon: "📞", text: "093 668 3005" },
     { id: 3, icon: "✉️", text: "info@saraevents.com" },
   ],
   copyright: "© 2025 Sara Event & Marketing. All rights reserved.",
