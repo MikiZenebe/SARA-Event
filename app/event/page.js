@@ -35,6 +35,7 @@ const partnerLogo = [
   "/aboutEvent/ICARE.jpeg",
   "/aboutEvent/AYSOL.jpeg",
   "/aboutEvent/LET.jpeg",
+  "/aboutEvent/Logo-Kindernothilfe.png",
 ];
 
 export default function Home() {

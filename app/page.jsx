@@ -33,6 +33,8 @@ const Page = () => {
     "/home_slide1.jpg",
     "/home_slide2.jpg",
     "/home_slide3.jpg",
+    "/aboutEvent/homeSlide1.jpg",
+    "/aboutEvent/homeSlide2.jpg",
     // Add more image URLs here
   ];
 

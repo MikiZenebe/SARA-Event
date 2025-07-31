@@ -1516,7 +1516,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaTiktok,
+  FaTelegram,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 const iconMap = {
   Facebook: FaFacebook,
   Twitter: FaTwitter,
@@ -1536,8 +1538,12 @@ export const mockFooterData = {
       url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
       icon: <FaFacebook />,
     },
-    { id: 2, url: "https://twitter.com", icon: <FaTwitter /> },
-    { id: 3, url: "https://instagram.com", icon: <FaInstagram /> },
+    { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
+    {
+      id: 3,
+      url: "https://www.instagram.com/p/C_xUlhsu2sC/?igsh=M2J3Y205MjhvMDVx",
+      icon: <FaInstagram />,
+    },
     {
       id: 4,
       url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
@@ -1545,8 +1551,13 @@ export const mockFooterData = {
     },
     {
       id: 5,
-      url: "https://www.tiktok.com",
+      url: "https://vm.tiktok.com/ZMSTXpBD9/",
       icon: <FaTiktok />,
+    },
+    {
+      id: 5,
+      url: "https://t.me/+eav8Df_bT-cyNjZk?fbclid=PAQ0xDSwL4W_dleHRuA2FlbQIxMQABp9hYAP8dxjY5Ec_wXA9GxwvuoHMEzn-CgGcKJsVWT8LEUml58UuNvaLMb9Fo_aem_-Q58ur8uDBIhNNb7eRfQDQ",
+      icon: <FaTelegram />,
     },
   ],
   quickLinks: [
@@ -1595,8 +1606,12 @@ export const mockPropertyFooterData = {
       url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
       icon: <FaFacebook />,
     },
-    { id: 2, url: "https://twitter.com", icon: <FaTwitter /> },
-    { id: 3, url: "https://instagram.com", icon: <FaInstagram /> },
+    { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
+    {
+      id: 3,
+      url: "https://www.instagram.com/p/C_xUlhsu2sC/?igsh=M2J3Y205MjhvMDVx",
+      icon: <FaInstagram />,
+    },
     {
       id: 4,
       url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
@@ -1604,8 +1619,13 @@ export const mockPropertyFooterData = {
     },
     {
       id: 5,
-      url: "https://www.tiktok.com",
+      url: "https://vm.tiktok.com/ZMSTXpBD9/",
       icon: <FaTiktok />,
+    },
+    {
+      id: 5,
+      url: "https://t.me/+eav8Df_bT-cyNjZk?fbclid=PAQ0xDSwL4W_dleHRuA2FlbQIxMQABp9hYAP8dxjY5Ec_wXA9GxwvuoHMEzn-CgGcKJsVWT8LEUml58UuNvaLMb9Fo_aem_-Q58ur8uDBIhNNb7eRfQDQ",
+      icon: <FaTelegram />,
     },
   ],
   quickLinks: [
