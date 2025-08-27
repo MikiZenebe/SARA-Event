@@ -3,7 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { LogOut } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { Pagination, Autoplay } from "swiper/modules";
 
 function About() {
   const titleSlide = {
@@ -38,6 +42,19 @@ function About() {
       content:
         "It’s rare to find an events team that combines speed, quality, and accountability as well as Sara Events & Marketing does. For our National Defense Day celebration, they delivered everything on time, managed the logistics flawlessly, and showed real dedication to making our event a success!",
       logo: "/aboutEvent/FEDR.jpeg",
+    },
+    {
+      name: "Kinder Not Hilfe e.V.",
+
+      content:
+        "Sara Events and Marketing helped us organize our 50th Anniversary celebration. They provided excellent master of ceremony services, produced promotional materials and giveaway products, and ensured everything ran smoothly. We highly appreciate the quality service they delivered and wish them continued success in the future.",
+    },
+
+    {
+      name: "Leadership Transformation Ministries (LeT)",
+      logo: "/aboutEvent/LET.jpeg",
+      content:
+        "SARA Events and Marketing partnered with us for our National City Seminar. Their team demonstrated skill, diligence, and stability throughout their work with us. We are grateful for their professionalism and wish them the very best in their future endeavors.",
     },
   ];
 
@@ -369,51 +386,74 @@ function About() {
 
       {/* Testimonials Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-800">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, idx) => (
-            <div
-              key={idx}
-              className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg"
-            >
-              {/* Star Rating */}
-              <div
-                className="text-yellow-400 flex mb-4"
-                aria-label="5 star rating"
-              >
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+        <div className="max-w-7xl mx-auto px-4">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000 }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {testimonials.map((testimonial, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
+                  {/* Star Rating */}
+                  <div
+                    className="text-yellow-400 flex mb-4"
+                    aria-label="5 star rating"
                   >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
 
-              {/* Testimonial Text */}
-              <p className="text-gray-600 italic dark:text-gray-300">
-                {testimonial.content}
-              </p>
-
-              {/* Author Info */}
-              <div className="mt-6 flex items-center">
-                <div className="max-w-[20%]">
-                  <img src={testimonial.logo} alt="logo" className="w-full" />
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {testimonial.title}
+                  {/* Testimonial Text */}
+                  <p className="text-gray-600 italic dark:text-gray-300 mb-6">
+                    {testimonial.content}
                   </p>
+
+                  {/* Author Info */}
+                  <div className="flex items-center mt-auto">
+                    {testimonial.logo && (
+                      <div className="w-12 h-12 flex-shrink-0">
+                        <img
+                          src={testimonial.logo}
+                          alt={testimonial.name}
+                          className="rounded-full w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="ml-4">
+                      <h4 className="font-semibold text-gray-800 dark:text-white">
+                        {testimonial.name}
+                      </h4>
+                      {testimonial.title && (
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          {testimonial.title}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 

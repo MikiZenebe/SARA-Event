@@ -79,10 +79,7 @@ export default function EventContact() {
                       <div>
                         <h3 className="font-semibold">Working Hours</h3>
                         <p className="text-gray-600">
-                          Monday - Friday: 9:00 AM - 6:00 PM
-                        </p>
-                        <p className="text-gray-600">
-                          Saturday: 10:00 AM - 4:00 PM
+                          Monday - Saturday : 2:30 AM - 11:30 PM
                         </p>
                       </div>
                     </div>

@@ -64,18 +64,6 @@ function PropertyAbout() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   };
 
-  const logoVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: (index) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: index * 0.5,
-        duration: 0.7,
-      },
-    }),
-  };
-
   const cardVariants = [
     {
       hidden: { opacity: 0, x: -100 },
@@ -90,6 +78,38 @@ function PropertyAbout() {
       visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.8 } },
     },
   ];
+
+  const testimonials = [
+    {
+      name: "W/RO Tsedale Girma",
+      // title: "Chief Executive Officer, AYSOL Management Consultancy",
+      content:
+        "From our very first meeting, Sara event & marketing property made it clear that our needs came first. They took the time to understand exactly what we were looking for and guided us through every step of the process with honesty, transparency, and professionalism. It’s rare to find someone in real estate who truly listens and gives honest advice even when it’s not the easiest option. We felt informed, supported, and confident throughout our journey. We highly recommend Sara event & marketing property to anyone looking for a trustworthy and client-focused real estate experience.",
+    },
+    {
+      name: "Ato Zena Asefa",
+      // title: "Director, Care for the Nation",
+      content:
+        "Working with Sara event & marketing property was a refreshing experience. They were not just focused on making a sale; they genuinely cared about what was best for us. Their honest guidance helped us avoid costly mistakes and make confident decisions. It’s rare to find such integrity in this industry. We truly felt like we had a partner we could trust.",
+    },
+    {
+      name: "Ato Werku Birhane",
+      // title: "Ethiopia",
+      content:
+        "We couldn’t have asked for a better real estate experience. Sara event & marketing property was always professional, responsive, and upfront with us. They made sure our goals were the top priority and provided honest advice every step of the way. The process felt seamless because we knew we were in good hands.",
+    },
+  ];
+
+  const [expanded, setExpanded] = useState({});
+
+  const toggleExpand = (idx) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
+  const maxChars = 150;
 
   return (
     <>
@@ -203,84 +223,72 @@ function PropertyAbout() {
               ))}
             </div>
 
-            {/* Team Section */}
-            {/* <div className="mb-16">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={titleSlide}
-                className="text-center mb-12"
-              >
-                <h2 className="text-3xl font-bold mb-4">
-                  {teamSection[0]?.ServiceCard?.title}
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                  {teamSection[0]?.ServiceCard?.description}
-                </p>
-              </motion.div>
-
-              <div className="relative">
-                <img
-                  src={
-                    teamSection[0]?.ServiceCard?.image?.data?.attributes?.url
-                  }
-                  alt={
-                    teamSection[0]?.ServiceCard?.image?.data?.attributes
-                      ?.alternativeText
-                  }
-                  className="w-full h-[400px] object-cover rounded-lg"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
-                  <button className="bg-[#969963] text-white px-6 py-2 rounded-lg hover:bg-[#7a6d57] transition-colors">
-                    {teamSection[0]?.ServiceCard?.button}
-                  </button>
-                </div>
-              </div>
-            </div> */}
-
             {/* Testimonials Section */}
-            <div className="mb-16">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={titleSlide}
-                className="text-center mb-12"
-              >
-                <h2 className="text-3xl font-bold mb-4">
-                  {testimonialSection[0]?.testimonailTitle?.title}{" "}
-                  <span className="text-[#969963]">
-                    {testimonialSection[0]?.testimonailTitle?.secondTitle}
-                  </span>
-                </h2>
-              </motion.div>
+            <section className="py-16  dark:bg-gray-800">
+              <h2 className="text-3xl font-bold mb-4 text-center">
+                Client Testimonials
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {testimonials.map((testimonial, idx) => {
+                  const isExpanded = expanded[idx];
+                  const isLong = testimonial.content.length > maxChars;
+                  const displayText =
+                    isExpanded || !isLong
+                      ? testimonial.content
+                      : testimonial.content.slice(0, maxChars) + "...";
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {testimonialSection[0]?.testimonialCard?.map(
-                  (testimonial, index) => (
-                    <motion.div
-                      key={index}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={cardVariants[index % 3]}
-                      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg"
                     >
-                      <h3 className="text-xl font-semibold mb-4">
-                        {testimonial.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
-                        {testimonial.description}
+                      {/* Star Rating */}
+                      <div
+                        className="text-yellow-400 flex mb-4"
+                        aria-label="5 star rating"
+                      >
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+
+                      {/* Testimonial Text */}
+                      <p className="text-gray-600 italic dark:text-gray-300">
+                        {displayText}
+                        {isLong && (
+                          <button
+                            className="ml-2 text-blue-500 hover:underline"
+                            onClick={() => toggleExpand(idx)}
+                          >
+                            {isExpanded ? "See less" : "See more"}
+                          </button>
+                        )}
                       </p>
-                      <button className="text-[#969963] hover:text-[#7a6d57] font-medium">
-                        {testimonial.button}
-                      </button>
-                    </motion.div>
-                  )
-                )}
+
+                      {/* Author Info */}
+                      <div className="mt-6 flex items-center">
+                        <div className="ml-4">
+                          <h4 className="font-semibold text-gray-800 dark:text-white">
+                            {testimonial.name}
+                          </h4>
+                          <p className="text-gray-600 dark:text-gray-400">
+                            {testimonial.title}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            </div>
+            </section>
 
             {/* Partners Section */}
             <div className="mb-16">
@@ -367,6 +375,143 @@ function PropertyAbout() {
                 </div>
               </div>
             </ScrollTrigger>
+
+            {/* Why Choose Us Section */}
+            <section className="py-16 bg-white dark:bg-gray-900">
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <motion.h2
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={titleSlide}
+                      className="text-4xl font-bold text-gray-800 dark:text-white"
+                    >
+                      Why Choose Us{" "}
+                      <span className="text-[#969963] font-bold">
+                        Our Strengths
+                      </span>
+                    </motion.h2>
+
+                    <p className="text-xl text-gray-600 mt-6 mb-8 dark:text-gray-300">
+                      We provide exceptional real estate services backed by
+                      experience, integrity, and a deep understanding of the
+                      market.
+                    </p>
+
+                    <div className="space-y-6">
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 rounded-full bg-[#969963] bg-opacity-10 flex items-center justify-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5 text-[#137a70]"
+                              viewBox="0 0 20 20"
+                              fill="#969963"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                            Personalized Service
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-400 mt-2">
+                            Every client is unique and so are their needs. We
+                            take the time to understand your preferences and
+                            deliver tailor-made real estate solutions that fit
+                            your lifestyle and goals.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 rounded-full bg-[#969963] bg-opacity-10 flex items-center justify-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5 text-[#137a70]"
+                              viewBox="0 0 20 20"
+                              fill="#969963"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                            Local Expertise, Global Reach
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-400 mt-2">
+                            With a presence in all 13 districts of Addis Ababa
+                            and access to premium listings in Dubai, we connect
+                            you with the best properties both locally and
+                            internationally.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 rounded-full bg-[#969963] bg-opacity-10 flex items-center justify-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5 text-[#137a70]"
+                              viewBox="0 0 20 20"
+                              fill="#969963"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                            Trusted by Clients, Backed by Experience
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-400 mt-2">
+                            With over 6 years of industry experience, 50+
+                            properties sold, and a growing list of satisfied
+                            clients, we’re committed to transparency,
+                            reliability, and results.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    // variants={imageSlideRight}
+                    className="w-full h-full"
+                  >
+                    <div className="relative">
+                      <div className="absolute -top-6 -right-6 w-full h-full bg-[#969963] bg-opacity-20 rounded-2xl"></div>
+                      <img
+                        src="/Property/PropertyLogo.jpeg"
+                        alt="Why Choose Us"
+                        className="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
       </div>

@@ -1535,13 +1535,13 @@ export const mockFooterData = {
   socialLinks: [
     {
       id: 1,
-      url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
+      url: "https://www.facebook.com/share/16Wyzn7BmN/?mibextid=wwXIfr",
       icon: <FaFacebook />,
     },
     { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
     {
       id: 3,
-      url: "https://www.instagram.com/p/C_xUlhsu2sC/?igsh=M2J3Y205MjhvMDVx",
+      url: "https://www.instagram.com/sara_events_marketing?igsh=YTM0Z3E3NjU4YnRw&utm_source=qr",
       icon: <FaInstagram />,
     },
     {
@@ -1551,7 +1551,7 @@ export const mockFooterData = {
     },
     {
       id: 5,
-      url: "https://vm.tiktok.com/ZMSTXpBD9/",
+      url: "https://www.tiktok.com/@sara_events_marketing.23?_t=ZM-8z9RsL69se6&_r=1",
       icon: <FaTiktok />,
     },
     {
@@ -1571,7 +1571,7 @@ export const mockFooterData = {
     {
       id: 1,
       icon: "📍",
-      text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
+      text: "lilu House 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
     { id: 2, icon: "📞", text: "+251 11 657 5755" },
     { id: 3, icon: "✉️", text: "info@saraevents.com" },
@@ -1603,13 +1603,13 @@ export const mockPropertyFooterData = {
   socialLinks: [
     {
       id: 1,
-      url: "https://web.facebook.com/p/SARA-Events-and-Marketing-100068533347322/?_rdc=1&_rdr#",
+      url: "https://www.facebook.com/share/1E68jUsZLg/?mibextid=wwXIfr",
       icon: <FaFacebook />,
     },
     { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
     {
       id: 3,
-      url: "https://www.instagram.com/p/C_xUlhsu2sC/?igsh=M2J3Y205MjhvMDVx",
+      url: "https://www.instagram.com/sem_property?utm_source=qr",
       icon: <FaInstagram />,
     },
     {
@@ -1619,7 +1619,7 @@ export const mockPropertyFooterData = {
     },
     {
       id: 5,
-      url: "https://vm.tiktok.com/ZMSTXpBD9/",
+      url: "https://www.tiktok.com/@sem_property_ethiopia?_t=ZM-8z9RpLkM68k&_r=1",
       icon: <FaTiktok />,
     },
     {
@@ -1639,7 +1639,7 @@ export const mockPropertyFooterData = {
     {
       id: 1,
       icon: "📍",
-      text: "liyu house 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
+      text: "lilu House 1st floor, Urael next to Capital Hotel, Addis Ababa 1000",
     },
     { id: 2, icon: "📞", text: "+251 11 657 5755" },
     { id: 3, icon: "✉️", text: "info@saraevents.com" },

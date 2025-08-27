@@ -248,16 +248,6 @@ export default function Home() {
               specializes in organizing charity events, corporate functions,
               conferences, grand openings, and product launches.
             </motion.p>
-            {/* <motion.a
-              href="/event/about"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={buttonSlide}
-              className="bg-[#137a70] mb-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
-            >
-              Learn More
-            </motion.a> */}
 
             <Button className="bg-[#137a70] mb-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md">
               <Link href="/event/about">Learn More</Link>
@@ -518,7 +508,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Our <span className="text-[#137a70]">Partners</span>
+              Some <span className="text-[#137a70]">Clients</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We collaborate with reputable organizations to deliver top-notch
@@ -526,16 +516,16 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-8 items-center px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-1 justify-center mx-auto w-full place-items-center">
             {partnerLogo.map((logo, index) => (
               <div
                 key={index}
-                className="w-32 h-20 flex items-center justify-center bg-white rounded-lg  dark:bg-gray-700 p-2"
+                className="bg-white dark:bg-gray-700 w-32 h-24 flex items-center justify-center p-3 rounded-lg shadow-md"
               >
                 <img
                   src={logo}
                   alt={`Partner Logo ${index + 1}`}
-                  className="object-contain max-h-full max-w-full"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             ))}
