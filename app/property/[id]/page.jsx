@@ -196,7 +196,7 @@ const PropertyDetail = () => {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 sticky top-4">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-2xl font-bold text-[#c9b68f]">
-                  ${attributes.Price.toLocaleString()}
+                  {attributes.Price.toLocaleString()}
                 </h3>
                 <span className="bg-[#c9b68f] text-black text-sm px-3 py-1 rounded-full">
                   {attributes.type}
@@ -301,7 +301,7 @@ const PropertyDetail = () => {
                     </div>
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-[#c9b68f] font-bold">
-                        ${property.attributes.Price.toLocaleString()}
+                        {property.attributes.Price.toLocaleString()}
                       </span>
                       <span className="text-gray-600 dark:text-gray-300 flex items-center">
                         <FaBed className="mr-1" />{" "}

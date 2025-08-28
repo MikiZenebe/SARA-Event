@@ -401,7 +401,7 @@ const PropertyHome = React.memo(function PropertyHome() {
                     </CardDescription>
                     <div className="flex justify-between items-center">
                       <span className="text-[#948567] font-bold">
-                        ${property.attributes.Price.toLocaleString()}
+                        {property.attributes.Price.toLocaleString()}
                       </span>
                       <span className="text-gray-600 dark:text-gray-300">
                         {property.attributes.Bedrooms} Beds

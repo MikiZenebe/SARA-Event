@@ -38,8 +38,8 @@ export default function PropertyCard({ property, index }) {
       >
         <CardHeader className="p-0">
           <img
-            src={property.attributes.Image.data.attributes.url}
-            alt={property.attributes.Image.data.attributes.alternativeText}
+            src={property.attributes.Image.data[0]?.attributes?.url}
+            alt={property.attributes.Image.data[0]?.attributes?.alternativeText}
             className="w-full h-48 object-cover"
           />
         </CardHeader>
@@ -52,7 +52,7 @@ export default function PropertyCard({ property, index }) {
           </CardDescription>
           <div className="flex justify-between items-center">
             <span className="text-[#a39373] font-bold">
-              ${property.attributes.Price.toLocaleString()}
+              {property.attributes.Price.toLocaleString()}
             </span>
             <span className="text-gray-600 dark:text-gray-300">
               {property.attributes.Bedrooms} Beds

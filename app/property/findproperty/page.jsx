@@ -282,7 +282,7 @@ const FindProperty = () => {
                 </p>
                 <div className="flex justify-between items-center">
                   <p className="font-bold">
-                    ${property.attributes.Price.toLocaleString()}
+                    {property.attributes.Price.toLocaleString()}
                   </p>
                   <p className="text-gray-600 dark:text-gray-300">
                     {property.attributes.Bedrooms} Bedrooms

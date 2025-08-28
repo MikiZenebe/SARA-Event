@@ -23,7 +23,7 @@ export const mockProperties = [
           },
         ],
       },
-      Price: 3500,
+      Price: "3,500 USD",
       Bedrooms: 5,
       city: {
         data: {
@@ -67,7 +67,7 @@ export const mockProperties = [
           },
         ],
       },
-      Price: 5000,
+      Price: "5,000 USD",
       Bedrooms: 5,
       city: {
         data: {
@@ -119,7 +119,7 @@ export const mockProperties = [
         ],
       },
 
-      Price: 1200000,
+      Price: "1,200,000 ETB",
       Bedrooms: 1,
       city: {
         data: {
@@ -169,7 +169,7 @@ export const mockProperties = [
           },
         ],
       },
-      Price: 3800000,
+      Price: "3,800,000 ETB",
       Bedrooms: 4,
       city: {
         data: {
@@ -243,7 +243,7 @@ export const mockProperties = [
           },
         ],
       },
-      Price: 1800,
+      Price: "1,800 USD",
       Bedrooms: 3,
       Bathrooms: 3,
       Features: {
@@ -331,7 +331,7 @@ export const mockProperties = [
           },
         ],
       },
-      Price: 36500000,
+      Price: "36,500,000 ETB",
       Bedrooms: 3,
       Bathrooms: 3,
       Features: {
@@ -366,8 +366,249 @@ export const mockProperties = [
         },
       },
       type: "For Sell",
-      contactAgent: "tel:+251936683005",
+      contactAgent: "tel:+251900014100",
       area: "235sqm",
+    },
+  },
+  {
+    id: "7",
+    attributes: {
+      Title: "Apartment for sale",
+      Description: "Spacious family home in a quiet neighborhood",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: [
+          {
+            attributes: {
+              url: "/Property/bole-atlas/1.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-atlas/2.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-atlas/3.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-atlas/4.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bisrate/5.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+        ],
+      },
+      Price: "30,000,000 ETB",
+      Bedrooms: 3,
+      Bathrooms: 3,
+      Features: {
+        data: [
+          // { attributes: { Name: "ተጠባባቂ ጀነሬተር" } },
+          // { attributes: { Name: "ሲሲቲቪ ካሜራ" } },
+          // { attributes: { Name: "የተሟላ የ 24ሰአት ጥበቃ" } },
+          // { attributes: { Name: "ያለተገደበ የከተማ እይታ" } },
+        ],
+      },
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Bole Atlas",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Bole",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      type: "For Sell",
+      contactAgent: "tel:+251900014100",
+      area: "160 sqm",
+    },
+  },
+  {
+    id: "8",
+    attributes: {
+      Title: "Luxury fully Furnished dublex penthouse Apartments for Rent",
+      Description: "Spacious family home in a quiet neighborhood",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: [
+          {
+            attributes: {
+              url: "/Property/welo-sefer/1.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/welo-sefer/2.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/welo-sefer/3.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+        ],
+      },
+      Price: "5,000 USD",
+      Bedrooms: 5,
+      Bathrooms: 5,
+      Features: {
+        data: [
+          { attributes: { Name: "Standby Generator" } },
+          { attributes: { Name: "24 hours security" } },
+          { attributes: { Name: "CCTV Cameras" } },
+          { attributes: { Name: "15000 liters water tankers" } },
+        ],
+      },
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Wollo Sefer",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Bole",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      type: "For Rent",
+      contactAgent: "tel:+251900014100",
+      area: "330sqm",
+    },
+  },
+  {
+    id: "9",
+    attributes: {
+      Title: "Furnished dublex penthouse Apartments for Rent",
+      Description: "Spacious family home in a quiet neighborhood",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: [
+          {
+            attributes: {
+              url: "/Property/bole-mega/1.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mega/2.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mega/3.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mega/4.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+        ],
+      },
+      Price: "3,500 USD",
+      Bedrooms: 5,
+      Bathrooms: 4,
+      Features: {
+        data: [
+          { attributes: { Name: "Laundry room" } },
+          { attributes: { Name: "Standby Generator" } },
+          { attributes: { Name: "24 hours security" } },
+          { attributes: { Name: "CCTV Cameras" } },
+          { attributes: { Name: "15000 liters water tankers" } },
+        ],
+      },
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Bole Mega",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Bole",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      type: "For Rent",
+      contactAgent: "tel:+251900014100",
+      area: "280sqm",
     },
   },
 ];
