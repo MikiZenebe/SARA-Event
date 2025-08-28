@@ -384,9 +384,9 @@ const PropertyHome = React.memo(function PropertyHome() {
                 >
                   <CardHeader className="p-0">
                     <img
-                      src={property.attributes.Image.data.attributes.url}
+                      src={property.attributes.Image.data[0]?.attributes.url}
                       alt={
-                        property.attributes.Image.data.attributes
+                        property.attributes.Image.data[0]?.attributes
                           .alternativeText
                       }
                       className="w-full h-48 object-cover"

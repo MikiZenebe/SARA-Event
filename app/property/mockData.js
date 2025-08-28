@@ -14,12 +14,14 @@ export const mockProperties = [
         },
       },
       Image: {
-        data: {
-          attributes: {
-            url: "/Property/house1.jpg",
-            alternativeText: "Modern Apartment",
+        data: [
+          {
+            attributes: {
+              url: "/Property/house1.jpg",
+              alternativeText: "Studio Apartment",
+            },
           },
-        },
+        ],
       },
       Price: 3500,
       Bedrooms: 5,
@@ -56,12 +58,14 @@ export const mockProperties = [
         "luxury fully Furnished dublex penthouse Apartments for Rent at Bole welo sefer",
 
       Image: {
-        data: {
-          attributes: {
-            url: "/Property/house2.jpg",
-            alternativeText: "Modern Apartment",
+        data: [
+          {
+            attributes: {
+              url: "/Property/house2.jpg",
+              alternativeText: "Studio Apartment",
+            },
           },
-        },
+        ],
       },
       Price: 5000,
       Bedrooms: 5,
@@ -105,13 +109,16 @@ export const mockProperties = [
         },
       },
       Image: {
-        data: {
-          attributes: {
-            url: "/Property/house3.jpg",
-            alternativeText: "Studio Apartment",
+        data: [
+          {
+            attributes: {
+              url: "/Property/house3.jpg",
+              alternativeText: "Studio Apartment",
+            },
           },
-        },
+        ],
       },
+
       Price: 1200000,
       Bedrooms: 1,
       city: {
@@ -153,12 +160,14 @@ export const mockProperties = [
         },
       },
       Image: {
-        data: {
-          attributes: {
-            url: "/Property/house4.jpg",
-            alternativeText: "Studio Apartment",
+        data: [
+          {
+            attributes: {
+              url: "/Property/house4.jpg",
+              alternativeText: "Studio Apartment",
+            },
           },
-        },
+        ],
       },
       Price: 3800000,
       Bedrooms: 4,
@@ -185,6 +194,180 @@ export const mockProperties = [
           },
         },
       },
+    },
+  },
+  {
+    id: "5",
+    attributes: {
+      Title: "Brand new apartment for rent at Bole",
+      Description: "Spacious family home in a quiet neighborhood",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: [
+          {
+            attributes: {
+              url: "/Property/bole-mil/1.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mil/2.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mil/3.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mil/4.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bole-mil/5.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+        ],
+      },
+      Price: 1800,
+      Bedrooms: 3,
+      Bathrooms: 3,
+      Features: {
+        data: [
+          { attributes: { Name: "Laundry" } },
+          { attributes: { Name: "Only 2 units per floor" } },
+          { attributes: { Name: "Quality finishing materials" } },
+          { attributes: { Name: "Backup generator and water reservoir" } },
+          { attributes: { Name: "Assigned car parking lot" } },
+          { attributes: { Name: "Elevator" } },
+        ],
+      },
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Bole Milinum",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Behind Avante Hote",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      type: "For Rent",
+      contactAgent: "tel:+251936683005",
+    },
+  },
+  {
+    id: "6",
+    attributes: {
+      Title: "የሚሸጥ ቅንጡ አፓርትመንት",
+      Description:
+        "ቢፈልጉ ጠቀም ባለ ዶላር የሚያከራዩት ካልሆነም የከተማ ላይ ቅንጡ ህይወት የሚኖሩበት ሠላማዊ ሥፍራ ላይ የተገነባ መኖሪያ ቤት!",
+      Icon: {
+        data: {
+          attributes: {
+            alternativeText: "Studio Icon",
+            url: "https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/studio-icon_1.jpg",
+          },
+        },
+      },
+      Image: {
+        data: [
+          {
+            attributes: {
+              url: "/Property/bisrate/1.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bisrate/2.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bisrate/3.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bisrate/4.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+          {
+            attributes: {
+              url: "/Property/bisrate/5.jpg",
+              alternativeText: "Studio Apartment",
+            },
+          },
+        ],
+      },
+      Price: 36500000,
+      Bedrooms: 3,
+      Bathrooms: 3,
+      Features: {
+        data: [
+          { attributes: { Name: "ተጠባባቂ ጀነሬተር" } },
+          { attributes: { Name: "ሲሲቲቪ ካሜራ" } },
+          { attributes: { Name: "የተሟላ የ 24ሰአት ጥበቃ" } },
+          { attributes: { Name: "ያለተገደበ የከተማ እይታ" } },
+        ],
+      },
+      city: {
+        data: {
+          attributes: {
+            Name: "Addis Ababa",
+            location: {
+              data: {
+                attributes: {
+                  Name: "Bisrate Gebriel",
+                },
+              },
+            },
+            subcities: {
+              data: [
+                {
+                  attributes: {
+                    Name: "Front of HomeDepo",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      type: "For Sell",
+      contactAgent: "tel:+251936683005",
+      area: "235sqm",
     },
   },
 ];

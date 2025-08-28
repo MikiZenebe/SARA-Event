@@ -27,12 +27,11 @@ const PropertyDetail = () => {
   const subCities = city.subcities.data;
 
   // Mock additional images for the gallery
-  const galleryImages = [
-    attributes.Image.data.attributes.url,
-    "/Property/house2.jpg",
-    "/Property/house3.jpg",
-    "/Property/house4.jpg",
-  ];
+  const galleryImages =
+    attributes.Image?.data?.map((img) => ({
+      url: img.attributes.url,
+      alt: img.attributes.alternativeText || "Property image",
+    })) || [];
 
   // Mock similar properties
   const similarProperties = mockProperties
@@ -94,7 +93,7 @@ const PropertyDetail = () => {
               <SwiperSlide key={index}>
                 <div className="h-96 w-full">
                   <img
-                    src={image}
+                    src={image.url}
                     alt={`Property image ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
@@ -140,9 +139,7 @@ const PropertyDetail = () => {
                       Bathrooms
                     </p>
                     <p className="font-semibold dark:text-white">
-                      {attributes.Bedrooms > 2
-                        ? Math.floor(attributes.Bedrooms / 2)
-                        : 1}
+                      {attributes.Bathrooms}
                     </p>
                   </div>
                 </div>
@@ -153,7 +150,7 @@ const PropertyDetail = () => {
                       Area
                     </p>
                     <p className="font-semibold dark:text-white">
-                      {attributes.Bedrooms * 50} m²
+                      {attributes.area}
                     </p>
                   </div>
                 </div>
@@ -163,20 +160,11 @@ const PropertyDetail = () => {
                 Features
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
-                {[
-                  "Fully Furnished",
-                  "Modern Kitchen",
-                  "Balcony",
-                  "Parking Space",
-                  "Security System",
-                  "Swimming Pool",
-                  "Gym",
-                  "24/7 Electricity",
-                ].map((feature, index) => (
+                {attributes?.Features?.data.map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <span className="w-2 h-2 bg-[#c9b68f] rounded-full mr-2"></span>
                     <span className="text-gray-600 dark:text-gray-300">
-                      {feature}
+                      {feature.attributes.Name}
                     </span>
                   </li>
                 ))}
@@ -211,12 +199,12 @@ const PropertyDetail = () => {
                   ${attributes.Price.toLocaleString()}
                 </h3>
                 <span className="bg-[#c9b68f] text-black text-sm px-3 py-1 rounded-full">
-                  For Sell
+                  {attributes.type}
                 </span>
               </div>
 
               <div className="mb-6">
-                <a href="tel:+251900014100">
+                <a href={attributes.contactAgent}>
                   <Button className="w-full bg-[#c9b68f] hover:bg-[#837559] text-black py-6 text-lg mb-4">
                     Contact Agent
                   </Button>
@@ -290,9 +278,9 @@ const PropertyDetail = () => {
                 >
                   <div className="h-48 w-full">
                     <img
-                      src={property.attributes.Image.data.attributes.url}
+                      src={property.attributes.Image.data[0]?.attributes.url}
                       alt={
-                        property.attributes.Image.data.attributes
+                        property.attributes.Image.data[0]?.attributes
                           .alternativeText
                       }
                       className="w-full h-full object-cover"

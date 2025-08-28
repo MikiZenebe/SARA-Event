@@ -48,7 +48,7 @@ const Page = () => {
         />
       </head>
 
-      <div className="bg-[#187c74] min-h-screen px-6 py-12 font-sans text-white">
+      <div className="bg-[#187c74] min-h-screen px-0 py-12 font-sans text-white">
         {/* Hero Section */}
         <motion.section
           initial="hidden"
@@ -67,30 +67,33 @@ const Page = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-10 max-w-6xl mx-auto rounded-xl overflow-hidden shadow-xl"
+          className="mb-10 max-full mx-auto rounded-xl overflow-hidden shadow-xl"
         >
           <div className="embla overflow-hidden" ref={emblaRef}>
-            <div className="embla__container flex">
-              {carouselImages.map((img, index) => (
-                <div
-                  className="embla__slide flex-[0_0_100%] min-w-0 relative"
-                  key={index}
-                >
-                  <img
-                    src={img}
-                    alt={`Carousel image ${index + 1}`}
-                    className="w-full h-96 object-cover"
-                  />
+            <div className="flex ">
+              <div className=" flex-[0_0_100%] min-w-0 relative rounded-none">
+                <img
+                  src="/landing_banner.jpg"
+                  alt={`Carousel image `}
+                  className="w-full h-96  rounded-0 top-2"
+                />
 
-                  {/* Text overlay */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white px-4 py-2 rounded">
-                    <p className="text-center text-sm sm:text-2xl">
-                      Your Number One Trusted Event Management and Marketing
-                      Company
-                    </p>
-                  </div>
+                <div className="absolute top-[-50px] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 rounded">
+                  <img
+                    src="/logo.png"
+                    alt={`Carousel image `}
+                    className="w-full h-96"
+                  />
                 </div>
-              ))}
+
+                {/* Text overlay */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white px-4 py-2 rounded">
+                  <p className="text-center text-sm sm:text-xl">
+                    Your Number One Trusted Event Management and Marketing
+                    Company
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.section>
