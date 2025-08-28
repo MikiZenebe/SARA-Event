@@ -254,17 +254,19 @@ const FindProperty = () => {
             >
               <div className="relative">
                 <img
-                  src={property.attributes.Image?.data.attributes.url}
+                  src={property.attributes.Image?.data[0]?.attributes.url}
                   alt={
-                    property.attributes.Image?.data.attributes.alternativeText
+                    property.attributes.Image?.data[0]?.attributes
+                      .alternativeText
                   }
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-2 left-2 bg-white dark:bg-gray-800 p-2 rounded-full">
                   <img
-                    src={property.attributes.Icon?.data.attributes.url}
+                    src={property.attributes.Icon?.data[0]?.attributes.url}
                     alt={
-                      property.attributes.Icon?.data.attributes.alternativeText
+                      property.attributes.Icon?.data[0]?.attributes
+                        .alternativeText
                     }
                     className="w-6 h-6"
                   />
