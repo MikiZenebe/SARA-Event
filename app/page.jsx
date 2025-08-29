@@ -48,26 +48,13 @@ const Page = () => {
         />
       </head>
 
-      <div className="bg-[#187c74] min-h-screen px-0 py-12 font-sans text-white">
-        {/* Hero Section */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={titleSlide}
-          className="text-center mb-16"
-        >
-          <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
-            Sara Event & Marketing
-          </h1>
-        </motion.section>
-
+      <div className="bg-[#187c74] min-h-screen px-0 pb-12 font-sans text-white">
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-10 max-full mx-auto rounded-xl overflow-hidden shadow-xl"
+          className="mb-10 max-full mx-auto  overflow-hidden shadow-xl"
         >
           <div className="embla overflow-hidden" ref={emblaRef}>
             <div className="flex ">
@@ -75,10 +62,10 @@ const Page = () => {
                 <img
                   src="/landing_banner.jpg"
                   alt={`Carousel image `}
-                  className="w-full h-96  rounded-0 top-2"
+                  className="w-full h-screen  object-cover"
                 />
 
-                <div className="absolute top-[-50px] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 rounded">
+                <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 rounded">
                   <img
                     src="/logo.png"
                     alt={`Carousel image `}
@@ -93,6 +80,27 @@ const Page = () => {
                     Company
                   </p>
                 </div>
+
+                <motion.div
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute bottom-4 right-5 mt-2 transform   p-2 rounded-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10 text-white animate-bounce"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    {/* Straight down arrow */}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4v16m0 0l-6-6m6 6l6-6"
+                    />
+                  </svg>
+                </motion.div>
               </div>
             </div>
           </div>
