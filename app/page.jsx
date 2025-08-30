@@ -65,7 +65,9 @@ const Page = () => {
                   className="w-full h-screen  object-cover"
                 />
 
-                <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 rounded">
+                <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+                <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 z-50">
                   <img
                     src="/logo.png"
                     alt={`Carousel image `}
