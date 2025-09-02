@@ -54,57 +54,67 @@ const Page = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-10 max-full mx-auto  overflow-hidden shadow-xl"
+          className="relative h-screen w-full overflow-hidden flex items-center justify-center"
         >
-          <div className="embla overflow-hidden" ref={emblaRef}>
-            <div className="flex ">
-              <div className=" flex-[0_0_100%] min-w-0 relative rounded-none">
-                <img
-                  src="/landing_banner.jpg"
-                  alt={`Carousel image `}
-                  className="w-full h-screen  object-cover"
-                />
+          {/* Background Image */}
+          <img
+            src="/landing_banner.jpg"
+            alt="Event background"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-                <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90 z-10" />
 
-                <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2   text-white px-4 py-2 z-50">
-                  <img
-                    src="/logo.png"
-                    alt={`Carousel image `}
-                    className="w-full h-96"
-                  />
-                </div>
+          {/* Content */}
+          <div className="relative z-20 text-center px-6">
+            {/* Logo */}
+            <motion.img
+              src="/logo.png"
+              alt="Event Logo"
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="mx-auto w-80 sm:w-60 md:w-72 lg:w-[33vw]"
+            />
 
-                {/* Text overlay */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white px-4 py-2 rounded">
-                  <p className="text-center text-sm sm:text-xl">
-                    Just think it we will make it happen
-                  </p>
-                </div>
-
-                <motion.div
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute bottom-4 right-5 mt-2 transform   p-2 rounded-full"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10 text-white animate-bounce"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    {/* Straight down arrow */}
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 4v16m0 0l-6-6m6 6l6-6"
-                    />
-                  </svg>
-                </motion.div>
-              </div>
-            </div>
+            {/* Tagline */}
+            <motion.h1
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 1 }}
+              className="mt-2 text-2xl sm:text-4xl md:text-5xl  font-bold text-white leading-tight capitalize"
+            >
+              Just think it we’ll make it happen
+              <motion.span
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
+                className="absolute left-0 -bottom-2 h-1 bg-gradient-to-r from-[#187c74] via-[#29c2b5] to-[#bdeeea] rounded-full"
+              />
+            </motion.h1>
           </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-white animate-bounce"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m0 0l-6-6m6 6l6-6"
+              />
+            </svg>
+          </motion.div>
         </motion.section>
 
         <div className="my-8">
@@ -226,4 +236,3 @@ const Page = () => {
 };
 
 export default Page;
-
