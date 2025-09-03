@@ -79,20 +79,30 @@ const Page = () => {
             />
 
             {/* Tagline */}
-            <motion.h1
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 1 }}
-              className="mt-2 text-2xl sm:text-4xl md:text-5xl  font-bold text-white leading-tight capitalize"
-            >
-              Just think it we’ll make it happen
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
-                className="absolute left-0 -bottom-2 h-1 bg-gradient-to-r from-[#187c74] via-[#29c2b5] to-[#bdeeea] rounded-full"
-              />
-            </motion.h1>
+            <motion.div className="relative inline-block mt-2 overflow-hidden">
+              <motion.h1
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: [0, 1, 1, 0], x: [-50, 0, 50, 0] }}
+                transition={{
+                  duration: 5, // full cycle duration
+                  repeat: Infinity,
+                  ease: "easeIn",
+                }}
+                className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight capitalize whitespace-nowrap"
+                style={{
+                  color: "transparent",
+                  WebkitTextStroke: "1px white",
+                  textShadow: `
+     
+        0 0 16px rgba(24, 124, 116, 0.6),
+        0 0 24px rgba(41, 194, 181, 0.6),
+        0 0 32px rgba(189, 238, 234, 0.8)
+      `, // glow layers
+                }}
+              >
+                Just think it we’ll make it happen
+              </motion.h1>
+            </motion.div>
           </div>
 
           {/* Scroll Indicator */}
