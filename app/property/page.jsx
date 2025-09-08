@@ -28,8 +28,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { motion } from "framer-motion";
-import { mockProperties, mockCities, mockAboutData } from "./mockData";
+import { mockAboutData } from "./mockData";
 import { FaBalanceScale, FaBullseye, FaEye } from "react-icons/fa";
+import { mockProperties } from "@/libs/data/propertyData";
 
 // Mock data for additional sections
 const mockHomeData = {
@@ -118,33 +119,72 @@ const PropertyHome = React.memo(function PropertyHome() {
   };
 
   const initialFilters = {
+    country: "",
     location: "",
     city: "",
     subCity: "",
-    priceRange: "",
-    propertyType: "all",
-    bedrooms: "any",
   };
 
   const [filters, setFilters] = useState(initialFilters);
   const [properties] = useState(mockProperties);
-  const [locations] = useState([
-    ...new Set(
-      mockCities.cities.data.map(
-        (city) => city.attributes.location.data.attributes.Name
-      )
-    ),
-  ]);
-  const [cities] = useState([
-    ...new Set(mockCities.cities.data.map((city) => city.attributes.Name)),
-  ]);
-  const [subCities] = useState([
-    ...new Set(
-      mockCities.cities.data.flatMap((city) =>
-        city.attributes.subcities.data.map((subcity) => subcity.attributes.Name)
-      )
-    ),
-  ]);
+
+  // Extract unique locations
+  const locations = useMemo(() => {
+    return [
+      ...new Set(
+        properties.map(
+          (p) => p.attributes.city.data.attributes.location.data.attributes.Name
+        )
+      ),
+    ];
+  }, [properties]);
+
+  const country = useMemo(() => {
+    return [
+      ...new Set(
+        properties.map(
+          (p) =>
+            p.attributes.city?.data.attributes.country?.data.attributes?.Name
+        )
+      ),
+    ];
+  }, [properties]);
+
+  // Cities depend on selected location
+  const cities = useMemo(() => {
+    return [
+      ...new Set(
+        properties
+          .filter(
+            (p) =>
+              !filters.location ||
+              p.attributes.city.data.attributes.location.data.attributes
+                .Name === filters.location
+          )
+          .map((p) => p.attributes.city.data.attributes.Name)
+      ),
+    ];
+  }, [properties, filters.location]);
+
+  // SubCities depend on selected city
+  const subCities = useMemo(() => {
+    return [
+      ...new Set(
+        properties
+          .filter(
+            (p) =>
+              !filters.city ||
+              p.attributes.city.data.attributes.Name === filters.city
+          )
+          .flatMap((p) =>
+            p.attributes.city.data.attributes.subcities.data.map(
+              (s) => s.attributes.Name
+            )
+          )
+      ),
+    ];
+  }, [properties, filters.city]);
+
   const [counterOn, setCounterOn] = useState(false);
 
   const handleFilterChange = (value, name) => {
@@ -154,12 +194,7 @@ const PropertyHome = React.memo(function PropertyHome() {
     }));
   };
 
-  const resetFilters = () => {
-    setFilters({
-      ...initialFilters,
-      bedrooms: "any",
-    });
-  };
+  const resetFilters = () => setFilters(initialFilters);
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
@@ -167,19 +202,18 @@ const PropertyHome = React.memo(function PropertyHome() {
         !filters.location ||
         property.attributes.city.data.attributes.location.data.attributes
           .Name === filters.location;
+
       const cityFilter =
         !filters.city ||
         property.attributes.city.data.attributes.Name === filters.city;
+
       const subCityFilter =
         !filters.subCity ||
         property.attributes.city.data.attributes.subcities.data.some(
-          (subcity) => subcity.attributes.Name === filters.subCity
+          (sub) => sub.attributes.Name === filters.subCity
         );
-      const bedroomsFilter =
-        filters.bedrooms === "any" ||
-        property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
-      return locationFilter && cityFilter && subCityFilter && bedroomsFilter;
+      return locationFilter && cityFilter && subCityFilter;
     });
   }, [properties, filters]);
 
@@ -281,16 +315,16 @@ const PropertyHome = React.memo(function PropertyHome() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
               {/* Location Filter */}
               <Select
-                value={filters?.location || ""}
-                onValueChange={(value) => handleFilterChange(value, "location")}
+                value={filters?.country || ""}
+                onValueChange={(value) => handleFilterChange(value, "country")}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select Location" />
+                  <SelectValue placeholder="Select Country" />
                 </SelectTrigger>
                 <SelectContent>
-                  {locations?.map((location) => (
-                    <SelectItem value={location} key={location}>
-                      {location}
+                  {country.map((country) => (
+                    <SelectItem key={country} value={country}>
+                      {country}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -300,7 +334,6 @@ const PropertyHome = React.memo(function PropertyHome() {
               <Select
                 value={filters?.city || ""}
                 onValueChange={(value) => handleFilterChange(value, "city")}
-                disabled={!filters?.location}
                 className={!filters?.location ? "disabled-cursor" : ""}
               >
                 <SelectTrigger>
@@ -319,7 +352,6 @@ const PropertyHome = React.memo(function PropertyHome() {
               <Select
                 value={filters?.subCity || ""}
                 onValueChange={(value) => handleFilterChange(value, "subCity")}
-                disabled={!filters?.city}
                 className={!filters?.city ? "disabled-cursor" : ""}
               >
                 <SelectTrigger>
@@ -334,23 +366,21 @@ const PropertyHome = React.memo(function PropertyHome() {
                 </SelectContent>
               </Select>
 
-              {/* Bedrooms Filter */}
-              {/* <Select
-                value={filters.bedrooms}
-                onValueChange={(value) => handleFilterChange(value, "bedrooms")}
+              <Select
+                value={filters?.location || ""}
+                onValueChange={(value) => handleFilterChange(value, "location")}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Bedrooms" />
+                  <SelectValue placeholder="Select Location" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="any">Any</SelectItem>
-                  <SelectItem value="1">1</SelectItem>
-                  <SelectItem value="2">2</SelectItem>
-                  <SelectItem value="3">3</SelectItem>
-                  <SelectItem value="4">4</SelectItem>
-                  <SelectItem value="5">5+</SelectItem>
+                  {locations?.map((location) => (
+                    <SelectItem value={location} key={location}>
+                      {location}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
-              </Select> */}
+              </Select>
             </div>
           </div>
           <div className="flex justify-end">

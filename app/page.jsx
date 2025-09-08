@@ -82,7 +82,7 @@ const Page = () => {
             <motion.div className="relative inline-block mt-2 overflow-hidden">
               <motion.h1
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: [0, 1, 1, 0], x: [-50, 0, 50, 0] }}
+                animate={{ opacity: [0, 1, 1, 0], x: [50, 0, 50, 0] }}
                 transition={{
                   duration: 5, // full cycle duration
                   repeat: Infinity,
