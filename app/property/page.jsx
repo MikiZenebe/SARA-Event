@@ -311,7 +311,7 @@ const PropertyHome = React.memo(function PropertyHome() {
           <h2 className="text-3xl font-bold text-center mb-6 dark:text-white">
             Find Your Dream Property
           </h2>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 gap-5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
               {/* Location Filter */}
               <Select
@@ -382,14 +382,15 @@ const PropertyHome = React.memo(function PropertyHome() {
                 </SelectContent>
               </Select>
             </div>
-          </div>
-          <div className="flex justify-end">
-            <Button
-              onClick={resetFilters}
-              className="bg-[#c9b68f] hover:bg-[#c2b49b] text-black"
-            >
-              Reset Filters
-            </Button>
+
+            <div className="flex justify-end">
+              <Button
+                onClick={resetFilters}
+                className="bg-[#c9b68f] hover:bg-[#c2b49b] text-black"
+              >
+                Reset Filters
+              </Button>
+            </div>
           </div>
         </section>
       </motion.div>

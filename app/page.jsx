@@ -78,26 +78,25 @@ const Page = () => {
               className="mx-auto w-80 sm:w-60 md:w-72 lg:w-[33vw]"
             />
 
-            {/* Tagline */}
             <motion.div className="relative inline-block mt-2 overflow-hidden">
               <motion.h1
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: [0, 1, 1, 0], x: [50, 0, 50, 0] }}
-                transition={{
-                  duration: 5, // full cycle duration
-                  repeat: Infinity,
-                  ease: "easeIn",
-                }}
                 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight capitalize whitespace-nowrap"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
                 style={{
                   color: "transparent",
                   WebkitTextStroke: "1px white",
                   textShadow: `
-     
         0 0 16px rgba(24, 124, 116, 0.6),
         0 0 24px rgba(41, 194, 181, 0.6),
         0 0 32px rgba(189, 238, 234, 0.8)
-      `, // glow layers
+      `,
                 }}
               >
                 Just think it we’ll make it happen
