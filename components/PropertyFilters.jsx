@@ -10,12 +10,12 @@ import {
 
 export default function PropertyFilters({
   filters,
-  locations,
+  countries,
   cities,
-  subCities,
+  subcities,
+  locations,
   handleFilterChange,
   resetFilters,
-  country,
 }) {
   return (
     <section>
@@ -33,7 +33,7 @@ export default function PropertyFilters({
               <SelectValue placeholder="Select Country" />
             </SelectTrigger>
             <SelectContent>
-              {country.map((country) => (
+              {countries?.map((country) => (
                 <SelectItem key={country} value={country}>
                   {country}
                 </SelectItem>
@@ -45,7 +45,8 @@ export default function PropertyFilters({
           <Select
             value={filters?.city || ""}
             onValueChange={(value) => handleFilterChange(value, "city")}
-            className={!filters?.location ? "disabled-cursor" : ""}
+            disabled={!filters?.country}
+            className={!filters?.country ? "disabled-cursor" : ""}
           >
             <SelectTrigger>
               <SelectValue placeholder="Select City" />
@@ -61,17 +62,18 @@ export default function PropertyFilters({
 
           {/* Sub-City Filter */}
           <Select
-            value={filters?.subCity || ""}
-            onValueChange={(value) => handleFilterChange(value, "subCity")}
+            value={filters?.subcity || ""}
+            onValueChange={(value) => handleFilterChange(value, "subcity")}
+            disabled={!filters?.city}
             className={!filters?.city ? "disabled-cursor" : ""}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Sub City" />
+              <SelectValue placeholder="Select Subcity" />
             </SelectTrigger>
             <SelectContent>
-              {subCities?.map((subCity) => (
-                <SelectItem key={subCity} value={subCity}>
-                  {subCity}
+              {subcities?.map((subcity) => (
+                <SelectItem key={subcity} value={subcity}>
+                  {subcity}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -80,13 +82,15 @@ export default function PropertyFilters({
           <Select
             value={filters?.location || ""}
             onValueChange={(value) => handleFilterChange(value, "location")}
+            disabled={!filters?.subcity}
+            className={!filters?.subcity ? "disabled-cursor" : ""}
           >
             <SelectTrigger>
               <SelectValue placeholder="Select Location" />
             </SelectTrigger>
             <SelectContent>
               {locations?.map((location) => (
-                <SelectItem value={location} key={location}>
+                <SelectItem key={location} value={location}>
                   {location}
                 </SelectItem>
               ))}

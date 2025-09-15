@@ -18,118 +18,103 @@ import PropertyHeader from "@/components/PropertyHeader";
 import PropertyFooter from "@/components/PropertyFooter";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { mockProperties, mockCities } from "../mockData";
+import { addressData, mockProperties } from "@/libs/data/propertyData";
 
 const FindProperty = () => {
   const initialFilters = {
-    location: "",
+    country: "",
     city: "",
-    subCity: "",
-    priceRange: "",
-    bedrooms: "",
+    subcity: "",
+    location: "",
   };
 
   const [filters, setFilters] = useState(initialFilters);
-  const [properties, setProperties] = useState(mockProperties);
-  const [locations, setLocations] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [subCities, setSubCities] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Set initial data from mock
-    setProperties(mockProperties);
+  const [properties] = useState(mockProperties);
 
-    // Extract unique locations
-    const uniqueLocations = [
-      ...new Set(
-        mockCities.cities?.data.map(
-          (city) => city.attributes.location?.data.attributes.Name
-        )
-      ),
-    ];
-    setLocations(uniqueLocations);
-
-    // Extract unique cities
-    const uniqueCities = [
-      ...new Set(mockCities.cities?.data.map((city) => city.attributes.Name)),
-    ];
-    setCities(uniqueCities);
-
-    // Extract unique subcities
-    const uniqueSubCities = [
-      ...new Set(
-        mockCities.cities?.data.flatMap((city) =>
-          city.attributes.subcities?.data.map(
-            (subcity) => subcity.attributes.Name
-          )
-        )
-      ),
-    ];
-    setSubCities(uniqueSubCities);
-
-    setIsLoading(false);
+  const countries = useMemo(() => {
+    return [...new Set(addressData.map((item) => item.country))];
   }, []);
+
+  const cities = useMemo(() => {
+    if (!filters.country) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    return selectedCountry
+      ? selectedCountry.cities.map((city) => city.name)
+      : [];
+  }, [filters.country]);
+
+  const subcities = useMemo(() => {
+    if (!filters.city) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    const selectedCity = selectedCountry?.cities.find(
+      (city) => city.name === filters.city
+    );
+    return selectedCity
+      ? selectedCity.subcities.map((subcity) => subcity.name)
+      : [];
+  }, [filters.country, filters.city]);
+
+  const locations = useMemo(() => {
+    if (!filters.subcity) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    const selectedCity = selectedCountry?.cities.find(
+      (city) => city.name === filters.city
+    );
+    const selectedSubcity = selectedCity?.subcities.find(
+      (subcity) => subcity.name === filters.subcity
+    );
+    return selectedSubcity ? selectedSubcity.locations : [];
+  }, [filters.country, filters.city, filters.subcity]);
 
   const handleFilterChange = (value, name) => {
     setFilters((prev) => ({
       ...prev,
       [name]: value,
+      ...(name === "country" && {
+        city: "",
+        subcity: "",
+        location: "",
+        bedrooms: "",
+      }),
+      ...(name === "city" && { subcity: "", location: "", bedrooms: "" }),
+      ...(name === "subcity" && { location: "", bedrooms: "" }),
+      ...(name === "location" && { bedrooms: "" }),
     }));
-
-    if (name === "location") {
-      // Filter cities based on selected location
-      const filteredCities = mockCities.cities?.data
-        .filter(
-          (city) => city.attributes.location?.data.attributes.Name === value
-        )
-        .map((city) => city.attributes.Name);
-      setCities(filteredCities);
-      setSubCities([]);
-      setFilters((prev) => ({ ...prev, city: "", subCity: "" }));
-    } else if (name === "city") {
-      // Filter subcities based on selected city
-      const selectedCity = mockCities.cities?.data.find(
-        (city) => city.attributes.Name === value
-      );
-      const subCities =
-        selectedCity?.attributes.subcities?.data.map(
-          (subcity) => subcity.attributes.Name
-        ) || [];
-      setSubCities(subCities);
-      setFilters((prev) => ({ ...prev, subCity: "" }));
-    }
   };
 
-  const resetFilters = () => {
-    setFilters(initialFilters);
-    // Reset cities and subcities to initial state
-    const uniqueCities = [
-      ...new Set(mockCities.cities?.data.map((city) => city.attributes.Name)),
-    ];
-    setCities(uniqueCities);
-    setSubCities([]);
-  };
+  const resetFilters = () => setFilters(initialFilters);
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
+      const countryFilter =
+        !filters.country ||
+        property.attributes.Address.Country === filters.country;
+      const cityFilter =
+        !filters.city || property.attributes.Address.City === filters.city;
+      const subcityFilter =
+        !filters.subcity ||
+        property.attributes.Address.Subcity === filters.subcity;
       const locationFilter =
         !filters.location ||
-        property.attributes.city?.data.attributes.location?.data.attributes
-          .Name === filters.location;
-      const cityFilter =
-        !filters.city ||
-        property.attributes.city?.data.attributes.Name === filters.city;
-      const subCityFilter =
-        !filters.subCity ||
-        property.attributes.city?.data.attributes.subcities?.data.some(
-          (subcity) => subcity.attributes.Name === filters.subCity
-        );
+        property.attributes.Address.Location === filters.location;
       const bedroomsFilter =
         !filters.bedrooms ||
         property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
-      return locationFilter && cityFilter && subCityFilter && bedroomsFilter;
+      return (
+        countryFilter &&
+        cityFilter &&
+        subcityFilter &&
+        locationFilter &&
+        bedroomsFilter
+      );
     });
   }, [properties, filters]);
 
@@ -171,16 +156,16 @@ const FindProperty = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Location Filter */}
             <Select
-              value={filters.location}
-              onValueChange={(value) => handleFilterChange(value, "location")}
+              value={filters.country}
+              onValueChange={(value) => handleFilterChange(value, "country")}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select Location" />
+                <SelectValue placeholder="Select Country" />
               </SelectTrigger>
               <SelectContent>
-                {locations.map((location) => (
-                  <SelectItem key={location} value={location}>
-                    {location}
+                {countries.map((country) => (
+                  <SelectItem key={country} value={country}>
+                    {country}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -190,7 +175,7 @@ const FindProperty = () => {
             <Select
               value={filters.city}
               onValueChange={(value) => handleFilterChange(value, "city")}
-              disabled={!filters.location}
+              disabled={!filters.country}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select City" />
@@ -204,24 +189,41 @@ const FindProperty = () => {
               </SelectContent>
             </Select>
 
-            {/* Sub-City Filter */}
+            {/* Subcity Filter */}
             <Select
               value={filters.subCity}
-              onValueChange={(value) => handleFilterChange(value, "subCity")}
+              onValueChange={(value) => handleFilterChange(value, "subcity")}
               disabled={!filters.city}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select Sub-City" />
+                <SelectValue placeholder="Select Subcity" />
               </SelectTrigger>
               <SelectContent>
-                {subCities.map((subCity) => (
-                  <SelectItem key={subCity} value={subCity}>
-                    {subCity}
+                {subCities.map((subcity) => (
+                  <SelectItem key={subcity} value={subcity}>
+                    {subcity}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
 
+            {/* Location Filter */}
+            <Select
+              value={filters.location}
+              onValueChange={(value) => handleFilterChange(value, "location")}
+              disabled={!filters.subcity}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select Location" />
+              </SelectTrigger>
+              <SelectContent>
+                {locations.map((location) => (
+                  <SelectItem key={location} value={location}>
+                    {location}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             {/* Bedrooms Filter */}
             <Input
               type="number"

@@ -1,3 +1,39 @@
+export const addressData = [
+  {
+    country: "Ethiopia",
+    cities: [
+      {
+        name: "Addis Ababa",
+        subcities: [
+          {
+            name: "Bole",
+            locations: [
+              "Bole Medhanealem",
+              "Gerji",
+              "Bole Milinum",
+              "Wollo Sefer",
+              "Bole Mega",
+              "Bole Atlas",
+            ],
+          },
+          {
+            name: "Sarbet",
+            locations: ["Sarbet"],
+          },
+          {
+            name: "CMC",
+            locations: ["CMC"],
+          },
+          {
+            name: "Bisrate Gebriel",
+            locations: ["Front of HomeDepo"],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export const mockProperties = [
   {
     id: "1",
@@ -25,33 +61,11 @@ export const mockProperties = [
       },
       Price: "3,500 USD",
       Bedrooms: 5,
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bole Medhanealem",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Bole Mega",
       },
     },
   },
@@ -74,33 +88,11 @@ export const mockProperties = [
       },
       Price: "5,000 USD",
       Bedrooms: 5,
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Sarbet",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Lideta",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Wollo Sefer",
       },
     },
   },
@@ -131,33 +123,11 @@ export const mockProperties = [
 
       Price: "1,200,000 ETB",
       Bedrooms: 1,
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "CMC",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Lemi Kura",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "CMC",
+        Location: "CMC",
       },
     },
   },
@@ -186,34 +156,11 @@ export const mockProperties = [
       },
       Price: "3,800,000 ETB",
       Bedrooms: 4,
-      Country: "Ethiopia",
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Gerji",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Gerji",
       },
     },
   },
@@ -277,33 +224,11 @@ export const mockProperties = [
           { attributes: { Name: "Elevator" } },
         ],
       },
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bole Milinum Behind Avante Hote",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Bole Milinum",
       },
       type: "For Rent",
       contactAgent: "tel:+251936683005",
@@ -368,33 +293,11 @@ export const mockProperties = [
           { attributes: { Name: "ያለተገደበ የከተማ እይታ" } },
         ],
       },
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bisrate Gebriel Front of HomeDepo",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Lideta",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bisrate Gebriel",
+        Location: "Front of HomeDepo",
       },
       type: "For Sell",
       contactAgent: "tel:+251900014100",
@@ -459,33 +362,11 @@ export const mockProperties = [
           // { attributes: { Name: "ያለተገደበ የከተማ እይታ" } },
         ],
       },
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bole Atlas",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Bole Atlas",
       },
       type: "For Sell",
       contactAgent: "tel:+251900014100",
@@ -530,7 +411,6 @@ export const mockProperties = [
       Price: "5,000 USD",
       Bedrooms: 5,
       Bathrooms: 5,
-      Country: "Ethiopia",
       Features: {
         data: [
           { attributes: { Name: "Standby Generator" } },
@@ -539,33 +419,11 @@ export const mockProperties = [
           { attributes: { Name: "15000 liters water tankers" } },
         ],
       },
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Wollo Sefer",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Wollo Sefer",
       },
       type: "For Rent",
       contactAgent: "tel:+251900014100",
@@ -625,33 +483,11 @@ export const mockProperties = [
           { attributes: { Name: "15000 liters water tankers" } },
         ],
       },
-      city: {
-        data: {
-          attributes: {
-            Name: "Addis Ababa",
-            location: {
-              data: {
-                attributes: {
-                  Name: "Bole Mega",
-                },
-              },
-            },
-            subcities: {
-              data: [
-                {
-                  attributes: {
-                    Name: "Bole",
-                  },
-                },
-              ],
-            },
-            country: {
-              data: {
-                attributes: { Name: "Ethiopia" },
-              },
-            },
-          },
-        },
+      Address: {
+        Country: "Ethiopia",
+        City: "Addis Ababa",
+        Subcity: "Bole",
+        Location: "Bole Mega",
       },
       type: "For Rent",
       contactAgent: "tel:+251900014100",

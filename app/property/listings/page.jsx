@@ -4,79 +4,74 @@ import PropertyHeader from "@/components/PropertyHeader";
 import PropertyFooter from "@/components/PropertyFooter";
 import PropertyCard from "@/components/PropertyCard";
 import PropertyFilters from "@/components/PropertyFilters";
-import { mockProperties } from "@/libs/data/propertyData";
+import { addressData, mockProperties } from "@/libs/data/propertyData";
 
 export default function PropertyListings() {
   const initialFilters = {
     country: "",
-    location: "",
     city: "",
-    subCity: "",
+    subcity: "",
+    location: "",
   };
 
   const [filters, setFilters] = useState(initialFilters);
+
   const [properties] = useState(mockProperties);
 
-  const locations = useMemo(() => {
-    return [
-      ...new Set(
-        properties.map(
-          (p) => p.attributes.city.data.attributes.location.data.attributes.Name
-        )
-      ),
-    ];
-  }, [properties]);
+  const countries = useMemo(() => {
+    return [...new Set(addressData.map((item) => item.country))];
+  }, []);
 
-  const country = useMemo(() => {
-    return [
-      ...new Set(
-        properties.map(
-          (p) =>
-            p.attributes.city?.data.attributes.country?.data.attributes?.Name
-        )
-      ),
-    ];
-  }, [properties]);
-
-  // Cities depend on selected location
   const cities = useMemo(() => {
-    return [
-      ...new Set(
-        properties
-          .filter(
-            (p) =>
-              !filters.location ||
-              p.attributes.city.data.attributes.location.data.attributes
-                .Name === filters.location
-          )
-          .map((p) => p.attributes.city.data.attributes.Name)
-      ),
-    ];
-  }, [properties, filters.location]);
+    if (!filters.country) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    return selectedCountry
+      ? selectedCountry.cities.map((city) => city.name)
+      : [];
+  }, [filters.country]);
 
-  // SubCities depend on selected city
-  const subCities = useMemo(() => {
-    return [
-      ...new Set(
-        properties
-          .filter(
-            (p) =>
-              !filters.city ||
-              p.attributes.city.data.attributes.Name === filters.city
-          )
-          .flatMap((p) =>
-            p.attributes.city.data.attributes.subcities.data.map(
-              (s) => s.attributes.Name
-            )
-          )
-      ),
-    ];
-  }, [properties, filters.city]);
+  const subcities = useMemo(() => {
+    if (!filters.city) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    const selectedCity = selectedCountry?.cities.find(
+      (city) => city.name === filters.city
+    );
+    return selectedCity
+      ? selectedCity.subcities.map((subcity) => subcity.name)
+      : [];
+  }, [filters.country, filters.city]);
+
+  const locations = useMemo(() => {
+    if (!filters.subcity) return [];
+    const selectedCountry = addressData.find(
+      (item) => item.country === filters.country
+    );
+    const selectedCity = selectedCountry?.cities.find(
+      (city) => city.name === filters.city
+    );
+    const selectedSubcity = selectedCity?.subcities.find(
+      (subcity) => subcity.name === filters.subcity
+    );
+    return selectedSubcity ? selectedSubcity.locations : [];
+  }, [filters.country, filters.city, filters.subcity]);
 
   const handleFilterChange = (value, name) => {
     setFilters((prev) => ({
       ...prev,
       [name]: value,
+      ...(name === "country" && {
+        city: "",
+        subcity: "",
+        location: "",
+        bedrooms: "",
+      }),
+      ...(name === "city" && { subcity: "", location: "", bedrooms: "" }),
+      ...(name === "subcity" && { location: "", bedrooms: "" }),
+      ...(name === "location" && { bedrooms: "" }),
     }));
   };
 
@@ -84,22 +79,28 @@ export default function PropertyListings() {
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
+      const countryFilter =
+        !filters.country ||
+        property.attributes.Address.Country === filters.country;
+      const cityFilter =
+        !filters.city || property.attributes.Address.City === filters.city;
+      const subcityFilter =
+        !filters.subcity ||
+        property.attributes.Address.Subcity === filters.subcity;
       const locationFilter =
         !filters.location ||
-        property.attributes.city.data.attributes.location.data.attributes
-          .Name === filters.location;
+        property.attributes.Address.Location === filters.location;
+      const bedroomsFilter =
+        !filters.bedrooms ||
+        property.attributes.Bedrooms === parseInt(filters.bedrooms);
 
-      const cityFilter =
-        !filters.city ||
-        property.attributes.city.data.attributes.Name === filters.city;
-
-      const subCityFilter =
-        !filters.subCity ||
-        property.attributes.city.data.attributes.subcities.data.some(
-          (sub) => sub.attributes.Name === filters.subCity
-        );
-
-      return locationFilter && cityFilter && subCityFilter;
+      return (
+        countryFilter &&
+        cityFilter &&
+        subcityFilter &&
+        locationFilter &&
+        bedroomsFilter
+      );
     });
   }, [properties, filters]);
 
@@ -118,10 +119,10 @@ export default function PropertyListings() {
       <main className="container mx-auto px-4 py-8">
         <PropertyFilters
           filters={filters}
-          country={country}
+          countries={countries}
           locations={locations}
           cities={cities}
-          subCities={subCities}
+          subcities={subcities}
           handleFilterChange={handleFilterChange}
           resetFilters={resetFilters}
         />
