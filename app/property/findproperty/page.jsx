@@ -28,6 +28,8 @@ const FindProperty = () => {
     location: "",
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [filters, setFilters] = useState(initialFilters);
 
   const [properties] = useState(mockProperties);
