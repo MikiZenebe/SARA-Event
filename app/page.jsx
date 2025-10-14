@@ -70,12 +70,12 @@ const Page = () => {
           <div className="relative z-20 text-center px-6">
             {/* Logo */}
             <motion.img
-              src="/logo.png"
+              src="/logoBanner.png"
               alt="Event Logo"
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="mx-auto w-80 sm:w-60 md:w-72 lg:w-[33vw]"
+              className="mx-auto w-80 sm:w-60 md:w-72 lg:w-[33vw] mb-5"
             />
 
             <motion.div className="relative inline-block mt-2 overflow-hidden">
@@ -99,7 +99,7 @@ const Page = () => {
       `,
                 }}
               >
-                Just think it we’ll make it happen
+                Just think it we will make it happen
               </motion.h1>
             </motion.div>
           </div>

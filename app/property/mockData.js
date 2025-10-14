@@ -1626,7 +1626,7 @@ export const EventService = {
       description:
         "We specialize in planning and executing professional corporate events that align with your brand and business goals. From team-building retreats to formal galas, we ensure every detail reflects your company’s values.",
       image: {
-        url: "meeting2.webp",
+        url: "/aboutEvent/coporate.jpeg",
         alternativeText: "Charity Event Image",
       },
       href: "/event/services/charity-events",
@@ -1670,7 +1670,7 @@ export const EventService = {
       description:
         "We bring your vision to life with professionally managed exhibitions, ensuring that your displays effectively engage visitors and highlight your offerings.",
       image: {
-        url: "metting3.webp",
+        url: "/aboutEvent/exhibition.jpg",
         alternativeText: "Product Launch Image",
       },
       href: "/event/services/product-launches",
@@ -1681,7 +1681,7 @@ export const EventService = {
       description:
         "Our expertise in organizing fashion shows ensures a stunning and memorable event that showcases your designs with flawless coordination and creative flair.",
       image: {
-        url: "/aboutEvent/large_3_W7_A9014_1_cb772560c0.jpg",
+        url: "/aboutEvent/fashionShow.jpg",
         alternativeText: "Product Launch Image",
       },
       href: "/event/services/product-launches",

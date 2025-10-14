@@ -47,7 +47,7 @@ function Service() {
         button: "Learn More",
         href: "/event/services/corporate-event",
         image: {
-          url: "/meeting2.webp",
+          url: "/aboutEvent/coporate.jpeg",
           alternativeText: "Brand Management Service",
         },
       },
@@ -58,7 +58,7 @@ function Service() {
         button: "Learn More",
         href: "/event/services/fashion-shows",
         image: {
-          url: "/show2.webp",
+          url: "/aboutEvent/fashionShow.jpg",
           alternativeText: "Brand Management Service",
         },
       },
