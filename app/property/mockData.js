@@ -1845,7 +1845,7 @@ export const mockFooterData = {
       url: "https://www.facebook.com/share/16Wyzn7BmN/?mibextid=wwXIfr",
       icon: <FaFacebook />,
     },
-    { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
+    // { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
     {
       id: 3,
       url: "https://www.instagram.com/sara_events_marketing?igsh=YTM0Z3E3NjU4YnRw&utm_source=qr",
@@ -1853,7 +1853,7 @@ export const mockFooterData = {
     },
     {
       id: 4,
-      url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
+      url: "https://www.linkedin.com/",
       icon: <FaLinkedin />,
     },
     {
@@ -1861,11 +1861,11 @@ export const mockFooterData = {
       url: "https://www.tiktok.com/@sara_events_marketing.23?_t=ZM-8z9RsL69se6&_r=1",
       icon: <FaTiktok />,
     },
-    {
-      id: 5,
-      url: "https://t.me/+eav8Df_bT-cyNjZk?fbclid=PAQ0xDSwL4W_dleHRuA2FlbQIxMQABp9hYAP8dxjY5Ec_wXA9GxwvuoHMEzn-CgGcKJsVWT8LEUml58UuNvaLMb9Fo_aem_-Q58ur8uDBIhNNb7eRfQDQ",
-      icon: <FaTelegram />,
-    },
+    // {
+    //   id: 6,
+    //   url: "https://t.me/+eav8Df_bT-cyNjZk?fbclid=PAQ0xDSwL4W_dleHRuA2FlbQIxMQABp9hYAP8dxjY5Ec_wXA9GxwvuoHMEzn-CgGcKJsVWT8LEUml58UuNvaLMb9Fo_aem_-Q58ur8uDBIhNNb7eRfQDQ",
+    //   icon: <FaTelegram />,
+    // },
   ],
   quickLinks: [
     { id: 1, label: "Home", href: "/event" },
@@ -1913,7 +1913,7 @@ export const mockPropertyFooterData = {
       url: "https://www.facebook.com/share/1E68jUsZLg/?mibextid=wwXIfr",
       icon: <FaFacebook />,
     },
-    { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
+    // { id: 2, url: "https://twitter.com", icon: <FaXTwitter /> },
     {
       id: 3,
       url: "https://www.instagram.com/sem_property?utm_source=qr",
@@ -1921,7 +1921,7 @@ export const mockPropertyFooterData = {
     },
     {
       id: 4,
-      url: "https://www.linkedin.com/in/sara-aklilu-840a1128a/?originalSubdomain=et",
+      url: "https://www.linkedin.com/",
       icon: <FaLinkedin />,
     },
     {
@@ -1930,7 +1930,7 @@ export const mockPropertyFooterData = {
       icon: <FaTiktok />,
     },
     {
-      id: 5,
+      id: 6,
       url: "https://t.me/+eav8Df_bT-cyNjZk?fbclid=PAQ0xDSwL4W_dleHRuA2FlbQIxMQABp9hYAP8dxjY5Ec_wXA9GxwvuoHMEzn-CgGcKJsVWT8LEUml58UuNvaLMb9Fo_aem_-Q58ur8uDBIhNNb7eRfQDQ",
       icon: <FaTelegram />,
     },
