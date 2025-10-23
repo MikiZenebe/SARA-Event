@@ -58,7 +58,7 @@ function Header() {
             <img
               src={logo.url}
               alt={logo.alternativeText}
-              className="h-auto w-28"
+              className="h-auto w-32"
             />
           </Link>
 
