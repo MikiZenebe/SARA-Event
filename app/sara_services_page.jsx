@@ -15,7 +15,11 @@ const ServicesPage = () => {
           Sara Event & Marketing
         </h1>
         <p className="max-w-4xl mx-auto text-xl text-[#e1f5f3] leading-relaxed">
-          At SARA, we bring your ideas to life — from unforgettable events and high-quality imports to bold marketing strategies and luxury real estate investments. With our dedicated team and eye for detail, we help you turn moments into milestones. Explore our world of excellence through SEM Properties and more.
+          At SARA, we bring your ideas to life — from unforgettable events and
+          high-quality imports to bold marketing strategies and luxury real
+          estate investments. With our dedicated team and eye for detail, we
+          help you turn moments into milestones. Explore our world of excellence
+          through SEM Properties and more.
         </p>
       </motion.section>
 
@@ -38,7 +42,8 @@ const ServicesPage = () => {
             <div className="p-8">
               <h3 className="text-2xl font-semibold mb-2">Events Management</h3>
               <p className="mb-4">
-                We design experiences that captivate — from intimate celebrations to large-scale productions.
+                We design experiences that captivate — from intimate
+                celebrations to large-scale productions.
               </p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Custom Event Planning</li>
@@ -57,14 +62,17 @@ const ServicesPage = () => {
             className="relative rounded-3xl bg-white text-[#959563] shadow-xl overflow-hidden group"
           >
             <img
-              src="/images/property.jpg"
+              src="/images/propManag.jpg"
               alt="Property"
               className="w-full h-64 object-cover"
             />
             <div className="p-8">
-              <h3 className="text-2xl font-semibold mb-2">Property Management</h3>
+              <h3 className="text-2xl font-semibold mb-2">
+                Property Management
+              </h3>
               <p className="mb-4">
-                Discover high-end real estate with SEM Properties — where investment meets lifestyle.
+                Discover high-end real estate with SEM Properties — where
+                investment meets lifestyle.
               </p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Luxury Apartments & Villas</li>

@@ -126,7 +126,7 @@ const Page = () => {
           </motion.div>
         </motion.section>
 
-        <div className="my-8">
+        {/* <div className="my-8">
           {" "}
           <p className="max-w-4xl mx-auto text-lg  text-[#e1f5f3] leading-relaxed">
             At SARA, we bring your ideas to life — from unforgettable events and
@@ -135,7 +135,7 @@ const Page = () => {
             help you turn moments into milestones. Explore our world of
             excellence through SEM Properties and more.
           </p>
-        </div>
+        </div> */}
 
         {/* Services Section */}
         <motion.section
@@ -145,7 +145,7 @@ const Page = () => {
           variants={imageSlideRight}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+          <h2 className="text-3xl font-bold text-center text-white my-12">
             What We Offer
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -191,7 +191,7 @@ const Page = () => {
             >
               <CardHeader className="p-0">
                 <img
-                  src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650749/photo_5800701578242541043_y_1_e6682c900f.jpg"
+                  src="./propManag.jpg"
                   alt="Property"
                   className="w-full h-64 object-cover"
                 />
